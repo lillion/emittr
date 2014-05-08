@@ -8,7 +8,7 @@
 #' @param xlab
 #' @export
 #' @keywords umit
-#' @seealso multibar
+#' @seealso lillionscage::multibar
 #' @return none
 #' @examples \dontrun{ 
 #' multihist(dd)
@@ -41,11 +41,27 @@ multihist <- function(x, variables, labels = TRUE, xlab = "Verteilung",save=TRUE
 
 
 
+#' @title <brief desc>
+#'
+#' @description <full description>
+#' @param x
+#' @param variables
+#' @param labels 
+#' @param xlab 
+#' @param save 
+#' @export
+#' @keywords umit
+#' @seealso mulithist
+#' @return none
+#' @examples \dontrun{
+#' multi
+#'}
 multibar <- function(x, variables, labels, xlab = "Antworten", 
 	save = TRUE,...) {
 	if(class(x)!="data.frame") stop("x is not a Dataframe")
 	if(missing(variables)) variables=1:length(x)
-	if (!missing(labels)) { if(is.character(labels) & length(variables)==length(labels)) {
+	if (!missing(labels)) {
+	 if(is.character(labels) & length(variables)==length(labels)) {
 		ll <- labels
 	} else {
 		cat("Labels don't correspond to variables\n")
