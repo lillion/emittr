@@ -1,17 +1,17 @@
 
-#' @title Multiple separate histograms
+#' @title Mehrere getrennte Histogramme
 #'
 #' @description produces a histogram for each variable in a dataframe or its subset, which optionally can be saved to disk as a pdf
 #' @param x data.frame
-#' @param variables vector of variables to be used
-#' @param labels character vector of labels
-#' @param xlab
-#' @param save should pdf be saved to disk
-#' @param ... additional graphic parameters vor hist (e.g., col)
+#' @param variables Vektor der Variablen, die dargestellt werden sollen
+#' @param labels String-Vektor der Labels, die verwendet werden sollen
+#' @param xlab Unterschrift unter dem Plot
+#' @param save Soll ein PDF gespeichert werden
+#' @param ... zusätzliche Parameter von hist (z.B. col)
 #' @export
 #' @keywords umit
 #' @seealso lillionscage::multibar
-#' @return none
+#' @return Histogramme
 #' @examples \dontrun{ 
 #' multihist(dd)
 #' multibar(dd, 80:82, save = T)
@@ -19,12 +19,12 @@
 #' multibar(neo_n,5,ylab="häu")
 #'}
 
-multihist <- function(x, variables, labels = TRUE, xlab = "Verteilung",save=TRUE,...) {
-	if(class(x)!="data.frame") stop("x is not a Dataframe")
+multihist_d <- function(x, variables, labels = TRUE, xlab = "Verteilung", save=TRUE,...) {
+	if(class(x)!="data.frame") stop("x ist kein Datensatz")
 	if(missing(variables)) variables=1:length(x)
 	ll <- attributes(x)$variable.labels
 	if(length(ll)==0) {
-		cat("no Labels in Dataframe, using variable names instead")
+		cat("keine Labels im Datensatz, verwende daher stattdessen Variablennamen")
 		ll <- names(x)
 		}
 	ll <- gsub("\\.", "", ll)
@@ -42,37 +42,36 @@ multihist <- function(x, variables, labels = TRUE, xlab = "Verteilung",save=TRUE
 
 
 
-
-#' @title Multiple separate barplots
+#' @title Mehrere getrennte barplots
 #'
 #' @description given a dataframe, produces a barplot for each variable or a subset of variables, which optionally can be saved to disk as a pdf
 #' @param x data.frame
-#' @param variables vector of variables to be used
-#' @param labels 
-#' @param xlab 
-#' @param save should pdf be saved to disk
-#' @param ... additional graphic parameters vor hist (e.g., col)
+#' @param variables Vektor der Variablen, die dargestellt werden sollen
+#' @param labels String-Vektor der Labels, die verwendet werden sollen
+#' @param xlab Unterschrift unter dem Plot
+#' @param save Soll ein PDF gespeichert werden
+#' @param ... zusätzliche Parameter von hist (z.B. col)
 #' @export
 #' @keywords umit
 #' @seealso mulithist
-#' @return Generates for each variable in a dataframe a barplot, optionally saved to the wd as a pdf
+#' @return Barplot
 #' @examples \dontrun{
 #' multi
 #'}
-multibar <- function(x, variables, labels, xlab = "Antworten", 
+multibar_d <- function(x, variables, labels, xlab = "Antworten", 
 	save = TRUE,...) {
-	if(class(x)!="data.frame") stop("x is not a Dataframe")
+	if(class(x)!="data.frame") stop("x ist kein Datensatz")
 	if(missing(variables)) variables=1:length(x)
 	if (!missing(labels)) {
 	 if(is.character(labels) & length(variables)==length(labels)) {
 		ll <- labels
 	} else {
-		cat("Labels don't correspond to variables\n")
+		cat("Labels/Anzahl entsprechen nicht den Variablen\n")
 		ll <- attributes(x)$variable.labels}} else {
 	ll <- attributes(x)$variable.labels
 	}
 	if(length(ll)==0) {
-		cat("no Labels in Dataframe, using variable names instead\n")
+		cat("keine Labels im Datensatz, verwende daher stattdessen Variablennamen")
 		ll <- names(x)
 		}
 		
