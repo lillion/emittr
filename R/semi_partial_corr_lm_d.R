@@ -5,7 +5,7 @@
 #' @param fit lm object
 #' @export
 #' @keywords linear model, lm, regression
-#' @seealso lm() 
+#' @seealso \code{\link{lm},\link{cor}}
 #' @return dataframe of r, r.,r..
 #' @examples \dontrun{
 #'

@@ -20,7 +20,7 @@ dataframe of r, r.,r..
 }
 }
 \seealso{
-lm()
+\code{\link{lm},\link{cor}}
 }
 \keyword{linear}
 \keyword{lm,}

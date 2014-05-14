@@ -4,7 +4,8 @@
 #' @param fit Objekt eines linearen Modells
 #' @export
 #' @keywords lm, regression, spss
-#' @return dataframe with lm output similar to SPSS
+#' @return dataframe des Ergebnisses einer Regression ähnlich der in SPSS
+#' @seealso \code{\link{lm}}
 #' @examples \dontrun{
 #'
 #'}

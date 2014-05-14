@@ -1,6 +1,6 @@
-pth <- "~/Dropbox/R Ideen/"
+#pth <- "~/Dropbox/R Ideen/"
  
-fls <- file.path(pth, dir(pth))
+#fls <- file.path(pth, dir(pth))
  
 FUN <- function(x) {
     cont <- readLines(x)
@@ -9,7 +9,7 @@ FUN <- function(x) {
     cat(paste(cont, collapse="\n"))
 }
  
-lapply(fls, FUN)
+#lapply(fls, FUN)
 
 
 
