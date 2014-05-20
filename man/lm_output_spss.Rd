@@ -15,8 +15,11 @@ dataframe with lm output similar to SPSS
 <full description>
 }
 \examples{
+library(car)
+l <- lm(mpg~disp+hp+wt+drat, data=mtcars)
+lm_output_spss(l)
 \dontrun{
-
+lapply(ll, lm_output_spss) # get outputs from several lm objects
 }
 }
 \keyword{lm,}

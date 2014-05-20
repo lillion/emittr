@@ -14,8 +14,9 @@
 #' lm_hier_model_sum(ll)
 #' #rm(ll)
 lm_hier_model_sum <- function (ll) {
-  if (class(ll[[1]])!="lm") stop("Please don't use a summary lm.object!")
-  r1 <- t(sapply(ll, function(x) {c(R=sqrt(summary(x)$r.squared),rsq=summary(x)$r.squared,adjrsq=summary(x)$adj.r.squared)}))
+  if (inherits(ll[[1]],"lm.summary")) stop("Please don't use a summary lm.object!")
+  #r1 <- t(sapply(ll, function(x) {c(R=sqrt(summary(x)$r.squared),rsq=summary(x)$r.squared,adjrsq=summary(x)$adj.r.squared)}))
+  r1 <- t(sapply(ll, function(x) {temp=summary(x); f=temp$fstatistic;c(R=sqrt(temp$r.squared),rsq=temp$r.squared, p = unname(pf(f[1],f[2],f[3],lower.tail=F)),adjrsq=temp$adj.r.squared)}))
   #print(r1)
   
   ano <- paste(sapply(1:length(ll), function(x) paste0("ll[[",x,"]]")), collapse=",")

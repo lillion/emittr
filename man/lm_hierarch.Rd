@@ -3,7 +3,7 @@
 \alias{lm_hierarch}
 \title{Hierarchical regression with several blocks estimate}
 \usage{
-lm_hierarch(formula, blocks, data, summary = TRUE, ...)
+lm_hierarch(formula, blocks, data, summary = FALSE, ...)
 }
 \arguments{
 \item{formula}{the complete formula including all blocks from the hierarchical regression}
