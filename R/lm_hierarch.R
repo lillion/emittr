@@ -10,15 +10,18 @@
 #' @param summary should the results be summaries of the lm object
 #' @param ... additional parameters for \code{\link{lm}} 
 #' @export
+#' @import car
 #' @keywords lm, regression, hierarchical regression
 #' @seealso \code{\link{lm}}
 #' @return list of the regression models
 #' @examples \dontrun{
-#' lm_hierarch(gewissen ~ sex + age + school, c(1),data=neoffi)
+#' # hierarchical regression with 2 blocks, 1:sex, 2: age+school
+#' lm_hierarch(conscien ~ sex + age + school, c(1),data=neoffi)
 #'}
-#' library(car)
-#' lm_hierarch(mpg~disp+hp+wt+drat, c(1,1,1,1), data=mtcars) # 4 blocks with each time one additional predictor
-#' lm_hierarch(mpg~disp+hp+wt+drat, c(2,2), data=mtcars) # 2 blocks with each time 2 additional predictors
+#' # 4 blocks with each time one additional predictor
+#' lm_hierarch(mpg~disp+hp+wt+drat, c(1,1,1,1), data=mtcars)
+#' # 2 blocks with each time 2 additional predictors 
+#' lm_hierarch(mpg~disp+hp+wt+drat, c(2,2), data=mtcars) 
 #'
 lm_hierarch <- function(formula, # the complete formula, including all blocks from the hierarchical regression
  blocks, # numeric vector denoting the lenght of each block, e.g. c(2,3,1)
