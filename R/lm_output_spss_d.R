@@ -1,6 +1,6 @@
-#' @title Lineare Regression ähnlich der aus SPSS
+#' @title Koeffizienten einer Lineare Regression präsentiert ähnlich SPSS
 #'
-#' @description <full description>
+#' @description Diese Funktion liefert die Tabelle der Regressionskoeffizienten (\beta) ähnlich der Darstellung in SPSS
 #' @param fit Objekt eines linearen Modells
 #' @export
 #' @keywords lm, regression, spss
@@ -9,7 +9,7 @@
 #' @examples \dontrun{
 #'
 #'}
-lm_output_spss_d <- function (fit) {
+lm_coef_spss_d <- function (fit) {
 	if(class(fit)!="lm") stop(substitute(fit), " ist kein LM Objekt")
 	require(car)
 	scaled <- data.frame(scale(fit$model))

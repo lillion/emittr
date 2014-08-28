@@ -17,7 +17,7 @@ multihist(x, variables, labels = TRUE, xlab = "Verteilung", save = TRUE,
 
 \item{save}{should pdf be saved to disk}
 
-\item{...}{additional graphic parameters vor hist (e.g., col)}
+\item{...}{additional graphic parameters for hist (e.g., col)}
 }
 \value{
 none

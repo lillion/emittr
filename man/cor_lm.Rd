@@ -12,12 +12,12 @@ cor_lm(fit)
 dataframe of r, r.,r..
 }
 \description{
-<full description>
+compute semipartial, partial and zero-order correlations by way of an lm object
 }
 \examples{
-\dontrun{
-
-}
+library(car)
+fit <- lm(mpg~disp+hp+wt+drat, data=mtcars)
+cor_lm(fit)
 }
 \seealso{
 lm()

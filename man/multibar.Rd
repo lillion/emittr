@@ -16,7 +16,7 @@ multibar(x, variables, labels, xlab = "Antworten", save = TRUE, ...)
 
 \item{save}{should pdf be saved to disk}
 
-\item{...}{additional graphic parameters vor hist (e.g., col)}
+\item{...}{additional graphic parameters for barplot (e.g., col)}
 }
 \value{
 Generates for each variable in a dataframe a barplot, optionally saved to the wd as a pdf
@@ -25,9 +25,8 @@ Generates for each variable in a dataframe a barplot, optionally saved to the wd
 given a dataframe, produces a barplot for each variable or a subset of variables, which optionally can be saved to disk as a pdf
 }
 \examples{
-\dontrun{
-multi
-}
+data(cars)
+multibar(cars)
 }
 \seealso{
 mulithist

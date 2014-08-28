@@ -1,7 +1,6 @@
-
-#' @title <brief desc>
+#' @title Extract scales from an EFA object
 #'
-#' @description <full description>
+#' @description given the pattern maxtrix of an EFA with more than one factor, combine items loading on one particular factor to a scale and save it in an object. Items with unclear loading pattern (i.e. non trivial loadings on more than one factor) can be either evaluated using a loading difference to the next highest loading (parameter loadingdifference) or using the Fürntratt criterion. If an item fails to meet the selected criterion it will not be included in the scale.
 #' @param faobject saved fa object
 #' @param ladungsunterschied should loadings be assigned to a factor by loading difference
 #' @param datensatz data.frame containing the items

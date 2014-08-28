@@ -7,7 +7,7 @@
 #' @param labels character vector of labels
 #' @param xlab
 #' @param save should pdf be saved to disk
-#' @param ... additional graphic parameters vor hist (e.g., col)
+#' @param ... additional graphic parameters for hist (e.g., col)
 #' @export
 #' @keywords umit
 #' @seealso lillionscage::multibar
@@ -51,14 +51,14 @@ multihist <- function(x, variables, labels = TRUE, xlab = "Verteilung",save=TRUE
 #' @param labels 
 #' @param xlab 
 #' @param save should pdf be saved to disk
-#' @param ... additional graphic parameters vor hist (e.g., col)
+#' @param ... additional graphic parameters for barplot (e.g., col)
 #' @export
 #' @keywords umit
 #' @seealso mulithist
 #' @return Generates for each variable in a dataframe a barplot, optionally saved to the wd as a pdf
-#' @examples \dontrun{
-#' multi
-#'}
+#' @examples 
+#' data(cars)
+#' multibar(cars)
 multibar <- function(x, variables, labels, xlab = "Antworten", 
 	save = TRUE,...) {
 	if(class(x)!="data.frame") stop("x is not a Dataframe")

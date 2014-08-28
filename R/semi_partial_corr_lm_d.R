@@ -1,15 +1,16 @@
 # 
 #' @title  semipartial, partial und Korrelationen nullter Ordnung eines Regressionsmodell
 #'
-#' @description <full description>
-#' @param fit lm object
+#' @description berechnet semipartial, partial und Korrelationen nullter Ordnung der Prädiktoren einer linearen Regression mit dem Kriterium
+#' @param fit ein Objekt einer lm Berechnung
 #' @export
 #' @keywords linear model, lm, regression
 #' @seealso \code{\link{lm},\link{cor}}
-#' @return dataframe of r, r.,r..
-#' @examples \dontrun{
-#'
-#'}
+#' @return Datensatz (dataframe) von r, r.,r..
+#' @examples
+#' library(car)
+#' fit <- lm(mpg~disp+hp+wt+drat, data=mtcars) 
+#' cor_lm_d(fit)
 cor_lm_d <- function(fit)  {
   if(class(fit)!="lm") stop(substitute(fit), " ist kein LM Objekt")
   dv <- names(fit$model)[1]

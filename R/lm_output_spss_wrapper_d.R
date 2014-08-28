@@ -7,15 +7,16 @@
 #' @keywords lm, regression, spss
 #' @return dataframe des Ergebnisses einer Regression ähnlich der in SPSS
 #' @seealso \code{\link{lm}}
-#' @examples \dontrun{
-#'
-#'}
+#' @examples
+#' library(car)
+#' fit <- lm(mpg~disp+hp+wt+drat, data=mtcars) 
+#' lm_output_spss_wrapper_d(fit)
 lm_output_spss_wrapper_d <- function (fit, Rsquare=TRUE, coefficients=TRUE, collinearity=TRUE,plot=TRUE) {
   if(class(fit)!="lm") stop(substitute(fit), " ist kein LM Objekt")
   #lm_hier_model_sum(fit)
   results=vector("list", 0)
   if (Rsquare) results[["Model"]]=rr(fit)
-  if (coefficients) results[["Coefficients"]]=lm_output_spss(fit)
+  if (coefficients) results[["Coefficients"]]=lm_coef_spss_d(fit)
   if (collinearity) results[["Collinearity"]]=lillionscage:::lm_coll(fit,add.intercept=F)
   if (plot) {
     op <- par (mfrow=c(2,2))

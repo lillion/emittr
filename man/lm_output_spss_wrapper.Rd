@@ -18,9 +18,9 @@ dataframe des Ergebnisses einer Regression ähnlich der in SPSS
 <full description>
 }
 \examples{
-\dontrun{
-
-}
+library(car)
+fit <- lm(mpg~disp+hp+wt+drat, data=mtcars)
+lm_output_spss_wrapper(fit)
 }
 \seealso{
 \code{\link{lm}}

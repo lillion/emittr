@@ -1,7 +1,7 @@
-#' @title <brief desc>
+#' @title multi collinearity diagnosis inside a linear regression
 #'
-#' @description <full description>
-#' @param l 
+#' @description multi collinearity diagnosis
+#' @param l lm object
 #' @param ... 
 #' @keywords internal
 #' @return data.frame colldiag
