@@ -12,15 +12,21 @@ lm_output_spss_wrapper_d(fit, Rsquare = TRUE, coefficients = TRUE,
 \item{plot}{sollen Histogramm der Residuen, qq plot und Plot dervorhergesagten Werte/Fehler erstellt werden}
 }
 \value{
-dataframe des Ergebnisses einer Regression ähnlich der in SPSS
+Liste mit 3 Elementen (dataframe) des Ergebnisses einer Regression ähnlich der in SPSS
 }
 \description{
-<full description>
+Dreigeteiltes Ergebnis einer linearen Regression ähnlich der Ausgabe in SPSS.  Neben einem Modelübersicht mit Varianzaufklärung werden die Koeffizienten aufgeführt und eine Kollinearitätsdiagnose angeboten.
 }
 \examples{
 library(car)
 fit <- lm(mpg~disp+hp+wt+drat, data=mtcars)
 lm_output_spss_wrapper_d(fit)
+
+\dontrun{
+# um "schöne" Tabellen zu bekommen
+kable(lm_output_spss_wrapper_d(l))
+lapply(ll, function(x) kable(lm_output_spss_wrapper_d(x)))
+}
 }
 \seealso{
 \code{\link{lm}}
