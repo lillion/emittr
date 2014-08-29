@@ -33,3 +33,35 @@ NULL
 #' @format A data frame with 51 rows and 9 variables
 #' @source A. Agresti and B. Finlay, STATISTICAL METHODS FOR THE SOCIAL SCIENCES, Prentice Hall, 3rd edition, 2008
 NULL
+
+
+#' Personality data with life satisfaction
+#'
+#' The data comprises items and sum-scores for Extraversion
+#' Neuroticism and Life Satisfaction
+#'
+#' \itemize{
+#'   \item lz1 \emph{In den meisten Bereichen entspricht mein Leben meinen Idealvorstellungen}
+#'   \item lz2 \emph{Meine Lebensbedingungen sind ausgezeichnet}
+#'   \item lz3 \emph{Ich bin mit meinem Leben zufrieden}
+#'   \item lz4 \emph{Bisher habe ich die wesentlichen Dinge erreicht, die ich mir für mein Leben wünsche.}
+#'   \item lz5 \emph{Wenn ich mein Leben noch einmal leben könnte, würde ich kaum etwas ändern.}
+#'   \item lezu \emph{Lebenszufriedenheit}
+#'   \item e1 \emph{kontaktfreudig}
+#'   \item e2 \emph{gesellig}
+#'   \item e3 \emph{lebhaft}
+#'   \item e4 \emph{temperamentvoll}
+#'   \item extra \emph{Extraversion}
+#'   \item n1 \emph{verletzbar}
+#'   \item n2 \emph{empfindlich}
+#'   \item n3 \emph{launenhaft}
+#'   \item n4 \emph{selbstzweiflerisch}
+#'   \item neuro \emph{Neurotizismus}
+#'   }
+#'
+#' @docType data
+#' @keywords datasets
+#' @name pers_data
+#' @usage data(pers_data)
+#' @format A data frame with 345 rows and 16 variables
+NULL

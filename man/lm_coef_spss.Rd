@@ -18,6 +18,11 @@ function that returns a table of the regression coefficients similar to the pres
 library(car)
 l <- lm(mpg~disp+hp+wt+drat, data=mtcars)
 lm_coef_spss(l)
+
+data(crime_data)
+l <- lm(crime~pctwhite+pctmetro+poverty, data=crime_data)
+lm_coef_spss(l)
+rm(l)
 \dontrun{
 lapply(ll, lm_output_spss) # get outputs from several lm objects
 }
