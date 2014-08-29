@@ -26,6 +26,6 @@ lm_hier_model_sum <- function (ll) {
   f <- summary(ll[[1]])$fstatistic
   p <- pf(f[1],f[2],f[3],lower.tail=F)
   r2[1,] <- c(summary(ll[[1]])$fstatistic,p)
-  rch <- c(r1[1,2],diff(r1[,2]))
-  cbind(r1,rch,r2)
+  R_change <- c(r1[1,2],diff(r1[,2]))
+  cbind(r1,R_change,r2)
 }
