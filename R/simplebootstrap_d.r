@@ -24,7 +24,7 @@ myboots<-boot(x,statistic=p.func,R=reps,stype="i")
 hist(myboots$t,breaks=25,main="Empirische Verteilung des bootstrap",xlab=paste("Statistik:",stat),ylab="Häufigkeit")
 abline(v=mean(myboots$t),col="blue")
 abline(v=myboots$t0, col="red")
-suppressWarnings(return(list(Anzahl_Samples=reps,Punkt.Schätzung=myboots$t0,normal.ci=c(boot.ci(myboots)$normal[2],boot.ci(myboots)$normal[3]),
+suppressWarnings(return(list(Anzahl_Samples=reps,Punkt.Schaetzung=myboots$t0,normal.ci=c(boot.ci(myboots)$normal[2],boot.ci(myboots)$normal[3]),
 percent.ci=c(boot.ci(myboots)$percent[4],boot.ci(myboots)$percent[5]),
 bca.ci=c(boot.ci(myboots)$bca[4],boot.ci(myboots)$bca[5]))))
 }
