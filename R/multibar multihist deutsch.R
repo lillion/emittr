@@ -55,9 +55,9 @@ multihist_d <- function(x, variables, labels = TRUE, xlab = "Verteilung", save=T
 #' @keywords umit
 #' @seealso mulithist
 #' @return Barplot
-#' @examples \dontrun{
-#' multi
-#'}
+#' @examples
+#' data(cars)
+#' multibar(cars,save=F)
 multibar_d <- function(x, variables, labels, xlab = "Antworten", 
 	save = TRUE,...) {
 	if(class(x)!="data.frame") stop("x ist kein Datensatz")

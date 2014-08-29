@@ -58,7 +58,7 @@ multihist <- function(x, variables, labels = TRUE, xlab = "Verteilung",save=TRUE
 #' @return Generates for each variable in a dataframe a barplot, optionally saved to the wd as a pdf
 #' @examples 
 #' data(cars)
-#' multibar(cars)
+#' multibar(cars,save=F)
 multibar <- function(x, variables, labels, xlab = "Antworten", 
 	save = TRUE,...) {
 	if(class(x)!="data.frame") stop("x is not a Dataframe")
