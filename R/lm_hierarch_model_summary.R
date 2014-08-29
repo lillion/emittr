@@ -6,13 +6,11 @@
 #' @keywords lm, regression
 #' @seealso \code{\link{lm}}, \code{\link{lm_hierarch}}
 #' @return dataframe of summaries
-#' @examples \dontrun{
-#'
-#'}
+#' @examples
 #' library(car)
 #' ll <- lm_hierarch(mpg~disp+hp+wt+drat, c(1,1,1,1), data=mtcars,summary=FALSE)
 #' lm_hier_model_sum(ll)
-#' #rm(ll)
+#' rm(ll)
 lm_hier_model_sum <- function (ll) {
   if (inherits(ll[[1]],"lm.summary")) stop("Please don't use a summary lm.object!")
   #r1 <- t(sapply(ll, function(x) {c(R=sqrt(summary(x)$r.squared),rsq=summary(x)$r.squared,adjrsq=summary(x)$adj.r.squared)}))

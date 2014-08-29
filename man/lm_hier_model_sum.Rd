@@ -15,13 +15,10 @@ dataframe of summaries
 given a hierarchical regression with several blocks, gives an overview over changes in R^2 and significance
 }
 \examples{
-\dontrun{
-
-}
 library(car)
 ll <- lm_hierarch(mpg~disp+hp+wt+drat, c(1,1,1,1), data=mtcars,summary=FALSE)
 lm_hier_model_sum(ll)
-#rm(ll)
+rm(ll)
 }
 \seealso{
 \code{\link{lm}}, \code{\link{lm_hierarch}}

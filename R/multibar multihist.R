@@ -10,7 +10,7 @@
 #' @param ... additional graphic parameters for hist (e.g., col)
 #' @export
 #' @keywords umit
-#' @seealso lillionscage::multibar
+#' @seealso \code{\link{multibar}}
 #' @return none
 #' @examples \dontrun{ 
 #' multihist(dd)
