@@ -12,7 +12,7 @@ lm_hier_model_sum(ll)
 dataframe of summaries
 }
 \description{
-given a hierarchical regression with several blocks, gives an overview over changes in R^2 \eqn{R^{2}}  and significance
+given a hierarchical regression with several blocks, gives an overview over changes in R^2 and significance
 }
 \examples{
 library(car)

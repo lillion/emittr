@@ -7,7 +7,8 @@
 #' @param labels character vector of labels
 #' @param xlab
 #' @param save should pdf be saved to disk
-#' @param ... additional graphic parameters for hist (e.g., col)
+#' @param format specify the format in which to save the file (e.g., jpeg, pdf, png, eps)
+#' @param ... additional graphic parameters for hist (e.g., col, ylab, etc)
 #' @export
 #' @keywords umit
 #' @seealso \code{\link{multibar}}
@@ -19,7 +20,7 @@
 #' multibar(neo_n,5,ylab="häu")
 #'}
 
-multihist <- function(x, variables, labels = TRUE, xlab = "Verteilung",save=TRUE,...) {
+multihist <- function(x, variables, labels = TRUE, xlab = "Verteilung",save=TRUE,format=jpeg,...) {
 	if(class(x)!="data.frame") stop("x is not a Dataframe")
 	if(missing(variables)) variables=1:length(x)
 	ll <- attributes(x)$variable.labels
@@ -31,10 +32,13 @@ multihist <- function(x, variables, labels = TRUE, xlab = "Verteilung",save=TRUE
 	ll <- sub("\\b(\\w)", "\\U\\1", ll, perl=TRUE)
 	for (i in variables) {
 		if (is.numeric(x[[i]])) {
-			hist(x[[i]], main = ll[i], xlab = xlab, cex.main = 0.8,...)
-				if (save) 
-			dev.copy2pdf(file = paste0(ll[[i]], " (Histogramm).pdf"), height = 8, 
-				width = 12)
+			hist(x[[i]], main = ll[i], xlab = ll[i], cex.main = 0.8,...)
+				if (save) {
+			#dev.copy2pdf(file = paste0(ll[[i]], " (Histogramm).pdf"), height = 8, 				width = 12)
+				  dev.copy(format,file = paste0(ll[[i]], " (Histogramm).",substitute(format)))
+				  dev.off() 
+				}
+#dev.copy(device=format, file = paste0(ll[[i]], " (Histogramm).",substitute(format)), height = 8, width = 12)
 				}
 	}
 }

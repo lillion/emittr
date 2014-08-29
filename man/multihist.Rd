@@ -4,7 +4,7 @@
 \title{Multiple separate histograms}
 \usage{
 multihist(x, variables, labels = TRUE, xlab = "Verteilung", save = TRUE,
-  ...)
+  format = jpeg, ...)
 }
 \arguments{
 \item{x}{data.frame}
@@ -17,7 +17,9 @@ multihist(x, variables, labels = TRUE, xlab = "Verteilung", save = TRUE,
 
 \item{save}{should pdf be saved to disk}
 
-\item{...}{additional graphic parameters for hist (e.g., col)}
+\item{format}{specify the format in which to save the file (e.g., jpeg, pdf, png, eps)}
+
+\item{...}{additional graphic parameters for hist (e.g., col, ylab, etc)}
 }
 \value{
 none
