@@ -12,7 +12,7 @@ lm_coef_spss_d(fit)
 dataframe des Ergebnisses einer Regression ähnlich der in SPSS
 }
 \description{
-Diese Funktion liefert die Tabelle der Regressionskoeffizienten (\beta) ähnlich der Darstellung in SPSS
+Diese Funktion liefert die Tabelle der Regressionskoeffizienten (β) ähnlich der Darstellung in SPSS
 }
 \examples{
 \dontrun{

@@ -17,7 +17,7 @@ function that returns a table of the regression coefficients similar to the pres
 \examples{
 library(car)
 l <- lm(mpg~disp+hp+wt+drat, data=mtcars)
-lm_output_spss(l)
+lm_coef_spss(l)
 \dontrun{
 lapply(ll, lm_output_spss) # get outputs from several lm objects
 }
