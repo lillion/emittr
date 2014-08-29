@@ -26,7 +26,7 @@ given a dataframe, produces a barplot for each variable or a subset of variables
 }
 \examples{
 data(cars)
-multibar(cars)
+multibar(cars,save=F)
 }
 \seealso{
 mulithist

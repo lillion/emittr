@@ -25,9 +25,8 @@ Barplot
 given a dataframe, produces a barplot for each variable or a subset of variables, which optionally can be saved to disk as a pdf
 }
 \examples{
-\dontrun{
-multi
-}
+data(cars)
+multibar(cars,save=F)
 }
 \seealso{
 mulithist

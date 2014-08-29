@@ -1,4 +1,4 @@
-#' @title Koeffizienten einer Lineare Regression präsentiert ähnlich SPSS
+#' @title Koeffizienten einer Lineare Regression dargestellt aehnlich SPSS
 #'
 #' @description Diese Funktion liefert die Tabelle der Regressionskoeffizienten (β) ähnlich der Darstellung in SPSS
 #' @param fit Objekt eines linearen Modells
