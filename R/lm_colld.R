@@ -11,5 +11,6 @@
 #'}
 lm_coll <- function(l,...){
   #require(perturb); 
-  results[["Collinearity"]]=data.frame(colldiag(l,...)$condindx,colldiag(l,...)$pi)
+  #results[["Collinearity"]]=data.frame(colldiag(l,...)$condindx,colldiag(l,...)$pi)
+  data.frame(colldiag(l,...)$condindx,colldiag(l,...)$pi)
 }
