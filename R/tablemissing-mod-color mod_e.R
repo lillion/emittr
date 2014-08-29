@@ -99,11 +99,11 @@ if (cut!=0) text(60-10, y1-2.5, paste0("Missing patterns mit bis zu ",cut," miss
         for (j in 1:nov) {
             if (finaltable[i, j] == 0) {
                 polygon(c(x1, x2, x2, x1), c(y1, y1, y2, y2), 
-                  col = "#FFFFFF", border = "#000000")
+                 col = "#FFFFFF", border = "#000000")
             }
             else {
                 polygon(c(x1, x2, x2, x1), c(y1, y1, y2, y2), 
-                  col = hsv(hue,(min(finaltable[i, nov + 1]/max(finaltable[-c(1,nrow(finaltable)),nov + 1]),1)),value), border = "#000000")
+                 col = hsv(hue,(min(finaltable[i, nov + 1]/max(finaltable[-c(1,nrow(finaltable)),nov + 1]),1)),value), border = "#000000")
             }
             x1 = x1 + width
             x2 = x2 + width
