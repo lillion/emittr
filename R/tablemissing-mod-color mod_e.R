@@ -36,155 +36,155 @@
 #'
 tablemissing <- function (x, sortby = "both", main = "Missing Value Plot", hue = .6, value = .9, cut=0) 
 {
-    par(xpd=NA)
-    x1 <- as.numeric(apply(x, 2, function(x) length(which(is.na(x)))))
-    x1 <- c(x1, nrow(x))
-    z1 <- ifelse(is.na(x), 0, 1)
-    tab = table(apply(z1, 1, paste, collapse = ","))
-    tab = tab[order(names(tab), decreasing = TRUE)]
-    tab = data.frame(combination = names(tab), count = as.numeric(tab))
-    tabp <- t(apply(tab, 1, function(x) {
-        as.numeric(unlist(strsplit(x, ",", fixed = TRUE)))
-        }))
-    tabp <- as.data.frame(tabp)
-    tabp <- rbind(tabp, x1)
-    names(tabp) <- c(names(x), "Total")
-    row.names(tabp) <- c(seq(1, nrow(tab)), "Total")
-    if (sortby == "variable") {
-        tabfinal <- tabp
-    }
-    if (sortby == "row") {
-        tabfinal <- tabp[-nrow(tabp), ]
-        tabfinal <- tabfinal[order(tabfinal$Total, decreasing = TRUE), 
-        ]
-        tabfinal <- rbind(tabfinal, tabp[nrow(tabp), ])
-    }
-    if (sortby == "column") {
-        tabfinal <- tabp[, -ncol(tabp)]
-        vals <- unlist(tabfinal[nrow(tabfinal), ])
-        tabfinal <- tabfinal[order(vals, decreasing = TRUE)]
-        tabfinal <- cbind(tabfinal, Total = tabp$Total)
-    }
-    if (sortby == "both") {
-        tabf <- tabp[-nrow(tabp), ]
-        tabf <- tabf[order(tabf$Total, decreasing = TRUE), ]
-        tabf <- rbind(tabf, tabp[nrow(tabp), ])
-        tabfinal <- tabf[, -ncol(tabf)]
-        vals <- unlist(tabfinal[nrow(tabfinal), ])
-        tabfinal <- tabfinal[order(vals, decreasing = TRUE)]
-        tabfinal <- cbind(tabfinal, Total = tabf$Total)
-    }
+    par(xpd=NA)
+    x1 <- as.numeric(apply(x, 2, function(x) length(which(is.na(x)))))
+    x1 <- c(x1, nrow(x))
+    z1 <- ifelse(is.na(x), 0, 1)
+    tab = table(apply(z1, 1, paste, collapse = ","))
+    tab = tab[order(names(tab), decreasing = TRUE)]
+    tab = data.frame(combination = names(tab), count = as.numeric(tab))
+    tabp <- t(apply(tab, 1, function(x) {
+        as.numeric(unlist(strsplit(x, ",", fixed = TRUE)))
+        }))
+    tabp <- as.data.frame(tabp)
+    tabp <- rbind(tabp, x1)
+    names(tabp) <- c(names(x), "Total")
+    row.names(tabp) <- c(seq(1, nrow(tab)), "Total")
+    if (sortby == "variable") {
+        tabfinal <- tabp
+    }
+    if (sortby == "row") {
+        tabfinal <- tabp[-nrow(tabp), ]
+        tabfinal <- tabfinal[order(tabfinal$Total, decreasing = TRUE), 
+        ]
+        tabfinal <- rbind(tabfinal, tabp[nrow(tabp), ])
+    }
+    if (sortby == "column") {
+        tabfinal <- tabp[, -ncol(tabp)]
+        vals <- unlist(tabfinal[nrow(tabfinal), ])
+        tabfinal <- tabfinal[order(vals, decreasing = TRUE)]
+        tabfinal <- cbind(tabfinal, Total = tabp$Total)
+    }
+    if (sortby == "both") {
+        tabf <- tabp[-nrow(tabp), ]
+        tabf <- tabf[order(tabf$Total, decreasing = TRUE), ]
+        tabf <- rbind(tabf, tabp[nrow(tabp), ])
+        tabfinal <- tabf[, -ncol(tabf)]
+        vals <- unlist(tabfinal[nrow(tabfinal), ])
+        tabfinal <- tabfinal[order(vals, decreasing = TRUE)]
+        tabfinal <- cbind(tabfinal, Total = tabf$Total)
+    }
  
 
-    finaltable <- tabfinal[tabfinal$Total>cut,]
-    finaltable
-    par(mar = c(1, 3, 5, 1))
-    nop = nrow(finaltable) - 1
-    nov = ncol(finaltable) - 1
-    width = 100/(nov)
-    height = 10
-    x1 = 0
-    x2 = width
-    y1 = 30
-    y2 = y1 + height
-    pylim = y1 + 10 * nop
+    finaltable <- tabfinal[tabfinal$Total>cut,]
+    finaltable
+    par(mar = c(1, 3, 5, 1))
+    nop = nrow(finaltable) - 1
+    nov = ncol(finaltable) - 1
+    width = 100/(nov)
+    height = 10
+    x1 = 0
+    x2 = width
+    y1 = 30
+    y2 = y1 + height
+    pylim = y1 + 10 * nop
  print(pylim)
-    plot(10, 20, type = "n", xlim = c(0, 120), ylim = c(0, pylim), 
-        axes = FALSE, xlab = "", ylab = "", main = main)
-    text(-5, y1+(pylim-y1)/2, "Missing patterns", srt=90, cex=1.25) 
+    plot(10, 20, type = "n", xlim = c(0, 120), ylim = c(0, pylim), 
+        axes = FALSE, xlab = "", ylab = "", main = main)
+    text(-5, y1+(pylim-y1)/2, "Missing patterns", srt=90, cex=1.25) 
  
 if (cut!=0) text(60-10, y1-2.5, paste0("Missing patterns mit bis zu ",cut," missings hier nicht angezeigt"), cex=.7) 
  
-    for (i in nop:1) {
-        for (j in 1:nov) {
-            if (finaltable[i, j] == 0) {
-                polygon(c(x1, x2, x2, x1), c(y1, y1, y2, y2), 
-                  col = "#FFFFFF", border = "#000000")
-            }
-            else {
-                polygon(c(x1, x2, x2, x1), c(y1, y1, y2, y2), 
-                  col = hsv(hue,(min(finaltable[i, nov + 1]/max(finaltable[-c(1,nrow(finaltable)),nov + 1]),1)),value), border = "#000000")
-            }
-            x1 = x1 + width
-            x2 = x2 + width
-        }
-        x1 = 0
-        x2 = width
-        y1 = y1 + height
-        y2 = y2 + height
-    }
-    bx1 = width/4
-    bx2 = 3 * bx1
-    by1 = 5
-    by3 = 25
-    bsize = 20
-    text(-5,15, "Variables", srt=90, cex=1.25)
-    for (i in 1:nov) {
-        m = finaltable[nop + 1, i]/finaltable[nop + 1, nov + 
-        1] * bsize
-        p = bsize - m
-        by2 = by1 + p
-        polygon(c(bx1, bx2, bx2, bx1), c(by1, by1, by2, by2), 
-            col = hsv(hue,1,value), border = "#000000")
-        polygon(c(bx1, bx2, bx2, bx1), c(by2, by2, by3, by3), 
-            col = "#F0F0F0", border = "#000000")
-        legend(bx1, 0, paste0("*",names(finaltable)[i]), bty = "n", xjust = 0, 
-            yjust = 0.5, x.intersp = -1, cex = .7)
-        text((bx1+bx2)/2, (by1+by3)/2, paste0(finaltable[nop + 1, i],"*"), col="white", cex = .7)
-        bx1 = bx1 + width
-        bx2 = bx1 + width/2
-    }
+    for (i in nop:1) {
+        for (j in 1:nov) {
+            if (finaltable[i, j] == 0) {
+                polygon(c(x1, x2, x2, x1), c(y1, y1, y2, y2), 
+                  col = "#FFFFFF", border = "#000000")
+            }
+            else {
+                polygon(c(x1, x2, x2, x1), c(y1, y1, y2, y2), 
+                  col = hsv(hue,(min(finaltable[i, nov + 1]/max(finaltable[-c(1,nrow(finaltable)),nov + 1]),1)),value), border = "#000000")
+            }
+            x1 = x1 + width
+            x2 = x2 + width
+        }
+        x1 = 0
+        x2 = width
+        y1 = y1 + height
+        y2 = y2 + height
+    }
+    bx1 = width/4
+    bx2 = 3 * bx1
+    by1 = 5
+    by3 = 25
+    bsize = 20
+    text(-5,15, "Variables", srt=90, cex=1.25)
+    for (i in 1:nov) {
+        m = finaltable[nop + 1, i]/finaltable[nop + 1, nov + 
+        1] * bsize
+        p = bsize - m
+        by2 = by1 + p
+        polygon(c(bx1, bx2, bx2, bx1), c(by1, by1, by2, by2), 
+            col = hsv(hue,1,value), border = "#000000")
+        polygon(c(bx1, bx2, bx2, bx1), c(by2, by2, by3, by3), 
+            col = "#F0F0F0", border = "#000000")
+        legend(bx1, 0, paste0("*",names(finaltable)[i]), bty = "n", xjust = 0, 
+            yjust = 0.5, x.intersp = -1, cex = .7)
+        text((bx1+bx2)/2, (by1+by3)/2, paste0(finaltable[nop + 1, i],"*"), col="white", cex = .7)
+        bx1 = bx1 + width
+        bx2 = bx1 + width/2
+    }
 #polygon(c(0,width*nov,width*nov,0),c(3,3,26,26))
 lines(c(0,0,width*nov,width*nov),c(26,5,5,5))
 lines(c(-1,1),c(25,25))
 text(-3,25,finaltable[nop+1, nov + 1],cex=.7)
 lines(c(-1,1),c(5,5))
 text(-3,5,0,cex=.7)
-    px1 = 110
-    py1 = 30+2
-    py2 = py1 + 6
-    text(px1+5, pylim + 10, "# Cases", adj=c(1,0.5))
+    px1 = 110
+    py1 = 30+2
+    py2 = py1 + 6
+    text(px1+5, pylim + 10, "# Cases", adj=c(1,0.5))
 
-    for (i in nop:2) {
-        if (sum(finaltable[1, 1:nov]) == nov) {
-            psize = finaltable[i, nov + 1]/(finaltable[nop + 
-                1, nov + 1] - finaltable[1, nov + 1]) * 20
-        }
-        else {
-            psize = finaltable[i, nov + 1]/(finaltable[nop + 
-                1, nov + 1]) * 20
-        }
-        if (psize < 0.2) {
-            psize = 0.2
-        }
-        px2 = px1 + psize
-        polygon(c(px1, px2, px2, px1), c(py1, py1, py2, py2), 
-            col = hsv(hue,(min(finaltable[i, nov + 1]/max(finaltable[-c(1,nrow(finaltable)),nov + 1]),1)),value), border = "#000000")
+    for (i in nop:2) {
+        if (sum(finaltable[1, 1:nov]) == nov) {
+            psize = finaltable[i, nov + 1]/(finaltable[nop + 
+                1, nov + 1] - finaltable[1, nov + 1]) * 20
+        }
+        else {
+            psize = finaltable[i, nov + 1]/(finaltable[nop + 
+                1, nov + 1]) * 20
+        }
+        if (psize < 0.2) {
+            psize = 0.2
+        }
+        px2 = px1 + psize
+        polygon(c(px1, px2, px2, px1), c(py1, py1, py2, py2), 
+            col = hsv(hue,(min(finaltable[i, nov + 1]/max(finaltable[-c(1,nrow(finaltable)),nov + 1]),1)),value), border = "#000000")
 
-        text(px1-2, (py1+py2)/2, finaltable[i, nov + 1], adj=c(1,0.5), cex = 0.7)
-        py1 = py1 + 10
-        py2 = py2 + 10
-    }
-    psize = finaltable[1, nov + 1]/finaltable[nop + 1, nov + 1] * 20
-    px2 = px1 + psize
-    if (sum(finaltable[1, 1:nov]) == nov) { 
-        polygon(c(px1, px2, px2, px1), c(py1, py1, py2, py2), 
-            col = hsv(hue,1,value), border = "#000000")
-        } else {
-            polygon(c(px1, px2, px2, px1), c(py1, py1, py2, py2), 
-                col = "#636363", border = "#000000")
-        }
+        text(px1-2, (py1+py2)/2, finaltable[i, nov + 1], adj=c(1,0.5), cex = 0.7)
+        py1 = py1 + 10
+        py2 = py2 + 10
+    }
+    psize = finaltable[1, nov + 1]/finaltable[nop + 1, nov + 1] * 20
+    px2 = px1 + psize
+    if (sum(finaltable[1, 1:nov]) == nov) { 
+        polygon(c(px1, px2, px2, px1), c(py1, py1, py2, py2), 
+            col = hsv(hue,1,value), border = "#000000")
+        } else {
+            polygon(c(px1, px2, px2, px1), c(py1, py1, py2, py2), 
+                col = "#636363", border = "#000000")
+        }
 
-        text(px1-2, (py1+py2)/2, finaltable[1, nov + 1], adj=c(1,0.5), cex = 0.7)
-        text(px1-2, (by1+by3)/2, finaltable[nop+1, nov + 1], adj=c(1,0.5), cex = 0.7)
+        text(px1-2, (py1+py2)/2, finaltable[1, nov + 1], adj=c(1,0.5), cex = 0.7)
+        text(px1-2, (by1+by3)/2, finaltable[nop+1, nov + 1], adj=c(1,0.5), cex = 0.7)
  
  print(pylim)
  text(px1-2, (by1+by3)/2, "n missings/variable",srt=90, cex = 60/pylim+.02) 
 
-        legend(25, pylim + 20, legend = c('Observed','Missing')
-            , fill = c(hsv(hue,1,value),"#FFFFFF"), border = "#000000"
-            , bty = 'n', ncol = 2) 
+        legend(25, pylim + 20, legend = c('Observed','Missing')
+            , fill = c(hsv(hue,1,value),"#FFFFFF"), border = "#000000"
+            , bty = 'n', ncol = 2) 
 
-        par(xpd=FALSE)
-        finaltable
+        par(xpd=FALSE)
+        finaltable
 }
