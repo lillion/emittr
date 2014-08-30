@@ -1,7 +1,7 @@
 #' Helper functions to ease the transition from SPSS to R
 #' 
-#' @name lillionscage-package
-#' @aliases lillionscage
+#' @name umittr-package
+#' @aliases umittr
 #' @docType package
 #' @title Helper functions to ease the transition from SPSS to R
 #' @author \email{macx@@lillion.e4ward.com}
