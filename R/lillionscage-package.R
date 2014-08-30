@@ -39,6 +39,7 @@ NULL
 #'
 #' The data comprises items and sum-scores for Extraversion
 #' Neuroticism and Life Satisfaction
+#' Items are scored from 1 to 5.
 #'
 #' \itemize{
 #'   \item lz1 \emph{In den meisten Bereichen entspricht mein Leben meinen Idealvorstellungen}
@@ -46,17 +47,17 @@ NULL
 #'   \item lz3 \emph{Ich bin mit meinem Leben zufrieden}
 #'   \item lz4 \emph{Bisher habe ich die wesentlichen Dinge erreicht, die ich mir für mein Leben wünsche.}
 #'   \item lz5 \emph{Wenn ich mein Leben noch einmal leben könnte, würde ich kaum etwas ändern.}
-#'   \item lezu \emph{Lebenszufriedenheit}
+#'   \item lezu \strong{Skala }\emph{Lebenszufriedenheit}
 #'   \item e1 \emph{kontaktfreudig}
 #'   \item e2 \emph{gesellig}
 #'   \item e3 \emph{lebhaft}
 #'   \item e4 \emph{temperamentvoll}
-#'   \item extra \emph{Extraversion}
+#'   \item extra \strong{Skala }\emph{Extraversion}
 #'   \item n1 \emph{verletzbar}
 #'   \item n2 \emph{empfindlich}
 #'   \item n3 \emph{launenhaft}
 #'   \item n4 \emph{selbstzweiflerisch}
-#'   \item neuro \emph{Neurotizismus}
+#'   \item neuro \strong{Skala }\emph{Neurotizismus}
 #'   }
 #'
 #' @docType data
@@ -64,4 +65,18 @@ NULL
 #' @name pers_data
 #' @usage data(pers_data)
 #' @format A data frame with 345 rows and 16 variables
+NULL
+
+
+#' 18 items of a reactance questionnaire 
+#'
+#' The data comprises 18 items measuring reactance
+#' and sex (i.e. 'Geschlecht')
+#' Items are scored from 1 to 4.
+#'
+#' @docType data
+#' @keywords datasets
+#' @name laurasdaten
+#' @usage data(laurasdaten)
+#' @format A data frame with 524 rows and 19 variables
 NULL

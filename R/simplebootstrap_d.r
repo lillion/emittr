@@ -8,11 +8,10 @@
 #' @keywords bootstrap
 #' @seealso boot
 #' @return bootstrap
-#' @examples {
+#' @examples
 #' mydata<-rchisq(25,df=3)
 #' simpleboot_d(mydata, "mean", reps=10000)
 #' simpleboot_d(mydata, sd, reps=5000)
-#'}
 simpleboot_d<-function(x,stat,reps=1000) {
 cat("This simple function will not show you warning messages.\n")
 cat("Check results closely and be prepared to consult a statistician.\n")

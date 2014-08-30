@@ -10,6 +10,7 @@ data(pers_data)
 \description{
 The data comprises items and sum-scores for Extraversion
 Neuroticism and Life Satisfaction
+Items are scored from 1 to 5.
 }
 \details{
 \itemize{
@@ -18,17 +19,17 @@ Neuroticism and Life Satisfaction
   \item lz3 \emph{Ich bin mit meinem Leben zufrieden}
   \item lz4 \emph{Bisher habe ich die wesentlichen Dinge erreicht, die ich mir für mein Leben wünsche.}
   \item lz5 \emph{Wenn ich mein Leben noch einmal leben könnte, würde ich kaum etwas ändern.}
-  \item lezu \emph{Lebenszufriedenheit}
+  \item lezu \strong{Skala }\emph{Lebenszufriedenheit}
   \item e1 \emph{kontaktfreudig}
   \item e2 \emph{gesellig}
   \item e3 \emph{lebhaft}
   \item e4 \emph{temperamentvoll}
-  \item extra \emph{Extraversion}
+  \item extra \strong{Skala }\emph{Extraversion}
   \item n1 \emph{verletzbar}
   \item n2 \emph{empfindlich}
   \item n3 \emph{launenhaft}
   \item n4 \emph{selbstzweiflerisch}
-  \item neuro \emph{Neurotizismus}
+  \item neuro \strong{Skala }\emph{Neurotizismus}
   }
 }
 \keyword{datasets}

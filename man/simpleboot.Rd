@@ -19,10 +19,8 @@ bootstrap
 simple bootstrap for simple univariate statistics
 }
 \examples{
-{
 mydata<-rchisq(25,df=3)
 simpleboot(mydata,"mean",reps=10000)
-}
 }
 \seealso{
 boot

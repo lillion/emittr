@@ -8,10 +8,9 @@
 #' @keywords bootstrap
 #' @seealso boot
 #' @return bootstrap
-#' @examples {
+#' @examples
 #' mydata<-rchisq(25,df=3)
 #' simpleboot(mydata,"mean",reps=10000)
-#'}
 simpleboot<-function(x,stat,reps=1000) {
 cat("Bootstrapping can go wrong!\n")
 cat("This simple function will not show you warning messages.\n")
