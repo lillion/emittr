@@ -120,7 +120,7 @@ if (cut!=0) text(60-10, y1-2.5, paste0("Missing Muster, die nur ",cut," Mal vork
     by1 = 5
     by3 = 25
     bsize = 20
-    text(-5,15, "Variables", srt=90, cex=1.25)
+    text(-5,15, "Variablen", srt=90, cex=1.25)
     for (i in 1:nov) {
         m = finaltable[nop + 1, i]/finaltable[nop + 1, nov + 
         1] * bsize
@@ -133,7 +133,7 @@ if (cut!=0) text(60-10, y1-2.5, paste0("Missing Muster, die nur ",cut," Mal vork
             col = "#F0F0F0", border = "#000000")
         legend(bx1, 0, paste0("*",names(finaltable)[i]), bty = "n", xjust = 0, 
             yjust = 0.5, x.intersp = -1, cex = .7)
-        text((bx1+bx2)/2, (by1+by3)/2, paste0(finaltable[nop + 1, i],"*"), col="white", cex = .7)
+        shadowtext((bx1+bx2)/2, (by1+by3)/2, paste0(finaltable[nop + 1, i],"*"), col="white", cex = .7)
         bx1 = bx1 + width
         bx2 = bx1 + width/2
     }
