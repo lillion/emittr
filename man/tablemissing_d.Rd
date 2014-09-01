@@ -3,32 +3,33 @@
 \alias{tablemissing_d}
 \title{Graphische Darstellung unterschiedlicher missing-value Muster über mehrere Items}
 \usage{
-tablemissing_d(x, sortby = "both", main = "Missing Value Plot", hue = 0.6,
-  value = 0.9, cut = 0)
+tablemissing_d(x, sortby = "beides", main = "Darstellung der Missings",
+  hue = 0.6, value = 0.9, cut = 0)
 }
 \arguments{
-\item{x}{dataframe with multiple items}
+\item{x}{mehrere Items als Datensatz (dataframe)}
 
-\item{sortby}{should the plot be sorted by "row", i.e. pattern, "column", i.e. item, or "both"}
+\item{sortby}{wonach soll die Darstellung sortiert werden: nach Muster -> "Muster", nach Item -> "Spalte",oder nach beidem "beides" (voreingestellt)}
 
-\item{main}{title for the plot}
+\item{main}{Überschrift der Darstellung}
 
-\item{hue}{hue, i.e. base color, in the hsv color model}
+\item{hue}{Farbe (H-ue), d.h. Grundfarbe, im hsv Farbmodel}
 
-\item{value}{value, i.e. luminance, in the hsv color model}
+\item{value}{Wert (V-alue), d.h. Helligkeit, im hsv Farbmodel}
 
-\item{cut}{minimum number of items a missing pattern has to contain to be included in the plot}
+\item{cut}{Minimale Häufigkeit eines Missing-Musters, damit es in der Graphik mitaufgenommen wird}
 }
 \value{
 plot
 }
 \description{
-Given a number of items, plot their individual number of missings and the patterns of missings across the items
+Für eine Anzahl von Items werden die jeweilige Anzahl der Missing per Item
+ als auch die unterschiedlichen Missing-Muster über alle Items graphisch dargestellt
 }
 \examples{
 demoframe <- data.frame(sapply(1:15,function(x) rnorm(50,100,10)))
 demoframe <- as.data.frame(lapply(demoframe, function(x) "is.na<-"(x, sample(seq(x), floor(length(x) * runif(1, 0, .2))))))
-tablemissing_d(demoframe,cut=1)
+tablemissing_d(demoframe,cut=0) # Muster, die nur 1x vorkommen, werden unterdrückt
 }
 \seealso{
 table

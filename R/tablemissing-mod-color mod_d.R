@@ -18,13 +18,14 @@
 
 #' @title Graphische Darstellung unterschiedlicher missing-value Muster über mehrere Items
 #'
-#' @description Given a number of items, plot their individual number of missings and the patterns of missings across the items
-#' @param x dataframe with multiple items
-#' @param sortby should the plot be sorted by "row", i.e. pattern, "column", i.e. item, or "both"
-#' @param main title for the plot
-#' @param hue hue, i.e. base color, in the hsv color model
-#' @param value value, i.e. luminance, in the hsv color model
-#' @param cut minimum number of items a missing pattern has to contain to be included in the plot
+#' @description Für eine Anzahl von Items werden die jeweilige Anzahl der Missing per Item
+#'  als auch die unterschiedlichen Missing-Muster über alle Items graphisch dargestellt
+#' @param x mehrere Items als Datensatz (dataframe)
+#' @param sortby wonach soll die Darstellung sortiert werden: nach Muster -> "Muster", nach Item -> "Spalte",oder nach beidem "beides" (voreingestellt)
+#' @param main Überschrift der Darstellung
+#' @param hue Farbe (H-ue), d.h. Grundfarbe, im hsv Farbmodel
+#' @param value Wert (V-alue), d.h. Helligkeit, im hsv Farbmodel
+#' @param cut Minimale Häufigkeit eines Missing-Musters, damit es in der Graphik mitaufgenommen wird
 #' @export
 #' @keywords missings
 #' @seealso table
@@ -32,9 +33,9 @@
 #' @examples 
 #' demoframe <- data.frame(sapply(1:15,function(x) rnorm(50,100,10)))
 #' demoframe <- as.data.frame(lapply(demoframe, function(x) "is.na<-"(x, sample(seq(x), floor(length(x) * runif(1, 0, .2))))))
-#' tablemissing_d(demoframe,cut=1)
+#' tablemissing_d(demoframe,cut=0) # Muster, die nur 1x vorkommen, werden unterdrückt
 #'
-tablemissing_d <- function (x, sortby = "both", main = "Missing Value Plot", hue = .6, value = .9, cut=0) 
+tablemissing_d <- function (x, sortby = "beides", main = "Darstellung der Missings", hue = .6, value = .9, cut=0) 
 {
     par(xpd=NA)
     x1 <- as.numeric(apply(x, 2, function(x) length(which(is.na(x)))))
@@ -53,19 +54,19 @@ tablemissing_d <- function (x, sortby = "both", main = "Missing Value Plot", hue
     if (sortby == "variable") {
         tabfinal <- tabp
     }
-    if (sortby == "row") {
+    if (sortby == "Muster") {
         tabfinal <- tabp[-nrow(tabp), ]
         tabfinal <- tabfinal[order(tabfinal$Total, decreasing = TRUE), 
         ]
         tabfinal <- rbind(tabfinal, tabp[nrow(tabp), ])
     }
-    if (sortby == "column") {
+    if (sortby == "Spalte") {
         tabfinal <- tabp[, -ncol(tabp)]
         vals <- unlist(tabfinal[nrow(tabfinal), ])
         tabfinal <- tabfinal[order(vals, decreasing = TRUE)]
         tabfinal <- cbind(tabfinal, Total = tabp$Total)
     }
-    if (sortby == "both") {
+    if (sortby == "beides") {
         tabf <- tabp[-nrow(tabp), ]
         tabf <- tabf[order(tabf$Total, decreasing = TRUE), ]
         tabf <- rbind(tabf, tabp[nrow(tabp), ])
@@ -91,7 +92,7 @@ tablemissing_d <- function (x, sortby = "both", main = "Missing Value Plot", hue
  print(pylim)
     plot(10, 20, type = "n", xlim = c(0, 120), ylim = c(0, pylim), 
         axes = FALSE, xlab = "", ylab = "", main = main)
-    text(-5, y1+(pylim-y1)/2, "Missing patterns", srt=90, cex=1.25) 
+    text(-5, y1+(pylim-y1)/2, "Missing Muster", srt=90, cex=1.25) 
  
 if (cut!=0) text(60-10, y1-2.5, paste0("Missing Muster, die nur ",cut," Mal vorkommen, hier nicht angezeigt"), cex=.7) 
  
@@ -100,6 +101,7 @@ if (cut!=0) text(60-10, y1-2.5, paste0("Missing Muster, die nur ",cut," Mal vork
             if (finaltable[i, j] == 0) {
                 polygon(c(x1, x2, x2, x1), c(y1, y1, y2, y2), 
                  col = "#FFFFFF", border = "#000000")
+                
             }
             else {
                 polygon(c(x1, x2, x2, x1), c(y1, y1, y2, y2), 
@@ -126,6 +128,7 @@ if (cut!=0) text(60-10, y1-2.5, paste0("Missing Muster, die nur ",cut," Mal vork
         by2 = by1 + p
         polygon(c(bx1, bx2, bx2, bx1), c(by1, by1, by2, by2), 
             col = hsv(hue,1,value), border = "#000000")
+        Sys.sleep(.05)
         polygon(c(bx1, bx2, bx2, bx1), c(by2, by2, by3, by3), 
             col = "#F0F0F0", border = "#000000")
         legend(bx1, 0, paste0("*",names(finaltable)[i]), bty = "n", xjust = 0, 
@@ -143,7 +146,8 @@ text(-3,5,0,cex=.7)
     px1 = 110
     py1 = 30+2
     py2 = py1 + 6
-    text(px1+5, pylim + 10, "# Cases", adj=c(1,0.5))
+cat("hello",(tabfinal$Total))
+    text(px1+5, pylim + 10, paste0("# Fälle: (von ", tail(tabfinal$Total,1),")"), adj=c(1,0.5))
 
     for (i in nop:2) {
         if (sum(finaltable[1, 1:nov]) == nov) {
@@ -176,12 +180,11 @@ text(-3,5,0,cex=.7)
         }
 
         text(px1-2, (py1+py2)/2, finaltable[1, nov + 1], adj=c(1,0.5), cex = 0.7)
-        text(px1-2, (by1+by3)/2, finaltable[nop+1, nov + 1], adj=c(1,0.5), cex = 0.7)
+        #text(px1-2, (by1+by3)/2, finaltable[nop+1, nov + 1], adj=c(1,0.5), cex = 0.7)
  
- print(pylim)
- text(px1-2, (by1+by3)/2, "n missings pro Var",srt=90, cex = 60/pylim+.02) 
+ text(px1-4, (by1+by3-4)/2, paste0("* Anzahl\nmissings (auf ",finaltable[nop+1, nov + 1],")\npro Var"),srt=0, cex = 200/par("usr")[4]+.02) 
 
-        legend(25, pylim + 20, legend = c('vorhanden','fehlend')
+        legend(30, par("usr")[4]*1.07 , legend = c('vorhanden','fehlend')
             , fill = c(hsv(hue,1,value),"#FFFFFF"), border = "#000000"
             , bty = 'n', ncol = 2) 
 
