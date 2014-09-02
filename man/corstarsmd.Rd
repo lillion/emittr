@@ -36,7 +36,7 @@ write.xlsx(for_word, "test.xlsx")
 }
 }
 \seealso{
-\link{corr}
+\link{cor}
 }
 \keyword{correlation}
 

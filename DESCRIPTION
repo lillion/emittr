@@ -4,6 +4,8 @@ Title: utility functions for psychological research
 Version: 0.1
 Date: 2014-05-08
 Author: lillion
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
+Maintainer: Erik Danay <danay@lillion.e4ward.com>
+Description: this package provides several functions to ease the transition
+    from SPSS to R by offering similar output for linear regression, helping
+    with bulding scales from EFA etc.
 License: GPL (>= 2)
