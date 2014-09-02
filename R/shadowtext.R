@@ -1,5 +1,5 @@
 shadowtext <- function(x, y=NULL, labels, col='white', bg='black',
-                       theta= seq(pi/4, 2*pi, length.out=8), r=0.1, ... ) {
+                       theta= seq(pi/4, 2*pi, length.out=8), r=0.05, ... ) {
   
   xy <- xy.coords(x,y)
   xo <- r*strwidth('A')

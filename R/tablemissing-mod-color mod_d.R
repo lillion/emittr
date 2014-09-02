@@ -34,6 +34,7 @@
 #' demoframe <- data.frame(sapply(1:15,function(x) rnorm(50,100,10)))
 #' demoframe <- as.data.frame(lapply(demoframe, function(x) "is.na<-"(x, sample(seq(x), floor(length(x) * runif(1, 0, .2))))))
 #' tablemissing_d(demoframe,cut=0) # Muster, die nur 1x vorkommen, werden unterdrückt
+#' tablemissing_d(demoframe,cut=0,sortby="Muster")
 #'
 tablemissing_d <- function (x, sortby = "beides", main = "Darstellung der Missings", hue = .6, value = .9, cut=0) 
 {

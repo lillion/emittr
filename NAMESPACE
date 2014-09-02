@@ -3,6 +3,7 @@
 export(buildscale)
 export(cor_lm)
 export(cor_lm_d)
+export(corstarsmd)
 export(extractlavaan2table)
 export(lm_coef_spss)
 export(lm_coef_spss_d)
