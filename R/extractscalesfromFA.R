@@ -9,14 +9,15 @@
 #' @export
 #' @keywords fa
 #' @seealso fa
-#' @return list of scales
-#' @examples \dontrun{
-#'
-#'}
-buildscale <- function(faobject, # saved fa object
+#' @return either the itemnumbers per scale or objects of the scales themselves saved to the environment
+#' @examples 
+#' efa <- fa(pers_data[-c(6,11,16)],nfactors = 3)
+#' fa.buildscale(efa) # all 3 scales are correctly extracted, no items is discarded
+#' fa.buildscale(efa,datensatz=pers_data[-c(6,11,16)]) # this saves scales to workspace
+fa.buildscale <- function(faobject, # saved fa object
   ladungsunterschied=.10, # should loadings be assigned to a factor by loading difference
   datensatz=NULL, # data.frame containing the items
-  name="skala", # Name the objects to be saved 
+  name="scale", # Name the objects to be saved 
   fuerntratt=FALSE # should loading be assigned to factor according to Fuerntratt
   ){
   class(faobject$loadings) <- "matrix"
@@ -50,10 +51,10 @@ buildscale <- function(faobject, # saved fa object
     a <-  list(a, nofactor=which(is.na(factorindex)))
     return(a)
   }
-  a <- lapply(a, function(x) datensatz[x])
-  for (i in 1:length(a)){
-    assign (paste0(name,i),a[[i]],envir=globalenv())
+  b <- lapply(a, function(x) datensatz[x])
+  for (i in 1:length(b)){
+    assign (paste0(name,i),b[[i]],envir=globalenv())
   }
-  
-  return(a)
+  cat("\nScales saved to your workspace!\n")
+  return(list(a, nofactor=which(is.na(factorindex))))
 }

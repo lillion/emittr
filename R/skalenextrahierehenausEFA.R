@@ -1,5 +1,19 @@
-
-skalenbilden2 <- function(faobject,ladungsunterschied=.10,datensatz=NULL, name="skala",fuerntratt=F){
+#' @title Extrahiert automatisch Skalen aus einem EFA Objekt
+#'
+#' @description given the pattern maxtrix of an EFA with more than one factor, combine items loading on one particular factor to a scale and save it in an object. Items with unclear loading pattern (i.e. non trivial loadings on more than one factor) can be either evaluated using a loading difference to the next highest loading (parameter loadingdifference) or using the Fürntratt criterion. If an item fails to meet the selected criterion it will not be included in the scale.
+#' @param faobject Objekt aus einer \link{fa} o.ä.
+#' @param ladungsunterschied Nebenladungsunterschied, der noch akzeptabel ist für das Beibehalten eines Items
+#' @param datensatz Datensatz (data.frame), der die Items enthält
+#' @param name Name (Präfix) der Skalen
+#' @param fuerntratt (logisch) Soll das Fürntratt-Kriterium bei der Faktorzuweiseung angewandt werden
+#' @export
+#' @keywords fa
+#' @seealso \link{fa}, \link{factanal}
+#' @return list of scales
+#' @examples \dontrun{
+#'
+#'}
+fa.skalenbilden <- function(faobject,ladungsunterschied=.10,datensatz=NULL, name="skala",fuerntratt=F){
   class(faobject$loadings) <- "matrix"
   ladungen <- faobject$loadings
   

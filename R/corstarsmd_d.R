@@ -1,9 +1,9 @@
-#' @title Korrelationstabelle mit Siginfikanzsternen
+#' @title Korrelationstabelle mit Signifikanzsternen
 #'
 #' @description die Funktion errechnet eine Korrelationstabelle aus den übermittelten Variablen und fügt, wo angebracht, Signifikanzsterne hinzu
 #' @param x Datensatz (dataframe) Objekt mit den Variablen
 #' @param type Ausgabevarianten ohne, html or markdown (übermittelt Tabelle an kable)
-#' @param stellen wie viele Stellen nach dem Komma
+#' @param stellen Anzahl Stellen nach dem Komma
 #' @param zehnproz (logisch) soll p<.10 mit einem Kreuz angezeigt werden
 #' @param abk (logisch) sollen Spaltennamen gekürzt werden
 #' @param diagonale (logisch) soll die Diagonale gefüllt werden
