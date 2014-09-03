@@ -1,6 +1,9 @@
 #' @title Installieren notwendiger packages
 #'
-#' @description völlig unnötige Funktion, aber praktisch
+#' @description voellig unnoetige Funktion, aber praktisch
+#' "car", "lmtest", "QuantPsyc", "lavaan", "psych", "ggplot2", "reshape2",
+#' "semTools", "semPlot","GPArotation", "HH", "Hmisc", "knitr","MplusAutomation",
+#' "Rcmdr", "sjPlot", "pander", "lattice", "perturb", "ggvis","ez","dplyr"
 #' @param keine Parameter
 #' @export
 #' @keywords helper
