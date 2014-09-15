@@ -24,8 +24,8 @@
 #' }
 
 corstarsmd_d <- function(x, type="markdown", stellen=3, zehnproz=F, abk=T, diagonale=F,  ...){ 
-  require(Hmisc) 
-  require(knitr)
+  suppressPackageStartupMessages(require(Hmisc)) 
+  suppressPackageStartupMessages(require(knitr))
   x <- as.matrix(x) 
   R <- rcorr(x)$r 
   p <- rcorr(x)$P 
