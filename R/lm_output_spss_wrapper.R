@@ -18,7 +18,7 @@ lm_output_spss_wrapper <- function (fit, Rsquare=TRUE, coefficients=TRUE, collin
   results=vector("list", 0)
   if (Rsquare) results[["Model"]]=rr(fit)
   if (coefficients) results[["Coefficients"]]=lm_coef_spss(fit)
-  if (collinearity) results[["Collinearity"]]=lillionscage:::lm_coll(fit,add.intercept=F)
+  if (collinearity) results[["Collinearity"]]=lm_coll(fit,add.intercept=F)
   if (plot) {
     op <- par (mfrow=c(2,2))
     zresid <- scale(resid(fit))

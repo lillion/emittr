@@ -26,6 +26,7 @@ text table
 die Funktion errechnet eine Korrelationstabelle aus den übermittelten Variablen und fügt, wo angebracht, Signifikanzsterne hinzu
 }
 \examples{
+data(pers_data)
 corstarsmd_d(pers_data[c(7:10,12:15)],type="ohne", stellen=2, zehnproz=TRUE)
 
 \dontrun{

@@ -26,6 +26,7 @@ text table
 provides a table of a correlation matrix including denoted significance
 }
 \examples{
+data(pers_data)
 corstarsmd(pers_data[c(7:10,12:15)],type="none", digits=2, tenperc=TRUE)
 \dontrun{
 # in order to transfer the output into e.g. Microsoft Word, use the following workflow:

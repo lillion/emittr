@@ -24,12 +24,14 @@ either the itemnumbers per scale or objects of the scales themselves saved to th
 given the pattern maxtrix of an EFA with more than one factor, combine items loading on one particular factor to a scale and save it in an object. Items with unclear loading pattern (i.e. non trivial loadings on more than one factor) can be either evaluated using a loading difference to the next highest loading (parameter loadingdifference) or using the Fürntratt criterion. If an item fails to meet the selected criterion it will not be included in the scale.
 }
 \examples{
+if(!require(psych)) {
 efa <- fa(pers_data[-c(6,11,16)],nfactors = 3)
 fa.buildscale(efa) # all 3 scales are correctly extracted, no items is discarded
 fa.buildscale(efa,datensatz=pers_data[-c(6,11,16)]) # this saves scales to workspace
 }
+}
 \seealso{
-fa
+\code{\link{fa}}
 }
 \keyword{fa}
 

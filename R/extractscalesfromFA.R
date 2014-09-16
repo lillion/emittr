@@ -8,12 +8,14 @@
 #' @param fuerntratt should loading be assigned to factor according to Fuerntratt 
 #' @export
 #' @keywords fa
-#' @seealso fa
+#' @seealso \code{\link{fa}}
 #' @return either the itemnumbers per scale or objects of the scales themselves saved to the environment
 #' @examples 
+#' if(!require(psych)) {
 #' efa <- fa(pers_data[-c(6,11,16)],nfactors = 3)
 #' fa.buildscale(efa) # all 3 scales are correctly extracted, no items is discarded
 #' fa.buildscale(efa,datensatz=pers_data[-c(6,11,16)]) # this saves scales to workspace
+#' }
 fa.buildscale <- function(faobject, # saved fa object
   ladungsunterschied=.10, # should loadings be assigned to a factor by loading difference
   datensatz=NULL, # data.frame containing the items

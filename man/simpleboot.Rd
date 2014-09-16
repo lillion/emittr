@@ -6,11 +6,11 @@
 simpleboot(x, stat, reps = 1000)
 }
 \arguments{
-\item{x}{}
+\item{x}{vector of data}
 
-\item{stat}{}
+\item{stat}{which stat should be bootstrapped, e.g. 'mean', 'sd'}
 
-\item{reps}{}
+\item{reps}{number of repeats}
 }
 \value{
 bootstrap

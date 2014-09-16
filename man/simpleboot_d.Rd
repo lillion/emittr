@@ -6,11 +6,11 @@
 simpleboot_d(x, stat, reps = 1000)
 }
 \arguments{
-\item{x}{}
+\item{x}{Vektor mit den Daten}
 
-\item{stat}{}
+\item{stat}{Art der Statistik, z.B. 'mean', 'sd'}
 
-\item{reps}{}
+\item{reps}{Anzahl der Wiederholung}
 }
 \value{
 bootstrap

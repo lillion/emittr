@@ -1,9 +1,9 @@
 #' @title Einfacher univariater Bootstrap
 #'
 #' @description einfacher bootstrap für  univariate Statistik
-#' @param x
-#' @param stat 
-#' @param reps 
+#' @param x Vektor mit den Daten
+#' @param stat Art der Statistik, z.B. 'mean', 'sd'
+#' @param reps Anzahl der Wiederholung
 #' @export
 #' @keywords bootstrap
 #' @seealso boot

@@ -28,7 +28,7 @@ lm_output_spss_wrapper_d <- function (fit, Rsquare=TRUE, coefficients=TRUE, coll
   results=vector("list", 0)
   if (Rsquare) results[["Modell"]]=rr(fit)
   if (coefficients) results[["Koeffizienten"]]=lm_coef_spss_d(fit,sterne=sterne)
-  if (collinearity) results[["Kollinearität"]]=lillionscage:::lm_coll(fit,add.intercept=F)
+  if (collinearity) results[["Kollinearität"]]=lm_coll(fit,add.intercept=F)
   if (plot) {
     op <- par (mfrow=c(2,2))
     zresid <- scale(resid(fit))
@@ -37,6 +37,6 @@ lm_output_spss_wrapper_d <- function (fit, Rsquare=TRUE, coefficients=TRUE, coll
     qqnorm(zresid); abline(0,1)
     par(op)
   }
-  if(is.numeric(runden)) return(sapply(results, umittr:::round_df, digits=runden))
+  if(is.numeric(runden)) return(sapply(results, round_df, digits=runden))
 results  
 }

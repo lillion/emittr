@@ -1,9 +1,9 @@
 #' @title simple univariate bootstrap
 #'
 #' @description simple bootstrap for simple univariate statistics
-#' @param x
-#' @param stat 
-#' @param reps 
+#' @param x vector of data
+#' @param stat which stat should be bootstrapped, e.g. 'mean', 'sd'
+#' @param reps number of repeats
 #' @export
 #' @keywords bootstrap
 #' @seealso boot

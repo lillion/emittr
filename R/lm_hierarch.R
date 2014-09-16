@@ -10,7 +10,6 @@
 #' @param summary should the results be summaries of the lm object
 #' @param ... additional parameters for \code{\link{lm}} 
 #' @export
-#' @import car
 #' @keywords lm, regression, hierarchical regression
 #' @seealso \code{\link{lm}}
 #' @return list of the regression models
