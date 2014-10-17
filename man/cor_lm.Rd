@@ -16,14 +16,15 @@ compute semipartial, partial and zero-order correlations by way of an lm object
 }
 \examples{
 library(car)
-fit <- lm(mpg~disp+hp+wt+drat, data=mtcars)
+fit <- lm(mpg ~ disp + hp + wt + drat, data=mtcars)
 cor_lm(fit)
 }
 \seealso{
-lm()
+\code{\link{lm}}
 }
+\keyword{correlation}
 \keyword{linear}
-\keyword{lm,}
+\keyword{lm}
 \keyword{model,}
 \keyword{regression}
 

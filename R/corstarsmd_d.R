@@ -8,7 +8,7 @@
 #' @param abk (logisch) sollen Spaltennamen gekürzt werden
 #' @param diagonale (logisch) soll die Diagonale gefüllt werden
 #' @export
-#' @keywords correlation
+#' @keywords correlation korrelation
 #' @seealso \link{cor} 
 #' @return text table
 #' @examples 
@@ -24,7 +24,7 @@
 #' # von dort Tabelle kopieren und in Word einfügen
 #' }
 
-corstarsmd_d <- function(x, type="markdown", stellen=3, zehnproz=F, abk=T, diagonale=F,  ...){ 
+corstarsmd_d <- function(x, type="markdown", stellen=3, zehnproz=FALSE, abk=TRUE, diagonale=FALSE,  ...){ 
   suppressPackageStartupMessages(require(Hmisc)) 
   suppressPackageStartupMessages(require(knitr))
   x <- as.matrix(x) 

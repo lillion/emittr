@@ -4,7 +4,7 @@
 \title{Ergebnis einer linearen Regression ähnlich SPSS}
 \usage{
 lm_output_spss_wrapper_d(fit, Rsquare = TRUE, coefficients = TRUE,
-  collinearity = TRUE, plot = TRUE, runden = NA, sterne = T)
+  collinearity = TRUE, plot = TRUE, runden = NA, sterne = TRUE)
 }
 \arguments{
 \item{fit}{Objekt eines linearen Modells}
@@ -29,8 +29,8 @@ Dreigeteiltes Ergebnis einer linearen Regression ähnlich der Ausgabe in SPSS.  
 }
 \examples{
 library(car)
-fit <- lm(mpg~disp+hp+wt+drat, data=mtcars)
-lm_output_spss_wrapper_d(fit, runden=2)
+fit <- lm(mpg ~ disp + hp + wt + drat, data=mtcars)
+# lm_output_spss_wrapper_d(fit, runden=2)
 
 \dontrun{
 # um "schöne" Tabellen zu bekommen
@@ -41,7 +41,7 @@ lapply(ll, function(x) kable(lm_output_spss_wrapper_d(x)))
 \seealso{
 \code{\link{lm}}
 }
-\keyword{lm,}
-\keyword{regression,}
+\keyword{lm}
+\keyword{regression}
 \keyword{spss}
 

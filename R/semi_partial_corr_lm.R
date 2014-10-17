@@ -4,12 +4,12 @@
 #' @description compute semipartial, partial and zero-order correlations by way of an lm object
 #' @param fit lm object
 #' @export
-#' @keywords linear model, lm, regression
-#' @seealso lm() 
+#' @keywords linear model, lm regression correlation
+#' @seealso \code{\link{lm}}
 #' @return dataframe of r, r.,r..
 #' @examples 
 #' library(car)
-#' fit <- lm(mpg~disp+hp+wt+drat, data=mtcars) 
+#' fit <- lm(mpg ~ disp + hp + wt + drat, data=mtcars) 
 #' cor_lm(fit)
 cor_lm <- function(fit)  {
   if(class(fit)!="lm") stop(substitute(fit), " is not an lm object")

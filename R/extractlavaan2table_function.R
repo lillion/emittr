@@ -3,7 +3,7 @@
 #' @description <full description>
 #' @param inva a lavaan object of an invariance test
 #' @export
-#' @keywords lavaan, invariance
+#' @keywords lavaan invariance
 #' @seealso lavaan
 #' @return dataframe
 #' @examples 
@@ -20,7 +20,7 @@
 #' extractlavaan2table(inva)
 #' \dontrun{
 #' # if you want e.g. latex output
-#' gsub(" 0.000", " <.001",print(xtable(extractlavaan2table(inva),digits=3), type="latex", sanitize.text.function=identity),useBytes=T)
+#' gsub(" 0.000", " <.001",print(xtable(extractlavaan2table(inva),digits=3), type="latex", sanitize.text.function=identity),useBytes=TRUE)
 #'}
 extractlavaan2table <- function(inva=result){
 

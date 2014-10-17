@@ -4,7 +4,7 @@
 \title{Extrahiert automatisch Skalen aus einem EFA Objekt}
 \usage{
 fa.skalenbilden(faobject, ladungsunterschied = 0.1, datensatz = NULL,
-  name = "skala", fuerntratt = F)
+  name = "skala", fuerntratt = FALSE)
 }
 \arguments{
 \item{faobject}{Objekt aus einer \link{fa} o.ä.}
@@ -29,7 +29,7 @@ given the pattern maxtrix of an EFA with more than one factor, combine items loa
 }
 }
 \seealso{
-\link{fa}, \link{factanal}
+\link[psych]{fa}, \link{factanal}
 }
 \keyword{fa}
 

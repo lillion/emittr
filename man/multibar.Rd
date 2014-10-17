@@ -10,26 +10,28 @@ multibar(x, variables, labels, xlab = "Antworten", save = TRUE, ...)
 
 \item{variables}{vector of variables to be used}
 
-\item{labels}{}
+\item{labels}{labels for each seperate histogram}
 
-\item{xlab}{}
+\item{xlab}{general subscript for each histogram}
 
 \item{save}{should pdf be saved to disk}
 
-\item{...}{additional graphic parameters for barplot (e.g., col)}
+\item{...}{additional graphic parameters for barplot (e.g., ylab col)}
 }
 \value{
 Generates for each variable in a dataframe a barplot, optionally saved to the wd as a pdf
 }
 \description{
 given a dataframe, produces a barplot for each variable or a subset of variables, which optionally can be saved to disk as a pdf
+it's actually just a wrapper for \code{\link{barplot}}
 }
 \examples{
 data(cars)
-multibar(cars,save=F)
+multibar(cars,save=FALSE)
 }
 \seealso{
-mulithist
+\code{\link{multihist}} \code{\link{barplot}}
 }
+\keyword{plot}
 \keyword{umit}
 

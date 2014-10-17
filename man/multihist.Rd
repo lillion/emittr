@@ -9,9 +9,10 @@ multihist(x, variables, labels = TRUE, xlab = "Verteilung", save = TRUE,
 \arguments{
 \item{x}{data.frame}
 
-\item{variables}{vector of variables to be used}
+\item{variables}{vector of variables to be used, e.g., c(1,4:10)}
 
-\item{labels}{character vector of labels}
+\item{labels}{character vector of labels, useful if elaborate labels are stored
+in an object separate from the dataframe}
 
 \item{xlab}{}
 
@@ -19,7 +20,7 @@ multihist(x, variables, labels = TRUE, xlab = "Verteilung", save = TRUE,
 
 \item{format}{specify the format in which to save the file (e.g., jpeg, pdf, png, eps)}
 
-\item{...}{additional graphic parameters for hist (e.g., col, ylab, etc)}
+\item{...}{additional graphic parameters for hist (e.g., densitiy, col, ylab, etc)}
 }
 \value{
 none
@@ -28,6 +29,8 @@ none
 produces a histogram for each variable in a dataframe or its subset, which optionally can be saved to disk as a pdf
 }
 \examples{
+data(crime_data)
+multihist(crime_data, save=FALSE, ylab="Freq. #")
 \dontrun{
 multihist(dd)
 multibar(dd, 80:82, save = T)
@@ -36,7 +39,8 @@ multibar(neo_n,5,ylab="häu")
 }
 }
 \seealso{
-\code{\link{multibar}}
+\code{\link{multibar}} \code{\link{hist}}
 }
+\keyword{plot}
 \keyword{umit}
 

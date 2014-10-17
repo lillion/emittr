@@ -23,7 +23,7 @@
 #' # the saved file can be opened in Excel, the table copied and pasted into Word
 #' }
 
-corstarsmd <- function(x, type="markdown", digits=3, tenperc=F, abbrev=T, diagonal=F,  ...){ 
+corstarsmd <- function(x, type="markdown", digits=3, tenperc=FALSE, abbrev=TRUE, diagonal=FALSE,  ...){ 
   require(Hmisc) 
   require(knitr)
   x <- as.matrix(x) 

@@ -8,12 +8,12 @@
 #' @param fuerntratt (logisch) Soll das Fürntratt-Kriterium bei der Faktorzuweiseung angewandt werden
 #' @export
 #' @keywords fa
-#' @seealso \link{fa}, \link{factanal}
+#' @seealso \link[psych]{fa}, \link{factanal}
 #' @return list of scales
 #' @examples \dontrun{
 #'
 #'}
-fa.skalenbilden <- function(faobject,ladungsunterschied=.10,datensatz=NULL, name="skala",fuerntratt=F){
+fa.skalenbilden <- function(faobject,ladungsunterschied=.10,datensatz=NULL, name="skala",fuerntratt=FALSE){
   class(faobject$loadings) <- "matrix"
   ladungen <- faobject$loadings
   
@@ -28,7 +28,7 @@ fa.skalenbilden <- function(faobject,ladungsunterschied=.10,datensatz=NULL, name
       
     }} else {
       for (i in 1:nrow(ladungen)) {
-        if(sort(abs(ladungen[i, ]),decreasing=T)[1]-sort(abs(ladungen[i, ]),decreasing=T)[2]<.10) ad <- NA else ad <- which.max(abs(ladungen[i, ]))
+        if(sort(abs(ladungen[i, ]),decreasing=TRUE)[1]-sort(abs(ladungen[i, ]),decreasing=TRUE)[2]<.10) ad <- NA else ad <- which.max(abs(ladungen[i, ]))
         factorindex <- c(factorindex, ad)
       }
     }

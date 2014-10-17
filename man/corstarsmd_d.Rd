@@ -3,8 +3,8 @@
 \alias{corstarsmd_d}
 \title{Korrelationstabelle mit Signifikanzsternen}
 \usage{
-corstarsmd_d(x, type = "markdown", stellen = 3, zehnproz = F, abk = T,
-  diagonale = F, ...)
+corstarsmd_d(x, type = "markdown", stellen = 3, zehnproz = FALSE,
+  abk = TRUE, diagonale = FALSE, ...)
 }
 \arguments{
 \item{x}{Datensatz (dataframe) Objekt mit den Variablen}
@@ -42,4 +42,5 @@ write.xlsx(for_word, "test.xlsx") # Ausgabe in ein Excel-Dokument speichern
 \link{cor}
 }
 \keyword{correlation}
+\keyword{korrelation}
 

@@ -8,7 +8,7 @@
 #' @param fuerntratt should loading be assigned to factor according to Fuerntratt 
 #' @export
 #' @keywords fa
-#' @seealso \code{\link{fa}}
+#' @seealso \code{\link[psych]{fa}}
 #' @return either the itemnumbers per scale or objects of the scales themselves saved to the environment
 #' @examples 
 #' if(!require(psych)) {
@@ -36,7 +36,7 @@ fa.buildscale <- function(faobject, # saved fa object
       
     }} else {
       for (i in 1:nrow(ladungen)) {
-        if(sort(abs(ladungen[i, ]),decreasing=T)[1]-sort(abs(ladungen[i, ]),decreasing=T)[2]<.10) ad <- NA else ad <- which.max(abs(ladungen[i, ]))
+        if(sort(abs(ladungen[i, ]),decreasing=TRUE)[1]-sort(abs(ladungen[i, ]),decreasing=TRUE)[2]<.10) ad <- NA else ad <- which.max(abs(ladungen[i, ]))
         factorindex <- c(factorindex, ad)
       }
     }

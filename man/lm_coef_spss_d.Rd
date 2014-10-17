@@ -3,7 +3,7 @@
 \alias{lm_coef_spss_d}
 \title{Koeffizienten einer Lineare Regression dargestellt aehnlich SPSS}
 \usage{
-lm_coef_spss_d(fit, sterne = T)
+lm_coef_spss_d(fit, sterne = TRUE)
 }
 \arguments{
 \item{fit}{Objekt eines linearen Modells}
@@ -14,17 +14,17 @@ lm_coef_spss_d(fit, sterne = T)
 dataframe des Ergebnisses einer Regression ähnlich der in SPSS
 }
 \description{
-Diese Funktion liefert die Tabelle der Regressionskoeffizienten (β) ähnlich der Darstellung in SPSS
+Diese Funktion liefert die Tabelle der Regressionskoeffizienten (beta) ähnlich der Darstellung in SPSS
 }
 \examples{
 data(crime_data)
-fit <- lm(crime~pctwhite+pcths+pctmetro+single+poverty,data=crime_data)
+fit <- lm(crime ~ pctwhite + pcths + pctmetro + single + poverty,data=crime_data)
 lm_coef_spss_d(fit)
 }
 \seealso{
 \code{\link{lm}}
 }
-\keyword{lm,}
-\keyword{regression,}
+\keyword{lm}
+\keyword{regression}
 \keyword{spss}
 

@@ -26,19 +26,18 @@ into user denoted blocks and computes its models in order to evaluate the increm
 }
 \examples{
 \dontrun{
-# hierarchical regression with 2 blocks, 1:sex, 2: age+school
+# hierarchical regression with 2 blocks, 1:sex, 2: age + school
 lm_hierarch(conscien ~ sex + age + school, c(1),data=neoffi)
 }
 # 4 blocks with each time one additional predictor
-lm_hierarch(mpg~disp+hp+wt+drat, c(1,1,1,1), data=mtcars)
+lm_hierarch(mpg ~ disp + hp + wt + drat, c(1,1,1,1), data=mtcars)
 # 2 blocks with each time 2 additional predictors
-lm_hierarch(mpg~disp+hp+wt+drat, c(2,2), data=mtcars)
+lm_hierarch(mpg ~ disp + hp + wt + drat, c(2,2), data=mtcars)
 }
 \seealso{
 \code{\link{lm}}
 }
 \keyword{hierarchical}
-\keyword{lm,}
+\keyword{lm}
 \keyword{regression}
-\keyword{regression,}
 

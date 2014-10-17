@@ -34,7 +34,8 @@ multibar(neo_n,5,ylab="häu")
 }
 }
 \seealso{
-lillionscage::multibar
+\code{\link{multibar_d}}
 }
+\keyword{Graphik}
 \keyword{umit}
 

@@ -28,12 +28,12 @@ inva <- measurementInvariance(model_reak,laurasdaten,group="Geschlecht",estimato
 extractlavaan2table(inva)
 \dontrun{
 # if you want e.g. latex output
-gsub(" 0.000", " <.001",print(xtable(extractlavaan2table(inva),digits=3), type="latex", sanitize.text.function=identity),useBytes=T)
+gsub(" 0.000", " <.001",print(xtable(extractlavaan2table(inva),digits=3), type="latex", sanitize.text.function=identity),useBytes=TRUE)
 }
 }
 \seealso{
 lavaan
 }
 \keyword{invariance}
-\keyword{lavaan,}
+\keyword{lavaan}
 

@@ -26,10 +26,11 @@ given a dataframe, produces a barplot for each variable or a subset of variables
 }
 \examples{
 data(cars)
-multibar(cars,save=F)
+multibar(cars,save=FALSE)
 }
 \seealso{
-mulithist
+\code{\link{multihist_d}}
 }
+\keyword{Graphik}
 \keyword{umit}
 

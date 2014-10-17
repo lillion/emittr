@@ -3,7 +3,7 @@
 \alias{pakete_installieren}
 \title{Installieren notwendiger packages}
 \usage{
-pakete_installieren()
+pakete_installieren(update = FALSE)
 }
 \arguments{
 \item{keine}{Parameter}
@@ -18,7 +18,7 @@ voellig unnoetige Funktion, aber praktisch
 "Rcmdr", "sjPlot", "pander", "lattice", "perturb", "ggvis","ez","dplyr"
 }
 \examples{
-pakete_installieren()
+pakete_installieren(update=FALSE)
 }
 \keyword{helper}
 

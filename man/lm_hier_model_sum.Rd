@@ -16,13 +16,13 @@ given a hierarchical regression with several blocks, gives an overview over chan
 }
 \examples{
 library(car)
-ll <- lm_hierarch(mpg~disp+hp+wt+drat, c(1,1,1,1), data=mtcars,summary=FALSE)
+ll <- lm_hierarch(mpg ~ disp + hp + wt + drat, c(1,1,1,1), data=mtcars,summary=FALSE)
 lm_hier_model_sum(ll)
 rm(ll)
 }
 \seealso{
 \code{\link{lm}}, \code{\link{lm_hierarch}}
 }
-\keyword{lm,}
+\keyword{lm}
 \keyword{regression}
 

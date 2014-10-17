@@ -3,18 +3,18 @@
 #' @description given a hierarchical regression with several blocks, gives an overview over changes in R^2 and significance
 #' @param ll a list containing regular lm objects
 #' @export
-#' @keywords lm, regression
+#' @keywords lm regression
 #' @seealso \code{\link{lm}}, \code{\link{lm_hierarch}}
 #' @return dataframe of summaries
 #' @examples
 #' library(car)
-#' ll <- lm_hierarch(mpg~disp+hp+wt+drat, c(1,1,1,1), data=mtcars,summary=FALSE)
+#' ll <- lm_hierarch(mpg ~ disp + hp + wt + drat, c(1,1,1,1), data=mtcars,summary=FALSE)
 #' lm_hier_model_sum(ll)
 #' rm(ll)
 lm_hier_model_sum <- function (ll) {
   if (inherits(ll[[1]],"lm.summary")) stop("Please don't use a summary lm.object!")
   #r1 <- t(sapply(ll, function(x) {c(R=sqrt(summary(x)$r.squared),rsq=summary(x)$r.squared,adjrsq=summary(x)$adj.r.squared)}))
-  r1 <- t(sapply(ll, function(x) {temp=summary(x); f=temp$fstatistic;c(R=sqrt(temp$r.squared),rsq=temp$r.squared, p = unname(pf(f[1],f[2],f[3],lower.tail=F)),adjrsq=temp$adj.r.squared)}))
+  r1 <- t(sapply(ll, function(x) {temp=summary(x); f=temp$fstatistic;c(R=sqrt(temp$r.squared),rsq=temp$r.squared, p = unname(pf(f[1],f[2],f[3],lower.tail=FALSE)),adjrsq=temp$adj.r.squared)}))
   #print(r1)
   
   ano <- paste(sapply(1:length(ll), function(x) paste0("ll[[",x,"]]")), collapse=",")
@@ -24,7 +24,7 @@ lm_hier_model_sum <- function (ll) {
   
   r2 <- r2[c(5,3,1,6)]
   f <- summary(ll[[1]])$fstatistic
-  p <- pf(f[1],f[2],f[3],lower.tail=F)
+  p <- pf(f[1],f[2],f[3],lower.tail=FALSE)
   r2[1,] <- c(summary(ll[[1]])$fstatistic,p)
   R_change <- c(r1[1,2],diff(r1[,2]))
   cbind(r1,R_change,r2)

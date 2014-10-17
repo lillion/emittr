@@ -9,8 +9,8 @@
 #' @param save Soll ein PDF gespeichert werden
 #' @param ... zusätzliche Parameter von hist (z.B. col)
 #' @export
-#' @keywords umit
-#' @seealso lillionscage::multibar
+#' @keywords umit Graphik
+#' @seealso \code{\link{multibar_d}}
 #' @return Histogramme
 #' @examples \dontrun{ 
 #' multihist(dd)
@@ -52,12 +52,12 @@ multihist_d <- function(x, variables, labels = TRUE, xlab = "Verteilung", save=T
 #' @param save Soll ein PDF gespeichert werden
 #' @param ... zusätzliche Parameter von hist (z.B. col)
 #' @export
-#' @keywords umit
-#' @seealso mulithist
+#' @keywords umit Graphik
+#' @seealso \code{\link{multihist_d}}
 #' @return Barplot
 #' @examples
 #' data(cars)
-#' multibar(cars,save=F)
+#' multibar(cars,save=FALSE)
 multibar_d <- function(x, variables, labels, xlab = "Antworten", 
 	save = TRUE,...) {
 	if(class(x)!="data.frame") stop("x ist kein Datensatz")

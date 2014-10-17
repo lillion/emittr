@@ -9,12 +9,13 @@
 #' @keywords helper
 #' @return nichts
 #' @examples 
-#' pakete_installieren()
-pakete_installieren <- function () {
-  wants <- c("car", "lmtest", "QuantPsyc", "lavaan", "psych", "ggplot2", "reshape2", "semTools", "semPlot","GPArotation", "HH", "Hmisc", "knitr","MplusAutomation", "Rcmdr", "sjPlot", "pander", "lattice", "perturb", "ggvis","ez","dplyr")
+#' pakete_installieren(update=FALSE)
+pakete_installieren <- function (update=FALSE) {
+  wants <- c("car", "lmtest", "QuantPsyc", "lavaan", "psych", "ggplot2", "reshape2", "semTools", "semPlot","GPArotation", "HH", "Hmisc", "knitr","MplusAutomation", "sjPlot", "pander", "lattice", "perturb", "ggvis","ez","dplyr", "yaml","rmarkdown")
+  repos=repos = c(CRAN = "http://cran.rstudio.com")
   has   <- wants %in% rownames(installed.packages())
-  if(any(!has)) install.packages(wants[!has],dependencies=T)
-  update.packages(ask = F)
+  if(any(!has)) install.packages(wants[!has],dependencies=TRUE,repos = repos)
+  if(update) update.packages(ask = F, repos=repos)
   print(wants[!has])
 }
 

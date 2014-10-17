@@ -5,6 +5,7 @@
 #' @param stat Art der Statistik, z.B. 'mean', 'sd'
 #' @param reps Anzahl der Wiederholung
 #' @export
+#' @importFrom boot boot boot.ci
 #' @keywords bootstrap
 #' @seealso boot
 #' @return bootstrap

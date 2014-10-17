@@ -3,15 +3,15 @@
 #' @description function that returns a table of the regression coefficients similar to the presentation in SPSS
 #' @param fit result of a lm
 #' @export
-#' @keywords lm, regression, spss
+#' @keywords lm regression spss
 #' @return dataframe with lm output similar to SPSS
 #' @examples 
 #' library(car)
-#' l <- lm(mpg~disp+hp+wt+drat, data=mtcars) 
+#' l <- lm(mpg ~ disp + hp + wt + drat, data=mtcars) 
 #' lm_coef_spss(l)
 #' 
 #' data(crime_data)
-#' l <- lm(crime~pctwhite+pctmetro+poverty, data=crime_data) 
+#' l <- lm(crime ~ pctwhite + pctmetro + poverty, data=crime_data) 
 #' lm_coef_spss(l)
 #' rm(l)
 #' \dontrun{

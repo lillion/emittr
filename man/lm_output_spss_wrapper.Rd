@@ -19,13 +19,13 @@ dataframe des Ergebnisses einer Regression ähnlich der in SPSS
 }
 \examples{
 library(car)
-fit <- lm(mpg~disp+hp+wt+drat, data=mtcars)
+fit <- lm(mpg ~ disp + hp + wt + drat, data=mtcars)
 lm_output_spss_wrapper(fit)
 }
 \seealso{
 \code{\link{lm}}
 }
-\keyword{lm,}
-\keyword{regression,}
+\keyword{lm}
+\keyword{regression}
 \keyword{spss}
 

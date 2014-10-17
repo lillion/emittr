@@ -10,17 +10,17 @@
 #' @param summary should the results be summaries of the lm object
 #' @param ... additional parameters for \code{\link{lm}} 
 #' @export
-#' @keywords lm, regression, hierarchical regression
+#' @keywords lm regression hierarchical regression
 #' @seealso \code{\link{lm}}
 #' @return list of the regression models
 #' @examples \dontrun{
-#' # hierarchical regression with 2 blocks, 1:sex, 2: age+school
+#' # hierarchical regression with 2 blocks, 1:sex, 2: age + school
 #' lm_hierarch(conscien ~ sex + age + school, c(1),data=neoffi)
 #'}
 #' # 4 blocks with each time one additional predictor
-#' lm_hierarch(mpg~disp+hp+wt+drat, c(1,1,1,1), data=mtcars)
+#' lm_hierarch(mpg ~ disp + hp + wt + drat, c(1,1,1,1), data=mtcars)
 #' # 2 blocks with each time 2 additional predictors 
-#' lm_hierarch(mpg~disp+hp+wt+drat, c(2,2), data=mtcars) 
+#' lm_hierarch(mpg ~ disp + hp + wt + drat, c(2,2), data=mtcars) 
 #'
 lm_hierarch <- function(formula, # the complete formula, including all blocks from the hierarchical regression
  blocks, # numeric vector denoting the lenght of each block, e.g. c(2,3,1)
@@ -31,7 +31,7 @@ lm_hierarch <- function(formula, # the complete formula, including all blocks fr
 	if (!is.numeric(blocks)) stop
 	txt <- deparse(formula)
 	#print(txt)
-	limits <- c(gregexpr("\\+",txt,fixed=F)[[1]]-1,nchar(txt))
+	limits <- c(gregexpr("\\+",txt,fixed=FALSE)[[1]]-1,nchar(txt))
 		if (length(limits)>sum(blocks)) blocks <- c(blocks,length(limits)-sum(blocks))
 	cat("\nBlocks with",paste(cumsum(blocks),collapse=", ")," predictors, respectively\n\n")
 	blocks <- limits[cumsum(blocks)]

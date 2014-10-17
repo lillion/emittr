@@ -6,7 +6,7 @@
 cor_lm_d(fit)
 }
 \arguments{
-\item{fit}{ein Objekt einer lm Berechnung}
+\item{fit}{ein Objekt einer \code{\link{lm}} Berechnung}
 }
 \value{
 Datensatz (dataframe) von r, r.,r..
@@ -16,14 +16,15 @@ berechnet semipartial, partial und Korrelationen nullter Ordnung der Prädiktore
 }
 \examples{
 library(car)
-fit <- lm(mpg~disp+hp+wt+drat, data=mtcars)
+fit <- lm(mpg ~ disp + hp + wt + drat, data=mtcars)
 cor_lm_d(fit)
 }
 \seealso{
 \code{\link{lm},\link{cor}}
 }
-\keyword{linear}
-\keyword{lm,}
-\keyword{model,}
+\keyword{"linear}
+\keyword{korrelation}
+\keyword{lm}
+\keyword{model"}
 \keyword{regression}
 

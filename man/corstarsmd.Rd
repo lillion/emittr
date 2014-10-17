@@ -3,8 +3,8 @@
 \alias{corstarsmd}
 \title{Correlation table with significance stars}
 \usage{
-corstarsmd(x, type = "markdown", digits = 3, tenperc = F, abbrev = T,
-  diagonal = F, ...)
+corstarsmd(x, type = "markdown", digits = 3, tenperc = FALSE,
+  abbrev = TRUE, diagonal = FALSE, ...)
 }
 \arguments{
 \item{x}{dataframe object}
