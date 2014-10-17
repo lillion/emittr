@@ -12,11 +12,13 @@
 #' @return moderation
 #' @examples 
 #' data(crime_data)
-#' xm <- crime$poverty-mean(crime$poverty, na.rm=T)
-#' zm <- crime$pcths-mean(crime$pcths, na.rm=T)
+#' attach(crime_data)
+#' xm <- poverty-mean(poverty, na.rm=T)
+#' zm <- pcths-mean(pcths, na.rm=T)
 #' zz <- xm*zm
 #' mod <- lm(crime~poverty+pcths+zz, data=crime_data)
 #' moderation.slopes(mod, xlab="crime rate")
+#' detach(crime_data)
 moderation.slopes <- function (mod, 
                                zsd = 1,
                                mod_name="Moderator",

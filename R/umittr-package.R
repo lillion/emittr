@@ -80,3 +80,31 @@ NULL
 #' @usage data(laurasdaten)
 #' @format A data frame with 524 rows and 19 variables
 NULL
+
+
+
+#' Intelligence, School grades and life data
+#'
+#' The data comprises items from the IST-2000-R
+#' its verbal, figural, numerical intelligence scores
+#' school grades from math, physics, german, etc. and GPA
+#' plus life data like age, sex, location
+#'
+#' \itemize{
+#'   \item vp \emph{VP ID}
+#'   \item sex \emph{Geschlecht}
+#'   \item age \emph{Alter}
+#'   \item verbint \emph{verbale Intelligenz}  
+#'   \item numint \emph{num Intelligenz}
+#'   \item figint \emph{fig Intelligenz}
+#'   \item schlusint \emph{reasoning, schlussfolgerndes Denkes}
+#'   \item se  an	gem	zr	re	rz	fa	wue	ma \emph{9 tests from the IST}
+#'   }
+#'
+#' @docType data
+#' @keywords datasets
+#' @name ist_data
+#' @usage data(ist)
+#' @format A data frame with 128 rows and 39 variables
+NULL
+
