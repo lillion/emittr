@@ -16,13 +16,23 @@ plus life data like age, sex, location
 \details{
 \itemize{
   \item vp \emph{VP ID}
-  \item sex \emph{Geschlecht}
+  \item sex \emph{Geschlecht} (FACTOR)
   \item age \emph{Alter}
   \item verbint \emph{verbale Intelligenz}
   \item numint \emph{num Intelligenz}
   \item figint \emph{fig Intelligenz}
   \item schlusint \emph{reasoning, schlussfolgerndes Denkes}
   \item se  an	gem	zr	re	rz	fa	wue	ma \emph{9 tests from the IST}
+  \item geb_jahr Geburtsjahr
+  \item abi Abischnitt
+  \item bundesla	Bundesland (FACTOR)
+  \item schulj	Anzahl der Schuljahre
+  \item deu_m	Deutsch Note
+  \item engl_m	Englisch Note
+  \item math_m	Mathe Note
+  \item phys_m	Physik Note
+  \item chem_m	Chemie Note
+  \item bio_m Bio Note
   }
 }
 \keyword{datasets}
