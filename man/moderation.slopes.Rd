@@ -23,11 +23,13 @@ calculates the slopes and intercepts for a simple moderation analysis from a lm
 \examples{
 data(crime_data)
 attach(crime_data)
-xm <- poverty-mean(poverty, na.rm=T)
-zm <- pcths-mean(pcths, na.rm=T)
+#crime <- scale(crime)
+poverty <- scale(poverty) #poverty-mean(poverty, na.rm=T)
+pcths <- scale(pcths) #pcths-mean(pcths, na.rm=T)
 zz <- xm*zm
-mod <- lm(crime~poverty+pcths+zz, data=crime_data)
-moderation.slopes(mod, xlab="crime rate")
+mod <- lm(crime~poverty*pcths)
+summary(mod)
+moderation.slopes(mod, ylab="crime rate", mod_name = "Highschool pct", xlab="poverty")
 detach(crime_data)
 }
 \seealso{
