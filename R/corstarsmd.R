@@ -24,11 +24,11 @@
 #' }
 
 corstarsmd <- function(x, type="markdown", digits=3, tenperc=FALSE, abbrev=TRUE, diagonal=FALSE,  ...){ 
-  require(Hmisc) 
+  #require(Hmisc) 
   require(knitr)
   x <- as.matrix(x) 
-  R <- rcorr(x)$r 
-  p <- rcorr(x)$P 
+  R <- Hmisc::rcorr(x)$r 
+  p <- Hmisc::rcorr(x)$P 
   if (tenperc){
     mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "* ", ifelse(p < .2, "✝  ", "   "))))
   } else {

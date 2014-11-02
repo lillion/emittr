@@ -99,7 +99,7 @@ NULL
 #'   \item figint \emph{fig Intelligenz}
 #'   \item schlusint \emph{reasoning, schlussfolgerndes Denkes}
 #'   \item se  an	gem	zr	re	rz	fa	wue	ma \emph{9 tests from the IST}
-#'   Satzergänzung, Analogien, Gemeinsamkeiten, Zahlenreihen, Rechenaufgaben, Rechenzeichen, Figurenauswahl, Würfelaufgaben, Matrizen
+#'   Satzergaenzung, Analogien, Gemeinsamkeiten, Zahlenreihen, Rechenaufgaben, Rechenzeichen, Figurenauswahl, Wuerfelaufgaben, Matrizen
 #'   \item geb_jahr Geburtsjahr
 #'   \item abi Abischnitt
 #'   \item bundesla	Bundesland (FACTOR)

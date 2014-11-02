@@ -25,11 +25,11 @@
 #' }
 
 corstarsmd_d <- function(x, type="markdown", stellen=3, zehnproz=FALSE, abk=TRUE, diagonale=FALSE,  ...){ 
-  suppressPackageStartupMessages(require(Hmisc)) 
+  #suppressPackageStartupMessages(require(Hmisc)) 
   suppressPackageStartupMessages(require(knitr))
   x <- as.matrix(x) 
-  R <- rcorr(x)$r 
-  p <- rcorr(x)$P 
+  R <- Hmisc::rcorr(x)$r 
+  p <- Hmisc::rcorr(x)$P 
   if (zehnproz){
     mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "* ", ifelse(p < .2, "✝  ", "   "))))
   } else {

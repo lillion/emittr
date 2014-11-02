@@ -23,7 +23,7 @@ plus life data like age, sex, location
   \item figint \emph{fig Intelligenz}
   \item schlusint \emph{reasoning, schlussfolgerndes Denkes}
   \item se  an	gem	zr	re	rz	fa	wue	ma \emph{9 tests from the IST}
-  Satzergänzung, Analogien, Gemeinsamkeiten, Zahlenreihen, Rechenaufgaben, Rechenzeichen, Figurenauswahl, Würfelaufgaben, Matrizen
+  Satzergaenzung, Analogien, Gemeinsamkeiten, Zahlenreihen, Rechenaufgaben, Rechenzeichen, Figurenauswahl, Wuerfelaufgaben, Matrizen
   \item geb_jahr Geburtsjahr
   \item abi Abischnitt
   \item bundesla	Bundesland (FACTOR)
@@ -34,6 +34,14 @@ plus life data like age, sex, location
   \item phys_m	Physik Note
   \item chem_m	Chemie Note
   \item bio_m Bio Note
+  \item 4 items of working memory (STOPRO, COORD, SWITCH, ATTENT)
+  \item verbintsw \emph{verbale Intelligenz Standardwert}
+  \item numintsw \emph{numerische Intelligenz Standardwert}
+  \item figintsw \emph{figurale Intelligenz Standardwert}
+  \item schluintsw \emph{schlussfolgerndes Denkes Standardwert}
+  \item z_Auf  z_Koord z-transformierte Aufmerksamkeit und Koordination
+  \item Produkt Produktterm z_Auf*z_Koord
+  \item Produkt2 Produktterm ATTENT*COORD
   }
 }
 \keyword{datasets}
