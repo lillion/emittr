@@ -40,4 +40,5 @@ write.xlsx(for_word, "test.xlsx")
 \link{cor}
 }
 \keyword{correlation}
+\keyword{semi}
 

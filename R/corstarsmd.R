@@ -9,7 +9,7 @@
 #' @param diagonal (logical) should the diagnonal be filled
 #' @export
 #' @importFrom Hmisc rcorr
-#' @keywords correlation
+#' @keywords correlation semi
 #' @seealso \link{cor} 
 #' @return text table
 #' @examples 
