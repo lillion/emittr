@@ -6,7 +6,7 @@
 #' @param digits how many digits should be displayed
 #' @param tenperc (logical) should p<.10 also be denoted by a cross
 #' @param abbrev (logical) should columnames be shortened
-#' @param diagonal (logical) should the diagnonal be filled
+#' @param diagonal (logical) should the diagonal be filled
 #' @export
 #' @importFrom Hmisc rcorr
 #' @keywords correlation semi

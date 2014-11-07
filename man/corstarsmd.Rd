@@ -17,7 +17,7 @@ corstarsmd(x, type = "markdown", digits = 3, tenperc = FALSE,
 
 \item{abbrev}{(logical) should columnames be shortened}
 
-\item{diagonal}{(logical) should the diagnonal be filled}
+\item{diagonal}{(logical) should the diagonal be filled}
 }
 \value{
 text table

@@ -4,7 +4,7 @@
 \title{Ergebnis einer linearen Regression ähnlich SPSS}
 \usage{
 lm_output_spss_wrapper_d(fit, Rsquare = TRUE, coefficients = TRUE,
-  collinearity = TRUE, plot = TRUE, runden = NA, sterne = TRUE)
+  collinearity = TRUE, plot = TRUE, runden = 3, sterne = TRUE)
 }
 \arguments{
 \item{fit}{Objekt eines linearen Modells}

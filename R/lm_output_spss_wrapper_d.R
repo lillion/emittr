@@ -22,7 +22,7 @@
 #' kable(lm_output_spss_wrapper_d(l))
 #' lapply(ll, function(x) kable(lm_output_spss_wrapper_d(x)))
 #' }
-lm_output_spss_wrapper_d <- function (fit, Rsquare=TRUE, coefficients=TRUE, collinearity=TRUE,plot=TRUE, runden=NA, sterne=TRUE) {
+lm_output_spss_wrapper_d <- function (fit, Rsquare=TRUE, coefficients=TRUE, collinearity=TRUE,plot=TRUE, runden=3, sterne=TRUE) {
   if(class(fit)!="lm") stop(substitute(fit), " ist kein LM Objekt")
   #lm_hier_model_sum(fit)
   results=vector("list", 0)

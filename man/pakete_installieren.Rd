@@ -15,7 +15,7 @@ nichts
 voellig unnoetige Funktion, aber praktisch
 "car", "lmtest", "QuantPsyc", "lavaan", "psych", "ggplot2", "reshape2",
 "semTools", "semPlot","GPArotation", "HH", "Hmisc", "knitr","MplusAutomation",
-"Rcmdr", "sjPlot", "pander", "lattice", "perturb", "ggvis","ez","dplyr"
+"sjPlot", "pander", "lattice", "perturb", "ggvis","ez","dplyr"
 }
 \examples{
 pakete_installieren(update=FALSE)
