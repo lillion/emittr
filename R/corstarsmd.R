@@ -4,9 +4,10 @@
 #' @param x dataframe object
 #' @param type options are none, html or markdown (hands table to kable)
 #' @param digits how many digits should be displayed
-#' @param tenperc (logical) should p<.10 also be denoted by a cross
+#' @param tenperc (logical) should p<.10 also be denoted by a bubble (°)
 #' @param abbrev (logical) should columnames be shortened
 #' @param diagonal (logical) should the diagonal be filled
+#' @param ... additional parameters for kable
 #' @export
 #' @importFrom Hmisc rcorr
 #' @keywords correlation semi
@@ -23,16 +24,20 @@
 #' # the saved file can be opened in Excel, the table copied and pasted into Word
 #' }
 
-corstarsmd <- function(x, type="markdown", digits=3, tenperc=FALSE, abbrev=TRUE, diagonal=FALSE,  ...){ 
+corstarsmd <- function(x, type="none", digits=3, tenperc=FALSE, abbrev=TRUE, diagonal=FALSE,  ...){ 
   #require(Hmisc) 
   require(knitr)
+  x <- x[sapply(x,is.numeric)]
   x <- as.matrix(x) 
-  R <- Hmisc::rcorr(x)$r 
-  p <- Hmisc::rcorr(x)$P 
+#   R <- Hmisc::rcorr(x)$r 
+#   p <- Hmisc::rcorr(x)$P 
+  R <- corr.test(x)$r # psych
+  p <- corr.test(x)$p #psych
   if (tenperc){
-    mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "* ", ifelse(p < .2, "✝  ", "   "))))
+#     mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "* ", ifelse(p < .1, "✝  ", "   "))))
+    mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "*  ", ifelse(p < .1, "°  ", "   "))))
   } else {
-  mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "* ", "   ")) ) }
+  mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "*  ", "   ")) ) }
   R <- format(round(cbind(rep(-1.111, ncol(x)), R), digits ))[,-1] 
   Rnew <- matrix(paste(R, mystars, sep=""), ncol=ncol(x)) 
   diag(Rnew) <- paste(diag(R), "   ", sep="") 
@@ -43,6 +48,7 @@ corstarsmd <- function(x, type="markdown", digits=3, tenperc=FALSE, abbrev=TRUE,
   if (nrow(Rnew) == ncol(Rnew)) {
     Rnew[!lower.tri(Rnew, diag = diagonal)] <- ""
   }
+  if (!diagonal) Rnew <- Rnew[,-length(Rnew[1,])]
   if(type=="none") return(Rnew) 
   return(kable(Rnew,format=type,...)) 
 }

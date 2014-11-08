@@ -3,8 +3,8 @@
 \alias{corstarsmd}
 \title{Correlation table with significance stars}
 \usage{
-corstarsmd(x, type = "markdown", digits = 3, tenperc = FALSE,
-  abbrev = TRUE, diagonal = FALSE, ...)
+corstarsmd(x, type = "none", digits = 3, tenperc = FALSE, abbrev = TRUE,
+  diagonal = FALSE, ...)
 }
 \arguments{
 \item{x}{dataframe object}
@@ -13,11 +13,13 @@ corstarsmd(x, type = "markdown", digits = 3, tenperc = FALSE,
 
 \item{digits}{how many digits should be displayed}
 
-\item{tenperc}{(logical) should p<.10 also be denoted by a cross}
+\item{tenperc}{(logical) should p<.10 also be denoted by a bubble (°)}
 
 \item{abbrev}{(logical) should columnames be shortened}
 
 \item{diagonal}{(logical) should the diagonal be filled}
+
+\item{...}{additional parameters for kable}
 }
 \value{
 text table

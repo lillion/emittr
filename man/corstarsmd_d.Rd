@@ -18,6 +18,8 @@ corstarsmd_d(x, type = "markdown", stellen = 3, zehnproz = FALSE,
 \item{abk}{(logisch) sollen Spaltennamen gekürzt werden}
 
 \item{diagonale}{(logisch) soll die Diagonale gefüllt werden}
+
+\item{...}{andere Parameter für \link{kable}}
 }
 \value{
 text table
