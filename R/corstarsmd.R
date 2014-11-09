@@ -45,10 +45,11 @@ corstarsmd <- function(x, type="none", digits=3, tenperc=FALSE, abbrev=TRUE, dia
   colnames(Rnew) <- paste(colnames(x), " ", sep="") 
   if (abbrev) colnames(Rnew) <- abbreviate(colnames(Rnew), minlength = digits + 3)
   Rnew <- as.data.frame(Rnew) 
+#if (!diagonal) Rnew <- Rnew[,-length(Rnew[1,])]
   if (nrow(Rnew) == ncol(Rnew)) {
-    Rnew[!lower.tri(Rnew, diag = diagonal)] <- ""
+    Rnew[!lower.tri(Rnew, diag = diagonal)] <- " "
   }
-  if (!diagonal) Rnew <- Rnew[,-length(Rnew[1,])]
+ if (!diagonal) Rnew <- Rnew[,-length(Rnew[1,])]
   if(type=="none") return(Rnew) 
   return(kable(Rnew,format=type,...)) 
 }
