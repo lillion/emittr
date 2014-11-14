@@ -14,7 +14,7 @@
 #' @return text table
 #' @examples 
 #' data(pers_data)
-#' corstarsmd_d(pers_data[c(7:10,12:15)],type="ohne", stellen=2, zehnproz=TRUE)
+#' corstarsmd_d(pers_data[c(7:10,12:15)],type="ohne", stellen=2, zehnproz=TRUE, untere=FALSE)
 #' 
 #' \dontrun{
 #' # um das Ergebnis z.B. in Microsoft Word einzufügen, folgende Schritte ausführen:
@@ -50,6 +50,7 @@ corstarsmd_d <- function(x, type="markdown", stellen=3, zehnproz=FALSE, abk=TRUE
     Rnew <- as.data.frame(Rnew) 
   }
   rownames(Rnew) <- colnames(x) 
+  if(untere) Rnew <- Rnew[, -length(Rnew[1, ])] else Rnew <- Rnew[-length(Rnew[,1 ]), ]
   if(type=="ohne") return(Rnew) 
   return(kable(Rnew,format=type,...)) 
 }

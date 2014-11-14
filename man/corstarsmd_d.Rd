@@ -29,7 +29,7 @@ die Funktion errechnet eine Korrelationstabelle aus den übermittelten Variablen
 }
 \examples{
 data(pers_data)
-corstarsmd_d(pers_data[c(7:10,12:15)],type="ohne", stellen=2, zehnproz=TRUE)
+corstarsmd_d(pers_data[c(7:10,12:15)],type="ohne", stellen=2, zehnproz=TRUE, untere=FALSE)
 
 \dontrun{
 # um das Ergebnis z.B. in Microsoft Word einzufügen, folgende Schritte ausführen:
