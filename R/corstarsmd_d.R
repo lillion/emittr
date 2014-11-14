@@ -25,15 +25,15 @@
 #' # von dort Tabelle kopieren und in Word einfügen
 #' }
 
-corstarsmd_d <- function(x, type="markdown", stellen=3, zehnproz=FALSE, abk=TRUE, diagonale=FALSE,  ...){ 
+corstarsmd_d <- function(x, type="markdown", stellen=3, zehnproz=FALSE, abk=TRUE, diagonale=FALSE, untere=TRUE, ...){ 
   #suppressPackageStartupMessages(require(Hmisc)) 
   suppressPackageStartupMessages(require(knitr))
   x <- x[sapply(x,is.numeric)]
   x <- as.matrix(x) 
   #   R <- Hmisc::rcorr(x)$r 
   #   p <- Hmisc::rcorr(x)$P 
-  R <- corr.test(x)$r # psych
-  p <- corr.test(x)$p #psych
+  R <- psych::corr.test(x)$r # psych
+  p <- psych::corr.test(x)$p #psych
   if (zehnproz){
     mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "*  ", ifelse(p < .1, "†  ", "   "))))
   } else {
@@ -41,13 +41,15 @@ corstarsmd_d <- function(x, type="markdown", stellen=3, zehnproz=FALSE, abk=TRUE
   R <- format(round(cbind(rep(-1.111, ncol(x)), R), stellen ))[,-1] 
   Rnew <- matrix(paste(R, mystars, sep=""), ncol=ncol(x)) 
   diag(Rnew) <- paste(diag(R), "   ", sep="") 
-  rownames(Rnew) <- colnames(x) 
   colnames(Rnew) <- paste(colnames(x), " ", sep="") 
   if (abk) colnames(Rnew) <- abbreviate(colnames(Rnew), minlength = stellen + 3)
   Rnew <- as.data.frame(Rnew) 
   if (nrow(Rnew) == ncol(Rnew)) {
-    Rnew[!lower.tri(Rnew, diag = diagonale)] <- ""
+    Rnew <- sapply(Rnew, as.character)
+    if(untere) Rnew[!lower.tri(Rnew, diag = diagonale)] <- " " else Rnew[!upper.tri(Rnew, diag = diagonale)] <- " " 
+    Rnew <- as.data.frame(Rnew) 
   }
+  rownames(Rnew) <- colnames(x) 
   if(type=="ohne") return(Rnew) 
   return(kable(Rnew,format=type,...)) 
 }

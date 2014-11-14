@@ -4,7 +4,7 @@
 \title{Correlation table with significance stars}
 \usage{
 corstarsmd(x, type = "markdown", digits = 3, tenperc = FALSE,
-  abbrev = TRUE, diagonal = FALSE, ...)
+  abbrev = TRUE, diagonal = FALSE, lower = TRUE, ...)
 }
 \arguments{
 \item{x}{dataframe object}
@@ -18,6 +18,8 @@ corstarsmd(x, type = "markdown", digits = 3, tenperc = FALSE,
 \item{abbrev}{(logical) should columnames be shortened}
 
 \item{diagonal}{(logical) should the diagonal be filled}
+
+\item{lower}{(logical) should the lower triangle be used}
 
 \item{...}{additional parameters for kable}
 }

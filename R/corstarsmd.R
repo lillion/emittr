@@ -7,6 +7,7 @@
 #' @param tenperc (logical) should p<.10 also be denoted by a bubble (°)
 #' @param abbrev (logical) should columnames be shortened
 #' @param diagonal (logical) should the diagonal be filled
+#' @param lower (logical) should the lower triangle be used
 #' @param ... additional parameters for kable
 #' @export
 #' @importFrom psych corr.test
@@ -24,7 +25,7 @@
 #' # the saved file can be opened in Excel, the table copied and pasted into Word
 #' }
 
-corstarsmd <- function(x, type="markdown", digits=3, tenperc=FALSE, abbrev=TRUE, diagonal=FALSE,  ...){ 
+corstarsmd <- function(x, type="markdown", digits=3, tenperc=FALSE, abbrev=TRUE, diagonal=FALSE, lower=TRUE, ...){ 
   require(knitr)
   x <- x[sapply(x,is.numeric)]
   x <- as.matrix(x) 
@@ -38,17 +39,18 @@ corstarsmd <- function(x, type="markdown", digits=3, tenperc=FALSE, abbrev=TRUE,
   R <- format(round(cbind(rep(-1.111, ncol(x)), R), digits ))[,-1] 
   Rnew <- matrix(paste(R, mystars, sep=""), ncol=ncol(x)) 
   diag(Rnew) <- paste(diag(R), "   ", sep="") 
-  rownames(Rnew) <- colnames(x) 
+  # rownames(Rnew) <- colnames(x) 
   colnames(Rnew) <- paste(colnames(x), " ", sep="") 
   if (abbrev) colnames(Rnew) <- abbreviate(colnames(Rnew), minlength = digits + 3)
   Rnew <- as.data.frame(Rnew) 
 #if (!diagonal) Rnew <- Rnew[,-length(Rnew[1,])]
   if (nrow(Rnew) == ncol(Rnew)) {
     Rnew <- sapply(Rnew, as.character)
-    Rnew[!lower.tri(Rnew, diag = diagonal)] <- c("")
+    if(lower) Rnew[!lower.tri(Rnew, diag = diagonal)] <- " " else Rnew[!upper.tri(Rnew, diag = diagonal)] <- " " 
     Rnew <- as.data.frame(Rnew) 
   }
- if (!diagonal) Rnew <- Rnew[,-length(Rnew[1,])]
+rownames(Rnew) <- colnames(x) 
+  if(lower) Rnew <- Rnew[, -length(Rnew[1, ])] else Rnew <- Rnew[-length(Rnew[,1 ]), ]
   if(type=="none") return(Rnew) 
   return(kable(Rnew,format=type,...)) 
 }
