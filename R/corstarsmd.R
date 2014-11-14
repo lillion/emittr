@@ -9,7 +9,7 @@
 #' @param diagonal (logical) should the diagonal be filled
 #' @param ... additional parameters for kable
 #' @export
-#' @importFrom Hmisc rcorr
+#' @importFrom psych corr.test
 #' @keywords correlation semi
 #' @seealso \link{cor} 
 #' @return text table
@@ -24,15 +24,12 @@
 #' # the saved file can be opened in Excel, the table copied and pasted into Word
 #' }
 
-corstarsmd <- function(x, type="none", digits=3, tenperc=FALSE, abbrev=TRUE, diagonal=FALSE,  ...){ 
-  #require(Hmisc) 
+corstarsmd <- function(x, type="markdown", digits=3, tenperc=FALSE, abbrev=TRUE, diagonal=FALSE,  ...){ 
   require(knitr)
   x <- x[sapply(x,is.numeric)]
   x <- as.matrix(x) 
-#   R <- Hmisc::rcorr(x)$r 
-#   p <- Hmisc::rcorr(x)$P 
-  R <- corr.test(x)$r # psych
-  p <- corr.test(x)$p #psych
+  R <- psych::corr.test(x)$r # psych
+  p <- psych::corr.test(x)$p #psych
   if (tenperc){
 #     mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "* ", ifelse(p < .1, "✝  ", "   "))))
     mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "*  ", ifelse(p < .1, "°  ", "   "))))
@@ -47,7 +44,9 @@ corstarsmd <- function(x, type="none", digits=3, tenperc=FALSE, abbrev=TRUE, dia
   Rnew <- as.data.frame(Rnew) 
 #if (!diagonal) Rnew <- Rnew[,-length(Rnew[1,])]
   if (nrow(Rnew) == ncol(Rnew)) {
-    Rnew[!lower.tri(Rnew, diag = diagonal)] <- " "
+    Rnew <- sapply(Rnew, as.character)
+    Rnew[!lower.tri(Rnew, diag = diagonal)] <- c("")
+    Rnew <- as.data.frame(Rnew) 
   }
  if (!diagonal) Rnew <- Rnew[,-length(Rnew[1,])]
   if(type=="none") return(Rnew) 
