@@ -15,7 +15,7 @@
 #' @examples
 #' library(car)
 #' fit <- lm(mpg ~ disp + hp + wt + drat, data=mtcars) 
-#' # lm_output_spss_wrapper_d(fit, runden=2)
+#' lm_output_spss_wrapper_d(fit, runden=2)
 #' 
 #' \dontrun{
 #' # um "schöne" Tabellen zu bekommen

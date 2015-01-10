@@ -1,18 +1,24 @@
-
-
 rr <- function(l) {
-  r1 <- (function(x) {temp=summary(x); f=temp$fstatistic;c(R=sqrt(temp$r.squared),rsq=temp$r.squared, p = unname(pf(f[1],f[2],f[3],lower.tail=FALSE)),adjR2=temp$adj.r.squared,predR2=lm_pred_r_squared(x))})(l) 
+  r1 <- (function(x) {temp=summary(x); f=temp$fstatistic;c(R=sqrt(temp$r.squared),"R\U00B2"=temp$r.squared, p = unname(pf(f[1],f[2],f[3],lower.tail=FALSE)),"adj R\U00B2"=temp$adj.r.squared,"pred R\U00B2"=lm_pred_r_squared(x))})(l) 
   
   #r2 <- anova(l)
   
   #r2 <- r2[c(5,3,1,6)]
-  f <- summary(l)$fstatistic[c(2,3,1)]
-  p <- pf(f[1],f[2],f[3],lower.tail=FALSE)
+  f <- summary(l)$fstatistic#[c(2,3,1)]
+  f <- c(summary(l)$sigma,f)
+  names(f) <- c("Res SE","F","df1","df2")
+  #p <- pf(f[1],f[2],f[3],lower.tail=FALSE)
   #r2[1,] <- c(summary(ll[[1]])$fstatistic,p)
   # rch <- c(r1[1,2],diff(r1[,2]))
-  data.frame(t(r1),t(f), row.names="Model")
-  
+  #data.frame(t(r1),t(f), row.names="Model")
+  temp <- c(r1,f)
+  temp1=data.frame(A=NA,B=NA,C=NA,D=NA,E=NA,F=NA,G=NA)[numeric(0), ]
+  temp1=rbind(temp1,temp)
+  names(temp1) <- names(temp)
+  row.names(temp1) <- "Model"
+  temp1
 }
+
 
 
 round.df <- function(x, digits) {

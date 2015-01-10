@@ -23,6 +23,7 @@ lm_coef_spss <- function (fit) {
 	scaled <- data.frame(scale(fit$model))
 	lmz <- lm(formula(fit),data=scaled)
 	results <- cbind(summary(fit)$coefficients,beta=coef(lmz),rbind(c(NA,NA,NA),cor_lm_d(fit)))[c(1,2,5,3,4)]
+	names(results) <- c("B","Std Error","\u03B2","t","p")
 	ifelse(ncol(fit$model)==2, return(cbind(results,rbind(c(NA,NA,NA),cor_lm(fit)))), return(cbind(results,rbind(c(NA,NA,NA),cor_lm(fit)),Tolerance=c(NA,1/vif(fit)), VIF=c(NA,vif(fit)),
 	Problem=c("", ifelse(sqrt(vif(fit))> 2,"yes","no")))))
 }
