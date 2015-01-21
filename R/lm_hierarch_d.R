@@ -17,11 +17,11 @@
 #' lm_hierarch(conscien ~ sex + age + school, c(1),data=neoffi)
 #'}
 #' # 4 blocks with each time one additional predictor
-#' lm_hierarch(formula=mpg ~ disp + hp + wt + drat, blocks=c(1,1,1,1), summary=TRUE, data=mtcars)
+#' lm_hierarch_d(formula=mpg ~ disp + hp + wt + drat, blocks=c(1,1,1,1), summary=TRUE, data=mtcars)
 #' # 2 blocks with each time 2 additional predictors 
-#' lm_hierarch(mpg ~ disp + hp + wt + drat, c(2,2), data=mtcars) 
+#' lm_hierarch_d(mpg ~ disp + hp + wt + drat, c(2,2), data=mtcars) 
 #'
-lm_hierarch <- function(formula, # the complete formula, including all blocks from the hierarchical regression
+lm_hierarch_d <- function(formula, # the complete formula, including all blocks from the hierarchical regression
  blocks, # numeric vector denoting the lenght of each block, e.g. c(2,3,1)
   data, # the dataframe holding the variables for the estimation of the lm
   summary = FALSE,
@@ -32,7 +32,7 @@ lm_hierarch <- function(formula, # the complete formula, including all blocks fr
 	#print(txt)
 	limits <- c(gregexpr("\\+",txt,fixed=FALSE)[[1]]-1,nchar(txt))
 		if (length(limits)>sum(blocks)) blocks <- c(blocks,length(limits)-sum(blocks))
-	cat("\nBlocks with",paste(cumsum(blocks),collapse=", ")," predictors, respectively\n\n")
+	cat("\n",length(blocks), "Blöcke mit insgesamt",paste(cumsum(blocks),collapse=", "),"Prädiktoren\n\n")
 	blocks <- limits[cumsum(blocks)]
 	#print(limits)
 	if (summary) 	results <- lapply(blocks, function(x) summary(lm(as.formula(strtrim(txt,x)),data=data)))

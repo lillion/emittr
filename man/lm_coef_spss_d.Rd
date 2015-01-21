@@ -4,7 +4,7 @@
 \alias{lm_coef_spss_d}
 \title{Koeffizienten einer Lineare Regression dargestellt aehnlich SPSS}
 \usage{
-lm_coef_spss_d(fit, sterne = TRUE)
+lm_coef_spss_d(fit, sterne = TRUE, stellen = 2)
 }
 \arguments{
 \item{fit}{Objekt eines linearen Modells}
