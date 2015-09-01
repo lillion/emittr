@@ -1,7 +1,7 @@
 Package: umittr
 Type: Package
 Title: utility functions for psychological research
-Version: 0.1-7
+Version: 0.1-8
 Date: 2014-05-08
 Author: lillion
 Maintainer: Erik Danay <danay@lillion.e4ward.com>

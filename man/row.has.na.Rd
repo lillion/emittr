@@ -4,17 +4,17 @@
 \alias{row.has.na}
 \title{Analyse cases for missings}
 \usage{
-row.has.na(data, which = TRUE, zeile = FALSE)
+row.has.na(data, which = TRUE, percase = FALSE)
 }
 \arguments{
 \item{data}{dataframe}
 
-\item{which}{logical: sollen nur die Fallnummern ausgegeben werden}
+\item{which}{logical: should only case/row numbers be displayed}
 
-\item{Zeile}{logical: Missings pro Zeile anzeigen}
+\item{percase}{logical: show missings per case/row}
 }
 \value{
-Fallnummern bzw. Ja/Nein
+case numbers or LOGICAL
 }
 \description{
 Analyse cases for missings

@@ -34,7 +34,7 @@ return( data[, c(refcols, setdiff(names(data), refcols))])
 #' head(temp)
 #' rm(temp)
 varumstellen <- function(variablen, data) {
-  if (!class(variablen)=="character") stop("columns need to be given as strings")
+  if (!class(variablen)=="character") stop("Variable müssen als Strings angegeben werden!")
   return( data[, c(refcols, setdiff(names(data), refcols))])
 }
 
