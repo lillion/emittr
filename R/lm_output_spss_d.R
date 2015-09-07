@@ -11,6 +11,9 @@
 #' data(crime_data)
 #' fit <- lm(crime ~ pctwhite + pcths + pctmetro + single + poverty,data=crime_data)
 #' lm_coef_spss_d(fit)
+#' \dontrun{
+#' lapply(ll, lm_output_spss) # get outputs from several lm objects
+#'}
 lm_coef_spss_d <- function (fit, sterne=TRUE, stellen=2) {
 	if(class(fit)!="lm") stop(substitute(fit), " ist kein LM Objekt")
 	suppressPackageStartupMessages(require(car))

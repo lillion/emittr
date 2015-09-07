@@ -1,6 +1,8 @@
 #' @title Buchstabenreihen ersetzen in Strings
 #'
-#' @description <full description>
+#' @description Ersetzt gleichzeitig mehrere Buchstaben in Zeichenketten, wobei die Positionen im Vektor
+#' den jeweiligen Ersatz bestimmen, also 1. Stelle - 1. Stelle
+#' 2. Stelle - 2. Stelle usw.
 #' @param pattern das Muster nach Art von c("ä","ü","ö")
 #' @param replacement Ersatzmuster nach Art von c("ae","ue","oe")
 #' @param x Stringvektor, in dem die Ersetzung stattfinden soll

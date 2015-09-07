@@ -19,9 +19,10 @@ Rohwerten Normwerte zuordnen
 }
 \examples{
 x <- data.frame(x=rnorm(10000)) # Datensatz erzeugen
-x$i <- Tscores(x$x) # Normwerte erzeugen
-RohwertezuNormwerten(Rohwerte = x["x"],Normwerte = x["i"])
-y <- x[RohwertezuNormwerten(Rohwerte = x$x,Normwerte = x["i"])$rows,]
+x$T <- Tscorestransformieren(x$x) # in T-Werte umwandeln
+RohwertezuNormwerten(Rohwerte = x["x"],Normwerte = x["T"])
+x$Stanine <- staninentransformieren(x$x) # in Stanine umwandeln
+y <- x[RohwertezuNormwerten(Rohwerte = x$x,Normwerte = x["T"])$rows,]
 y
 }
 

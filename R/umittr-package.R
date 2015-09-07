@@ -1,29 +1,29 @@
-#' Helper functions to ease the transition from SPSS to R
+#' Hilfsfunktionen in R, um den Übergang von GUI zu Syntax zu erleichtern (z.B. SPSS zu R)
 #' 
 #' @name umittr-package
 #' @aliases umittr
 #' @docType package
-#' @title Helper functions to ease the transition from SPSS to R
+#' @title Hilfsfunktionen für den Übergang von SPSS zu R
 #' @author \email{macx@@lillion.e4ward.com}
 #' @keywords package
 #' @seealso \code{\link{...}}
 NULL
 
-#' Statewide Crime Data
+#' Verbrechensdaten der USA 1993
 #'
 #' The data are from Statistical Abstract of the United States and most
 #' variables were measured in 1993.
 #'
 #' \itemize{
-#'   \item \emph{sid} ID number
-#'   \item \emph{state} state abbreviation
-#'   \item \emph{crime} violent crime rate (per 100,000 people in population)
-#'   \item \emph{murder} murder rate (per 100,000 people in population)
-#'   \item \emph{pctmetro} percent in metropolitan areas
-#'   \item \emph{pctwhite} percent white
-#'   \item \emph{pcths} percent high school graduates
-#'   \item \emph{poverty}  percent with income below the poverty level
-#'   \item \emph{single} percent of families headed by a single parent
+#'   \item \emph{sid} ID Nummer
+#'   \item \emph{state} US-Staat Abkürzung
+#'   \item \emph{crime} Gewaltverbrechen-Rate (pro 100000)
+#'   \item \emph{murder} Mord-Rate (pro 100000)
+#'   \item \emph{pctmetro} Anteil der Stadtbevölkerung in Prozent
+#'   \item \emph{pctwhite} Anteil der Weißen in Prozent
+#'   \item \emph{pcths} Anteil der Highschool-Absolventen in Prozent
+#'   \item \emph{poverty}  Anteil der als arm einzustufenden Bevölkerung in Prozent
+#'   \item \emph{single} Anteil der Alleinerziehenden in Prozent
 #' }
 #'
 #' @docType data

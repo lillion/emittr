@@ -187,7 +187,7 @@ cat("hello",(tabfinal$Total))
 
         legend(30, par("usr")[4]*1.07 , legend = c('vorhanden','fehlend')
             , fill = c(hsv(hue,1,value),"#FFFFFF"), border = "#000000"
-            , bty = 'n', ncol = 2) 
+            , bty = 'n', ncol = 2, xjust = 0.5) 
 
         par(xpd=FALSE)
         finaltable

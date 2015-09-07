@@ -21,6 +21,9 @@ Diese Funktion liefert die Tabelle der Regressionskoeffizienten (beta) ähnlich 
 data(crime_data)
 fit <- lm(crime ~ pctwhite + pcths + pctmetro + single + poverty,data=crime_data)
 lm_coef_spss_d(fit)
+\dontrun{
+lapply(ll, lm_output_spss) # get outputs from several lm objects
+}
 }
 \seealso{
 \code{\link{lm}}

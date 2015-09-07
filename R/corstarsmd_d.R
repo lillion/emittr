@@ -27,7 +27,7 @@
 
 corstarsmd_d <- function(x, type="markdown", stellen=3, zehnproz=FALSE, abk=TRUE, diagonale=FALSE, untere=TRUE, ...){ 
   #suppressPackageStartupMessages(require(Hmisc)) 
-  suppressPackageStartupMessages(require(knitr))
+  # suppressPackageStartupMessages(require(knitr))
   x <- x[sapply(x,is.numeric)]
   x <- as.matrix(x) 
   #   R <- Hmisc::rcorr(x)$r 
@@ -52,5 +52,6 @@ corstarsmd_d <- function(x, type="markdown", stellen=3, zehnproz=FALSE, abk=TRUE
   rownames(Rnew) <- colnames(x) 
   if(untere) Rnew <- Rnew[, -length(Rnew[1, ])] else Rnew <- Rnew[-length(Rnew[,1 ]), ]
   if(type=="ohne") return(Rnew) 
-  return(kable(Rnew,format=type,...)) 
+  if("knitr" %in% rownames(installed.packages()) == FALSE) {return("Knitr fehlt! Bitte installieren!")}
+  return(knitr::kable(Rnew,format=type,...)) 
 }

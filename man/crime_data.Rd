@@ -3,7 +3,7 @@
 \docType{data}
 \name{crime_data}
 \alias{crime_data}
-\title{Statewide Crime Data}
+\title{Verbrechensdaten der USA 1993}
 \format{A data frame with 51 rows and 9 variables}
 \source{
 A. Agresti and B. Finlay, STATISTICAL METHODS FOR THE SOCIAL SCIENCES, Prentice Hall, 3rd edition, 2008
@@ -17,15 +17,15 @@ variables were measured in 1993.
 }
 \details{
 \itemize{
-  \item \emph{sid} ID number
-  \item \emph{state} state abbreviation
-  \item \emph{crime} violent crime rate (per 100,000 people in population)
-  \item \emph{murder} murder rate (per 100,000 people in population)
-  \item \emph{pctmetro} percent in metropolitan areas
-  \item \emph{pctwhite} percent white
-  \item \emph{pcths} percent high school graduates
-  \item \emph{poverty}  percent with income below the poverty level
-  \item \emph{single} percent of families headed by a single parent
+  \item \emph{sid} ID Nummer
+  \item \emph{state} US-Staat Abkürzung
+  \item \emph{crime} Gewaltverbrechen-Rate (pro 100000)
+  \item \emph{murder} Mord-Rate (pro 100000)
+  \item \emph{pctmetro} Anteil der Stadtbevölkerung in Prozent
+  \item \emph{pctwhite} Anteil der Weißen in Prozent
+  \item \emph{pcths} Anteil der Highschool-Absolventen in Prozent
+  \item \emph{poverty}  Anteil der als arm einzustufenden Bevölkerung in Prozent
+  \item \emph{single} Anteil der Alleinerziehenden in Prozent
 }
 }
 \keyword{datasets}

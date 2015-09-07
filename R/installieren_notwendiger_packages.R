@@ -13,7 +13,7 @@
 #' @examples 
 #' pakete_installieren()
 pakete_installieren <- function () {
-  wants <- c("car", "lmtest", "QuantPsyc", "lavaan", "psych", "ggplot2", "reshape2", "semTools", "semPlot","GPArotation", "HH", "Hmisc", "knitr","MplusAutomation", "sjPlot", "pander", "lattice", "perturb", "ggvis","ez","dplyr")
+  wants <- c("car", "lmtest", "QuantPsyc", "lavaan", "psych", "ggplot2", "reshape2", "semTools", "semPlot","GPArotation", "HH", "Hmisc", "knitr", "sjPlot", "pander", "lattice", "perturb", "ggvis","ez","dplyr")
   has   <- wants %in% rownames(installed.packages())
   if(any(!has)) install.packages(wants[!has],dependencies=T)
   update.packages(ask = F)

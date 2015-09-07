@@ -19,7 +19,9 @@ mgsub(pattern, replacement, x, ...)
 string vektor
 }
 \description{
-<full description>
+Ersetzt gleichzeitig mehrere Buchstaben in Zeichenketten, wobei die Positionen im Vektor
+den jeweiligen Ersatz bestimmen, also 1. Stelle - 1. Stelle
+2. Stelle - 2. Stelle usw.
 }
 \examples{
 \dontrun{

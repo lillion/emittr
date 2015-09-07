@@ -4,9 +4,9 @@
 \name{umittr-package}
 \alias{umittr}
 \alias{umittr-package}
-\title{Helper functions to ease the transition from SPSS to R}
+\title{Hilfsfunktionen für den Übergang von SPSS zu R}
 \description{
-Helper functions to ease the transition from SPSS to R
+Hilfsfunktionen in R, um den Übergang von GUI zu Syntax zu erleichtern (z.B. SPSS zu R)
 }
 \author{
 \email{macx@lillion.e4ward.com}

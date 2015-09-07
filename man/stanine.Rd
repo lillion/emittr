@@ -16,7 +16,7 @@ Dataframe mit den Grenzwerten für die Stanine
 Stanine Werte berechnen
 }
 \examples{
-x <- rnorm(10000) # Datensatz erzeugen
-stanine(x)
+IQ <- rnorm(20000,100,15) # Datensatz erzeugen
+stanine(IQ)
 }
 

@@ -6,8 +6,9 @@
 #' @export
 #'
 #' @examples
-#' x <- rnorm(10000) # Datensatz erzeugen
-#' stanine(x)
+#' IQ <- rnorm(20000,100,15) # Datensatz erzeugen
+#' stanine(IQ)
+#' 
 stanine=function(x){
   probs_l= c(0, 4, 11,23,40,60,77,89,96)/100
   probs_h=c(4,11,23,40,60,77,89,96,100)/100
@@ -29,10 +30,13 @@ stanine=function(x){
 #' @examples
 #' x <- rnorm(10000) # Datensatz erzeugen
 #' y <- c(1.2,-1,.4,3) # für diese Werte 
-#' staninenormierung(x)
-#' table(staninenormierung(x))
-#' hist(staninenormierung(x),breaks=0:9,xlim=c(0,9))
-staninenormierung <- function(x){
+#' staninentransformieren(x)
+#' table(staninentransformieren(x))
+#' hist(staninentransformieren(x),breaks=0:9,xlim=c(0,9))
+#' hist(exp(x)) # schief verteilte Daten
+#' x <- staninentransformieren(exp(x)) 
+#' table(staninentransformieren(x))
+staninentransformieren <- function(x){
   probs= c(0,4,11,23,40,60,77,89,96,100)/100
   y <- findInterval(x, quantile(x,  probs), all.inside = TRUE)
   return(y)
@@ -49,8 +53,8 @@ staninenormierung <- function(x){
 #'
 #' @examples
 #' x <- data.frame(x=rnorm(10000)) # Datensatz erzeugen
-#' Tscores(x$x) # Normwerte erzeugen
-Tscores <- function(x){
+#' Tscorestransformieren(x$x) # in Normwerte umwandeln
+Tscorestransformieren <- function(x){
   z <- scale(x,center = TRUE,scale = TRUE)
   # z2 <- (x-mean(x))/sd(x)
   t <- z*10+50
@@ -69,9 +73,10 @@ Tscores <- function(x){
 #'
 #' @examples
 #' x <- data.frame(x=rnorm(10000)) # Datensatz erzeugen
-#' x$i <- Tscores(x$x) # Normwerte erzeugen
-#' RohwertezuNormwerten(Rohwerte = x["x"],Normwerte = x["i"])
-#' y <- x[RohwertezuNormwerten(Rohwerte = x$x,Normwerte = x["i"])$rows,]
+#' x$T <- Tscorestransformieren(x$x) # in T-Werte umwandeln
+#' RohwertezuNormwerten(Rohwerte = x["x"],Normwerte = x["T"])
+#' x$Stanine <- staninentransformieren(x$x) # in Stanine umwandeln
+#' y <- x[RohwertezuNormwerten(Rohwerte = x$x,Normwerte = x["T"])$rows,]
 #' y
 RohwertezuNormwerten <- function(Rohwerte, Normwerte){
   #stopifnot(length(Rohwerte)==length(Normwerte))
