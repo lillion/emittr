@@ -32,8 +32,10 @@ options(show.signif.stars=TRUE) # sollen die Sterne bei Signifikanzen stehen? so
 try(library(psych))
 #notfalls in den folgenden Zeilen das # am Zeilenanfang löschen, damit die Befehle ausgeführt werden
 try(library(ggplot2)) #ggplot2 ist für Graphiken, nicht unbedingt notwendig
-try(library(foreign)) #um SPSS zu laden
+try(library(foreign)) #um SPSS Dateien zu laden
 try(library(dplyr)) # dplyr für viele Funktionen der Datenmanipulation
+try(library(umittr)) # umittr Package laden
+# try(library(readxl)) # Excel Dateien lesen
 
 ## Do you want to automatically convert strings to factor variables in a data.frame?
 ## WARNING!!! This makes your code less portable/reproducible.
