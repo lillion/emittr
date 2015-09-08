@@ -2,7 +2,7 @@
 % Please edit documentation in R/lm_hierarch_d.R
 \name{lm_hierarch_d}
 \alias{lm_hierarch_d}
-\title{Hierarchische lineare Regression mit mehreren Blöcken}
+\title{Hierarchische lineare Regression mit mehreren Bl\code{ö}cken}
 \usage{
 lm_hierarch_d(formula, blocks, data, summary = FALSE, ...)
 }

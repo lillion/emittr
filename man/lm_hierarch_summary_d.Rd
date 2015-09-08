@@ -2,7 +2,7 @@
 % Please edit documentation in R/lm_hierarch_model_summary_d.R
 \name{lm_hierarch_summary_d}
 \alias{lm_hierarch_summary_d}
-\title{Übersicht der Ergebnisse einer Hierarchischen Regression}
+\title{\code{Ü}bersicht der Ergebnisse einer Hierarchischen Regression}
 \usage{
 lm_hierarch_summary_d(formula, blocks, stellen = 2, ...)
 }
