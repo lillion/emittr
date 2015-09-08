@@ -13,10 +13,16 @@ stanine(x)
 Dataframe mit den Grenzwerten für die Stanine
 }
 \description{
-Stanine Werte berechnen
+Bestimmt die Staninewert-Grenzen eines gegebenen Vektors. Praktisch für die Normierung eines neuen Tests.
+Die Normierung erfolgt nach den Vorschlägen von Telt und Stelzl.
 }
 \examples{
 IQ <- rnorm(20000,100,15) # Datensatz erzeugen
 stanine(IQ)
 }
+\references{
+Tent, L., Stelzl, I. (1993), Pädagogisch-psychologische Diagnostik: Theoretische und methodische Grundlagen. Göttingen: Hogrefe.
+}
+\keyword{Normierung}
+\keyword{Stanine,}
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/lm_output_spss_wrapper_d.R
 \name{lm_output_spss_wrapper_d}
 \alias{lm_output_spss_wrapper_d}
-\title{Ergebnis einer linearen Regression ähnlich SPSS}
+\title{Ergebnis einer linearen Regression aehnlich SPSS}
 \usage{
 lm_output_spss_wrapper_d(fit, Rsquare = TRUE, coefficients = TRUE,
   collinearity = TRUE, plot = TRUE, runden = 3, sterne = TRUE)

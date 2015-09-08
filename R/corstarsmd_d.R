@@ -7,9 +7,9 @@
 #' @param zehnproz (logisch) soll p<.10 mit einem Kreuz angezeigt werden
 #' @param abk (logisch) sollen Spaltennamen gekürzt werden
 #' @param diagonale (logisch) soll die Diagonale gefüllt werden
-#' @param ... andere Parameter für \link{kable} 
+#' @param ... andere Parameter für \link{kable}, falls type="html" oder "markdown" 
 #' @export
-#' @keywords correlation korrelation
+#' @keywords korrelation
 #' @seealso \link{cor} 
 #' @return text table
 #' @examples 
@@ -26,16 +26,12 @@
 #' }
 
 corstarsmd_d <- function(x, type="markdown", stellen=3, zehnproz=FALSE, abk=TRUE, diagonale=FALSE, untere=TRUE, ...){ 
-  #suppressPackageStartupMessages(require(Hmisc)) 
-  # suppressPackageStartupMessages(require(knitr))
   x <- x[sapply(x,is.numeric)]
   x <- as.matrix(x) 
-  #   R <- Hmisc::rcorr(x)$r 
-  #   p <- Hmisc::rcorr(x)$P 
   R <- psych::corr.test(x)$r # psych
-  p <- psych::corr.test(x)$p #psych
+  p <- psych::corr.test(x)$p # psych
   if (zehnproz){
-    mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "*  ", ifelse(p < .1, "†  ", "   "))))
+    mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "*  ", ifelse(p < .1, "\u2020  ", "   "))))
   } else {
   mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "*  ", "   ")) ) }
   R <- format(round(cbind(rep(-1.111, ncol(x)), R), stellen ))[,-1] 

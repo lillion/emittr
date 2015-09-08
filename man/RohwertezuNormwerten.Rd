@@ -25,4 +25,7 @@ x$Stanine <- staninentransformieren(x$x) # in Stanine umwandeln
 y <- x[RohwertezuNormwerten(Rohwerte = x$x,Normwerte = x["T"])$rows,]
 y
 }
+\references{
+Tent, L., Stelzl, I. (1993), Pädagogisch-psychologische Diagnostik: Theoretische und methodische Grundlagen. Göttingen: Hogrefe.
+}
 

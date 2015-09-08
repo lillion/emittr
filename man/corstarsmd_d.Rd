@@ -20,7 +20,7 @@ corstarsmd_d(x, type = "markdown", stellen = 3, zehnproz = FALSE,
 
 \item{diagonale}{(logisch) soll die Diagonale gefüllt werden}
 
-\item{...}{andere Parameter für \link{kable}}
+\item{...}{andere Parameter für \link{kable}, falls type="html" oder "markdown"}
 }
 \value{
 text table
@@ -44,6 +44,5 @@ write.xlsx(for_word, "test.xlsx") # Ausgabe in ein Excel-Dokument speichern
 \seealso{
 \link{cor}
 }
-\keyword{correlation}
 \keyword{korrelation}
 

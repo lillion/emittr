@@ -2,7 +2,7 @@
 % Please edit documentation in R/setup.R
 \name{setup}
 \alias{setup}
-\title{erstes Setup von R f?r das RProfile}
+\title{erstes Setup von R fuer das RProfile}
 \usage{
 setup()
 }
@@ -12,7 +12,19 @@ Falls die Datei '.Rprofile' schon besteht, wird ein Backup
 der alten Daten erzeugt.
 }
 \description{
-erstes Setup von R f?r das RProfile
+Mit dieser einfachen Funktion ohne Parameter wird für den Benutzer in seinem Heimverzeichnis die .Rprofile Datei erstellt, die bei jedem Start von R aufgerufen wird.
+Darin sind Voreinstellungen enthalten, die somit nicht mehr jedes Mal per Hand vorgenommen werden müssen.
+\itemize{
+\item library psych, ggplot2, foreign, dplyr, umittr werden geladen
+\item options(stringsAsFactors=FALSE)
+\item options(width=75, digits=3) # Zeilenbreite und Kommastellen
+\item options(show.signif.stars=TRUE) # Signifikanzsterne
+\item o() # öffent im Explorer/Finder das aktuelle Verzeichnis
+\item plotstart() # entfernt den Hintergrund für Plots
+\item Schriftfamilien für Graphiken
+\item
+\item
+}
 }
 \examples{
 setup()

@@ -1,4 +1,4 @@
-#' @title \code{Ü}bersicht der Ergebnisse einer Hierarchischen Regression
+#' @title Uebersicht der Ergebnisse einer Hierarchischen Regression
 #'
 #' @description Diese Funktion führt eine hierarchische Regression mit mehreren Blöcken durch und bietet sowohl eine Modellübersicht mit den Veränderungen in R² und deren Signifikanz, als auch eine Übersicht der Koeffizienten pro Modell
 #' @param formula die Formel des vollständigen, d.h. alle Blöcke umfassenden Modells

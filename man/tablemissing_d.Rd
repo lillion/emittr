@@ -2,7 +2,7 @@
 % Please edit documentation in R/tablemissing-mod-color_mod_d.R
 \name{tablemissing_d}
 \alias{tablemissing_d}
-\title{Graphische Darstellung unterschiedlicher missing-value Muster über mehrere Items}
+\title{Graphische Darstellung unterschiedlicher missing-value Muster ueber mehrere Items}
 \usage{
 tablemissing_d(x, sortby = "beides", main = "Darstellung der Missings",
   hue = 0.6, value = 0.9, cut = 0)

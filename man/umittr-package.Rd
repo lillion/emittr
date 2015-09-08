@@ -6,7 +6,7 @@
 \alias{umittr-package}
 \title{Hilfsfunktionen f\code{ü}r den \code{Ü}bergang von SPSS zu R}
 \description{
-Hilfsfunktionen in R, um den \code{Ü}bergang von GUI zu Syntax zu erleichtern (z.B. SPSS zu R)
+Hilfsfunktionen in R, um den Uebergang von GUI zu Syntax zu erleichtern (z.B. SPSS zu R)
 }
 \author{
 \email{macx@lillion.e4ward.com}

@@ -15,7 +15,7 @@ nichts
 \description{
 voellig unnoetige Funktion, aber praktisch
 "car", "lmtest", "QuantPsyc", "lavaan",
-"semTools", "semPlot","GPArotation", "HH", "knitr","MplusAutomation",
+"semTools", "semPlot","GPArotation", "HH", "knitr",
  "sjPlot", "pander", "lattice",  "ggvis","ez","dplyr"
 früher noch: "psych", "ggplot2", "reshape2", "Hmisc", "perturb",
 "Rcmdr"

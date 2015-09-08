@@ -1,10 +1,13 @@
 #' Stanine Werte berechnen
 #'
+#' @description Bestimmt die Staninewert-Grenzen eines gegebenen Vektors. Praktisch für die Normierung eines neuen Tests.
+#' Die Normierung erfolgt nach den Vorschlägen von Telt und Stelzl.
 #' @param x 
 #'
 #' @return Dataframe mit den Grenzwerten für die Stanine
 #' @export
-#'
+#' @references Tent, L., Stelzl, I. (1993), Pädagogisch-psychologische Diagnostik: Theoretische und methodische Grundlagen. Göttingen: Hogrefe.
+#' @keywords Stanine, Normierung
 #' @examples
 #' IQ <- rnorm(20000,100,15) # Datensatz erzeugen
 #' stanine(IQ)
@@ -71,6 +74,7 @@ Tscorestransformieren <- function(x){
 #' @return Dataframe
 #' @export
 #'
+#' @references Tent, L., Stelzl, I. (1993), Pädagogisch-psychologische Diagnostik: Theoretische und methodische Grundlagen. Göttingen: Hogrefe.
 #' @examples
 #' x <- data.frame(x=rnorm(10000)) # Datensatz erzeugen
 #' x$T <- Tscorestransformieren(x$x) # in T-Werte umwandeln

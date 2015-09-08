@@ -1,4 +1,4 @@
-#' Hilfsfunktionen in R, um den \code{Ü}bergang von GUI zu Syntax zu erleichtern (z.B. SPSS zu R)
+#' Hilfsfunktionen in R, um den Uebergang von GUI zu Syntax zu erleichtern (z.B. SPSS zu R)
 #' 
 #' @name umittr-package
 #' @aliases umittr

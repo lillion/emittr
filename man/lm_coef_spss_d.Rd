@@ -12,7 +12,7 @@ lm_coef_spss_d(fit, sterne = TRUE, stellen = 2)
 \item{sterne}{(logisch) sollen Signifikanzsterne (\code{\link{symnum}}) gedruckt werden}
 }
 \value{
-dataframe des Ergebnisses einer Regression \code{ä}hnlich der in SPSS
+dataframe des Ergebnisses einer Regression ähnlich der in SPSS
 }
 \description{
 Diese Funktion liefert die Tabelle der Regressionskoeffizienten (\code{β}) ähnlich der Darstellung in SPSS

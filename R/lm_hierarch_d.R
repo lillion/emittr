@@ -1,4 +1,4 @@
-#' @title Hierarchische lineare Regression mit mehreren Bl\code{ö}cken
+#' @title Hierarchische lineare Regression mit mehreren Bloecken
 #'
 #' @description Hierarchichal regression with several blocks estimated in sequence
 #' This is basically a wrapper function for \code{\link{lm}} that splits the formula 

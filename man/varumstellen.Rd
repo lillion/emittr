@@ -2,7 +2,7 @@
 % Please edit documentation in R/colreorder_d.R
 \name{varumstellen}
 \alias{varumstellen}
-\title{Variablen-Reihenfolge ändern}
+\title{Variablen-Reihenfolge aendern}
 \usage{
 varumstellen(variablen, data)
 }

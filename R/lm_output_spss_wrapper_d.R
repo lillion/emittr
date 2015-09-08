@@ -1,4 +1,4 @@
-#' @title Ergebnis einer linearen Regression ähnlich SPSS
+#' @title Ergebnis einer linearen Regression aehnlich SPSS
 #'
 #' @description Dreigeteiltes Ergebnis einer linearen Regression ähnlich der Ausgabe in SPSS.  Neben einem Modelübersicht mit Varianzaufklärung werden die Koeffizienten aufgeführt und eine Kollinearitätsdiagnose angeboten.
 #' @param fit Objekt eines linearen Modells

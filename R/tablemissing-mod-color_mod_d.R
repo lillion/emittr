@@ -16,7 +16,7 @@
 # May, 2014
 
 
-#' @title Graphische Darstellung unterschiedlicher missing-value Muster über mehrere Items
+#' @title Graphische Darstellung unterschiedlicher missing-value Muster ueber mehrere Items
 #'
 #' @description Für eine Anzahl von Items werden die jeweilige Anzahl der Missing per Item
 #'  als auch die unterschiedlichen Missing-Muster über alle Items graphisch dargestellt

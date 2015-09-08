@@ -2,6 +2,7 @@
 
 export(RohwertezuNormwerten)
 export(Tscorestransformieren)
+export(anzahlmissings)
 export(cor_lm_d)
 export(corstarsmd_d)
 export(extractlavaan2table)

@@ -4,14 +4,12 @@
 \alias{fall.hat.missings}
 \title{Missinganalyse pro Zeile}
 \usage{
-fall.hat.missings(data, welcher = TRUE, zeile = FALSE)
+fall.hat.missings(data, logisch = FALSE)
 }
 \arguments{
 \item{data}{Datensatz}
 
-\item{which}{logisch: sollen nur die Fallnummern ausgegeben werden}
-
-\item{Zeile}{logisch: Missings pro Zeile anzeigen}
+\item{logisch}{logisch: sollen ein logischer Vektor ausgegeben werden (standard=FALSE)}
 }
 \value{
 Fallnummern bzw. Ja/Nein
@@ -20,8 +18,11 @@ Fallnummern bzw. Ja/Nein
 Missinganalyse pro Zeile
 }
 \examples{
-demoframe <- data.frame(sapply(1:15,function(x) rnorm(50,100,10)))
+demoframe <- data.frame(sapply(1:10,function(x) rnorm(30,100,10)))
 demoframe <- as.data.frame(lapply(demoframe, function(x) "is.na<-"(x, sample(seq(x), floor(length(x) * runif(1, 0, .2))))))
-fall.hat.missings(demoframe)
+demoframe
+fall.hat.missings(demoframe) # Fallnummern mit Missings
+fall.hat.missings(demoframe,logisch = T) # Vektor T/F für Fälle mit und ohne Missings
+anzahlmissings(demoframe)
 }
 
