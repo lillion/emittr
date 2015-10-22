@@ -2,7 +2,7 @@
 % Please edit documentation in R/KI.R
 \name{KI}
 \alias{KI}
-\title{Title Berechnung von Konfidenzintervallen}
+\title{Berechnung von Konfidenzintervallen}
 \usage{
 KI(wert, standardabweichung, reliabilitaet, seitigkeit = 1,
   sicherheit = 0.8, mittelwert = NA, typ = "a")
@@ -10,9 +10,9 @@ KI(wert, standardabweichung, reliabilitaet, seitigkeit = 1,
 \arguments{
 \item{wert}{Roh- bzw. Standardwert im Test}
 
-\item{standardabweichung}{Die Standardabweichung des verwendeten Wert}
+\item{standardabweichung}{Die Standardabweichung des verwendeten Werts}
 
-\item{reliabilitaet}{Reliabilität zwischen 0 und 1}
+\item{reliabilitaet}{Reliabilität des Tests - zwischen 0 und 1}
 
 \item{seitigkeit}{1 oder 2}
 
@@ -26,7 +26,7 @@ KI(wert, standardabweichung, reliabilitaet, seitigkeit = 1,
 Konfidenzintervall
 }
 \description{
-Title Berechnung von Konfidenzintervallen
+Berechnung von Konfidenzintervallen
 }
 \examples{
 KI(wert = 66,standardabweichung = 10,reliabilitaet = .98,sicherheit = .99,seitigkeit = 1,mittelwert = 50,typ = "r") # inklusive Regressionshypothese

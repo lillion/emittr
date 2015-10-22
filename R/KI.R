@@ -1,8 +1,8 @@
-#' Title Berechnung von Konfidenzintervallen
+#' Berechnung von Konfidenzintervallen
 #'
 #' @param wert Roh- bzw. Standardwert im Test
-#' @param standardabweichung Die Standardabweichung des verwendeten Wert
-#' @param reliabilitaet Reliabilität zwischen 0 und 1
+#' @param standardabweichung Die Standardabweichung des verwendeten Werts
+#' @param reliabilitaet Reliabilität des Tests - zwischen 0 und 1
 #' @param seitigkeit 1 oder 2
 #' @param sicherheit Sicherheitswahrscheinlichkeit zwischen 0 und 1
 #' @param mittelwert für Äquivalenzhypothese: Mittelwert der Verteilung
@@ -21,7 +21,7 @@ KI <- function(wert, standardabweichung, reliabilitaet, seitigkeit=1, sicherheit
   if(typ=="r" & !is.na(mittelwert)) {wertt <- reliabilitaet*wert+mittelwert*(1-reliabilitaet)}
   b <- sex*qnorm(z)
   bt <- set*qnorm(z)
-  cat("Äquivalenz: ", c(wert-b,wert+b))
+  cat("\nÄquivalenz: ", c(wert-b,wert+b))
   if(exists("wertt")) cat("\nRegression: ",c(wertt-bt,wertt+bt))
 }
 
