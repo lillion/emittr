@@ -13,6 +13,7 @@
 #'
 #' @examples
 #' KI(wert = 66,standardabweichung = 10,reliabilitaet = .98,sicherheit = .99,seitigkeit = 1,mittelwert = 50,typ = "r") # inklusive Regressionshypothese
+#' KI(wert = 66,standardabweichung = 10,reliabilitaet = .96,sicherheit = .8,seitigkeit = 1,mittelwert = 50,typ = "r") # inklusive Regressionshypothese
 KI <- function(wert, standardabweichung, reliabilitaet, seitigkeit=1, sicherheit=.80, mittelwert=NA, typ="a"){
   sex <- standardabweichung*sqrt(1-reliabilitaet)
   set <- standardabweichung*sqrt(reliabilitaet*(1-reliabilitaet))

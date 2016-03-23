@@ -11,10 +11,11 @@ rr <- function(l) {
   #r2[1,] <- c(summary(ll[[1]])$fstatistic,p)
   # rch <- c(r1[1,2],diff(r1[,2]))
   #data.frame(t(r1),t(f), row.names="Model")
-  temp <- c(r1,f)
+    temp <- c(r1,f)
   temp1=data.frame(A=NA,B=NA,C=NA,D=NA,E=NA,F=NA,G=NA)[numeric(0), ]
   temp1=rbind(temp1,temp)
   names(temp1) <- names(temp)
+  if(round(temp1$p,3)==0) temp1$p <- "<.001" ## neu
   row.names(temp1) <- "Model"
   temp1
 }
