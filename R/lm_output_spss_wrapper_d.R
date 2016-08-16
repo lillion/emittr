@@ -31,12 +31,19 @@ lm_output_spss_wrapper_d <- function (fit, Rsquare=TRUE, coefficients=TRUE, coll
   if (coefficients) results[["Koeffizienten"]]=lm_coef_spss_d(fit,sterne=sterne, fix=fix)
   if (collinearity) results[["Kollinearität"]]=lm_coll(fit,add.intercept=FALSE)
   if (plot) {
-    op <- par (mfrow=c(2,2))
-    zresid <- scale(resid(fit))
-    hist(zresid, breaks=24);
-    plot(predict(fit), resid(fit)); abline(0,0)
-    qqnorm(zresid); abline(0,1)
-    par(op)
+    # op <- par (mfrow=c(2,2))
+    zresid <- data.frame(Residuen=scale(resid(fit)))
+    # hist(zresid, breaks=24);
+    # plot(predict(fit), resid(fit)); abline(0,0)
+    # qqnorm(zresid); abline(0,1)
+    # par(op)
+    library(ggplot2)
+    library(gridExtra)
+    p1 <- ggplot(zresid,aes(Residuen))+geom_histogram(bins=dim(zresid)[1]/1.1)+geom_vline(xintercept=0)+theme_bw()
+    predictdata <- data.frame(predicted=predict(fit), residuals=resid(fit))
+    p2 <- ggplot(predictdata,aes(predicted,residuals))+geom_point(size=.9)+geom_smooth()+theme_bw()
+    p3 <- umittr:::qqplot.data(zresid$Residuen)
+    grid.arrange(p1,p2,p3,ncol=2)
   }
   if(is.numeric(runden)) return(sapply(results, round.df, digits=runden))
 results  
