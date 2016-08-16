@@ -5,7 +5,8 @@
 \title{Ergebnis einer linearen Regression aehnlich SPSS}
 \usage{
 lm_output_spss_wrapper_d(fit, Rsquare = TRUE, coefficients = TRUE,
-  collinearity = TRUE, plot = TRUE, runden = 3, sterne = TRUE)
+  collinearity = TRUE, plot = TRUE, runden = 3, sterne = TRUE,
+  fix = TRUE)
 }
 \arguments{
 \item{fit}{Objekt eines linearen Modells}
@@ -16,11 +17,13 @@ lm_output_spss_wrapper_d(fit, Rsquare = TRUE, coefficients = TRUE,
 
 \item{collinearity}{(logisch) soll eine Kollinearitätsdiagnose durchgeführt werden}
 
-\item{plot}{sollen Histogramm der Residuen, qq plot und Plot der vorhergesagten Werte/Fehler erstellt werden}
+\item{plot}{(logisch) sollen Histogramm der Residuen, qq plot und Plot der vorhergesagten Werte/Fehler erstellt werden}
 
-\item{runden}{sollen die Ergebnisse auf x Stellen gerundet werden. Sinnvoll sind 2 oder 3}
+\item{runden}{(nummerisch) Anzahl der Stellen, auf die die Ergebnisse gerundet werden. Sinnvoll sind 2 oder 3}
 
 \item{sterne}{(logisch) sollen Signifikanzsterne angegeben werden}
+
+\item{fix}{(logisch) sollen p Werte gerundet 0 als <.001 angezeigt werden}
 }
 \value{
 Liste mit 3 Elementen (dataframe) des Ergebnisses einer Regression ähnlich der in SPSS
@@ -40,7 +43,7 @@ lapply(ll, function(x) kable(lm_output_spss_wrapper_d(x)))
 }
 }
 \seealso{
-\code{\link{lm}}
+\code{\link{lm}} \code{\link{lm_coef_spss_d}}
 }
 \keyword{lm}
 \keyword{regression}

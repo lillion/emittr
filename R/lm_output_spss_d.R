@@ -3,10 +3,12 @@
 #' @description Diese Funktion liefert die Tabelle der Regressionskoeffizienten (\code{β}) ähnlich der Darstellung in SPSS
 #' @param fit Objekt eines linearen Modells
 #' @param sterne (logisch) sollen Signifikanzsterne (\code{\link{symnum}}) gedruckt werden
+#' @param stellen (nummerisch) auf wie viele Stellen soll gerundet werden, voreingestellt ist 2
+#' @param fix (logisch) sollen p Werte gerundet 0 als <.001 angezeigt werden
 #' @export
 #' @keywords lm regression spss
 #' @return dataframe des Ergebnisses einer Regression ähnlich der in SPSS
-#' @seealso \code{\link{lm}}
+#' @seealso \code{\link{lm}} \code{\link{lm_output_spss_wrapper_d}}
 #' @examples 
 #' data(crime_data)
 #' fit <- lm(crime ~ pctwhite + pcths + pctmetro + single + poverty,data=crime_data)
@@ -16,6 +18,7 @@
 #'}
 lm_coef_spss_d <- function (fit, sterne=TRUE, stellen=2, fix=TRUE) {
 	if(class(fit)!="lm") stop(substitute(fit), " ist kein LM Objekt")
+  if(FALSE %in% sapply(fit$model,is.numeric))  stop("Variablen sind nicht alle numerisch!\nFunktion ist für eine ANCOVA nicht verfügbar!", call. = FALSE)
 	suppressPackageStartupMessages(require(car))
 	scaled <- data.frame(scale(fit$model))
 	lmz <- lm(formula(fit),data=scaled)
