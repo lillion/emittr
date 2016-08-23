@@ -10,8 +10,6 @@
 #' \item o() # öffent im Explorer/Finder das aktuelle Verzeichnis
 #' \item plotstart() # entfernt den Hintergrund für Plots
 #' \item Schriftfamilien für Graphiken
-#' \item
-#' \item
 #' }
 #' @return schreibt eine User-Datei auf die Festplatte. 
 #' Falls die Datei '.Rprofile' schon besteht, wird ein Backup

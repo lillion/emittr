@@ -32,18 +32,20 @@ lm_output_spss_wrapper_d <- function (fit, Rsquare=TRUE, coefficients=TRUE, coll
   if (collinearity) results[["Kollinearität"]]=lm_coll(fit,add.intercept=FALSE)
   if (plot) {
     # op <- par (mfrow=c(2,2))
-    zresid <- data.frame(Residuen=scale(resid(fit)))
+    zresid <- data.frame(zResiduen=scale(resid(fit)))
     # hist(zresid, breaks=24);
     # plot(predict(fit), resid(fit)); abline(0,0)
     # qqnorm(zresid); abline(0,1)
     # par(op)
     library(ggplot2)
     library(gridExtra)
-    p1 <- ggplot(zresid,aes(Residuen))+geom_histogram(bins=dim(zresid)[1]/1.1)+geom_vline(xintercept=0)+theme_bw()
+    p1 <- ggplot(zresid,aes(zResiduen))+geom_histogram(bins=dim(zresid)[1]/1.1)+geom_vline(xintercept=0)+theme_bw(,"Helvetica Light")+ggtitle("Verteilung der Residuen")
     predictdata <- data.frame(predicted=predict(fit), residuals=resid(fit))
-    p2 <- ggplot(predictdata,aes(predicted,residuals))+geom_point(size=.9)+geom_smooth()+theme_bw()
-    p3 <- umittr:::qqplot.data(zresid$Residuen)
-    grid.arrange(p1,p2,p3,ncol=2)
+    p2 <- ggplot(predictdata,aes(predicted,residuals))+geom_point(size=.9)+geom_smooth()+theme_bw(,"Helvetica Light")+ggtitle("Skedastizität")
+    p3 <- umittr:::qqplot.data(zresid$zResiduen)+ggtitle("QQ-Plot der Residuen")
+    p1;p2;p3
+    lay=rbind(c(1,1),c(2,3))
+    grid.arrange(p2,p1,p3,layout_matrix=lay)
   }
   if(is.numeric(runden)) return(sapply(results, round.df, digits=runden))
 results  

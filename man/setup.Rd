@@ -22,8 +22,6 @@ Darin sind Voreinstellungen enthalten, die somit nicht mehr jedes Mal per Hand v
 \item o() # öffent im Explorer/Finder das aktuelle Verzeichnis
 \item plotstart() # entfernt den Hintergrund für Plots
 \item Schriftfamilien für Graphiken
-\item
-\item
 }
 }
 \examples{
