@@ -4,7 +4,7 @@
 \alias{fmaxtest}
 \title{F-Max Test für ANOVA}
 \usage{
-fmaxtest(erglm, ...)
+fmaxtest(erglm, deskriptive = TRUE)
 }
 \arguments{
 \item{erglm}{lm Objekt}

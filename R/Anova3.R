@@ -22,6 +22,7 @@ Anova3 <- function(formula, data, Median=TRUE, posthoc=TRUE){
   # ergaov <- Anova(erglm,type=3)
   # print(ergaov)
   print(ergaov <- heplots::etasq(erglm,anova=T,type=3))
+  cat("Gesamtvariation:   Sum Sq;", sum(ergaov$`Sum Sq`[-1])," df:",sum(ergaov$Df[-1]),"\n")
   if(posthoc) print(agricolae::HSD.test(erglm, attr(erglm$terms, "term.labels")[1:length(erglm$model)-1], group=T,console = T))
   invisible(ergaov)
 }
