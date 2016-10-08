@@ -1,0 +1,113 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\begin{document}
+\title {Mediation}
+\author{Erik Danay}
+
+\maketitle
+
+Eine kurze Einführung zur Berechnung einer Mediation in
+\texttt{lavaan} mit Angabe der Syntax. \par
+Um eine Mediation durchzuführen, m\"ussen mehrere Schritte durchlaufen werden. 
+Zuerst müssen \begin{itemize}
+  \item Prädiktor (X),   \item 
+  Mediator (Z) und   \item 
+  Kriterium (Y) 
+\end{itemize}
+klar zugeordnet werden.
+Danach müssen mit diesen drei Variablen verschiedene Modelle berechnet und miteinander verglichen werden. \par
+Die Modelle unterscheiden sich dahingehend, welche Pfade \textit{zwischen} den Variablen eingezeichnet werden.
+Die Pfade, die zwischen diesen drei Variablen stehen, werden spezifisch benannt:
+\begin{itemize}
+  \item Pfad von Prädiktor (X) auf Kriterium (Y): \textbf{c
+}  \item Pfad von Prädiktor (X) auf Mediator (Z): \textbf{a}
+\item Pfad von Mediator (Z) auf Kriterium (Y): \textbf{b}
+\end{itemize}
+
+Die Kombination aus Pfad a und Pfad b, also die Verbidung von Prädiktor und Kriterium über den Mediator, nennt man \texttt{indirekten Pfad}.
+\begin{itemize}
+  \item Pfad \textbf{a + b}: indirekter Pfad
+\end{itemize}
+
+
+Hier sind die drei Pfade in einem Gesamtmodell dargestellt:
+\begin{figure}[ht]
+\center
+  \includegraphics[height=100pt]{/Users/lillion/Desktop/MEdiation.png}
+  
+  \caption{Mediation: volles Modell}
+  \label{Mediation: volles Modell}
+\end{figure}
+
+
+
+\begin{enumerate}
+  \item (Direktes Modell erstellen)
+  \begin{enumerate}
+  \item nicht unbedingt notwendig, da identisch der Korrelation von Prädiktor und Kriterium
+\end{enumerate}
+
+  \item volles Modell erstellen
+  \item indirektes Modell erstellen
+\end{enumerate}
+
+Man testet nun, ob das indirekte Modell, also das Modell des Mediators, nicht signifikant schlechter ist als das volle Modell. Ist dies der Fall, bedeutet das, dass der Pfad über den Mediator, der sog. \texttt{indirekte Pfad}, die Aufklärung der Varianz im Kriterium vollständig übernehmen kann.
+
+Zuerst müssen die notwendigen Pakete geladen werden. Hier im Beispiel zusätzlich noch der Datensatz
+
+<<>>=
+# Daten
+library(umittr) 
+data(crime_data)
+
+# für SEM/Mediation
+library(lavaan)
+@
+
+Danach muss das Modell spezifiziert werden. Pfade sind dabei durch die Tilde (\~) symbolisiert.
+
+Modelle werden immer unter Anführungszeichen per Syntax definiert und dann einem Namen zugewiesen (\textbf{<-}) wie im folgenden Beispiel.
+
+Wir beginnen mit dem direkten Modell, der einfachen Korrelation.
+<<>>=
+# Modell 1: (nur) direktes Modell
+Modelldirekt <- 'crime ~ pctwhite'
+@
+
+Diese Modell stellt den direkten Pfad \textbf{c} dar. Man kann den Pfad benennen, wenn man die Syntax leicht erweitert und vor dem Prädiktor noch \textbf{Namen mit *} hinschreibt:
+<<>>=
+# Modell 1: (nur) direktes Modell
+Modelldirekt <- 'crime ~ a * pctwhite'
+@
+
+Das Modell kann man sich schon graphisch ausgeben lassen.
+
+<<>>=
+# Grapik leer
+library(semPlot) # Graphikpaket aktivieren
+semPaths(Modelldirekt, style="lisrel",nCharNodes = 0, whatLabels="std",intercepts = F)
+@
+
+
+Um sich das Ergebnis ausgeben zu lassen, muss das Modell nun berechnet werden.
+<<>>=
+# Berechnung der Modelle
+ergModelldirekt <- sem(Modelldirekt, data = crime_data)
+summary(ergModelldirekt, std=TRUE, rsquare=TRUE)
+@
+
+
+<<>>=
+# Modell 2: volles Modell
+Modellvoll <- 'crime ~ c*pctwhite # c Pfad direkt
+                crime ~ b*pcths # b
+pcths ~ a*pctwhite # a
+indirekterPfad := a*b' 
+ergModellvoll <- sem(Modellvoll, data = crime_data)
+summary(ergModellvoll, std=TRUE, rsquare=TRUE)
+ergModellindirekt <- sem(Modellvoll, data = crime_data,constraints='c==0')
+summary(ergModellindirekt, std=TRUE, rsquare=TRUE)
+@
+
+
+\end{document}
