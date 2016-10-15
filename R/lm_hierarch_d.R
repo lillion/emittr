@@ -34,6 +34,10 @@ lm_hierarch_d <- function(formula, # the complete formula, including all blocks 
 		if (length(limits)>sum(blocks)) blocks <- c(blocks,length(limits)-sum(blocks))
 	cat("\n",length(blocks), "Blöcke mit insgesamt",paste(cumsum(blocks),collapse=", "),"Prädiktoren\n\n")
 	blocks <- limits[cumsum(blocks)]
+	
+	sbj <- dim(data)[2]
+	data <- lm(formula, data)$model # neu 15.10.2016
+	if(dim(data)[2]!=sbj) cat("\nAchtung!\nDatensatz hat",sbj-dim(data)[2], "Fälle, die auf einem der Prädiktoren/dem Kriterium einen fehlenden Wert aufweisen und daher für die Analyse entfernt werden\n\n")
 	#print(limits)
 	if (summary) 	results <- lapply(blocks, function(x) summary(lm(as.formula(strtrim(txt,x)),data=data)))
 		else results <- lapply(blocks, function(x) lm(as.formula(strtrim(txt,x)),data=data))

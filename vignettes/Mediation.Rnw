@@ -5,28 +5,31 @@
 \author{Erik Danay}
 
 \maketitle
-
-Eine kurze Einführung zur Berechnung einer Mediation in
+\section{Einf\"uhrung}
+Eine kurze Einf\"uhrung zur Berechnung einer Mediation in
 \texttt{lavaan} mit Angabe der Syntax. \par
-Um eine Mediation durchzuführen, m\"ussen mehrere Schritte durchlaufen werden. 
-Zuerst müssen \begin{itemize}
-  \item Prädiktor (X),   \item 
+Um eine Mediation durchzuf\"uhren, m\"ussen mehrere Schritte durchlaufen werden. 
+\subsection{Variablen}
+Zuerst m\"ussen \begin{itemize}
+  \item Pr\"adiktor (X),   \item 
   Mediator (Z) und   \item 
   Kriterium (Y) 
 \end{itemize}
 klar zugeordnet werden.
-Danach müssen mit diesen drei Variablen verschiedene Modelle berechnet und miteinander verglichen werden. \par
+Danach m\"ussen mit diesen drei Variablen verschiedene Modelle berechnet und miteinander verglichen werden. \par
+
+\subsection{Modelle und Pfade}
 Die Modelle unterscheiden sich dahingehend, welche Pfade \textit{zwischen} den Variablen eingezeichnet werden.
 Die Pfade, die zwischen diesen drei Variablen stehen, werden spezifisch benannt:
 \begin{itemize}
-  \item Pfad von Prädiktor (X) auf Kriterium (Y): \textbf{c
-}  \item Pfad von Prädiktor (X) auf Mediator (Z): \textbf{a}
+  \item Pfad von Pr\"adiktor (X) auf Kriterium (Y): \textbf{c
+}  \item Pfad von Pr\"adiktor (X) auf Mediator (Z): \textbf{a}
 \item Pfad von Mediator (Z) auf Kriterium (Y): \textbf{b}
 \end{itemize}
 
-Die Kombination aus Pfad a und Pfad b, also die Verbidung von Prädiktor und Kriterium über den Mediator, nennt man \texttt{indirekten Pfad}.
+Die Kombination aus Pfad a und Pfad b, also die Verbidung von Pr\"adiktor und Kriterium \"uber den Mediator, nennt man \texttt{indirekten Pfad}.
 \begin{itemize}
-  \item Pfad \textbf{a + b}: indirekter Pfad
+  \item Pfad \textbf{a - b}: indirekter Pfad
 \end{itemize}
 
 
@@ -40,73 +43,138 @@ Hier sind die drei Pfade in einem Gesamtmodell dargestellt:
 \end{figure}
 
 
-
+\subsection{Drei Modell-Schritte}
 \begin{enumerate}
   \item (Direktes Modell erstellen)
   \begin{enumerate}
-  \item nicht unbedingt notwendig, da identisch der Korrelation von Prädiktor und Kriterium
+  \item nicht unbedingt notwendig, da identisch der Korrelation von Pr\"adiktor und Kriterium
 \end{enumerate}
 
   \item volles Modell erstellen
   \item indirektes Modell erstellen
 \end{enumerate}
 
-Man testet nun, ob das indirekte Modell, also das Modell des Mediators, nicht signifikant schlechter ist als das volle Modell. Ist dies der Fall, bedeutet das, dass der Pfad über den Mediator, der sog. \texttt{indirekte Pfad}, die Aufklärung der Varianz im Kriterium vollständig übernehmen kann.
+Man testet nun, ob das indirekte Modell, also das Modell des Mediators, nicht signifikant schlechter ist als das volle Modell. Ist dies der Fall, bedeutet das, dass der Pfad \"uber den Mediator, der sog. \texttt{indirekte Pfad}, die Aufkl\"arung der Varianz im Kriterium vollst\"andig \"ubernehmen kann.
 
-Zuerst müssen die notwendigen Pakete geladen werden. Hier im Beispiel zusätzlich noch der Datensatz
+Zuerst m\"ussen die notwendigen Pakete geladen werden. Hier im Beispiel zus\"atzlich noch der Datensatz
 
 <<>>=
 # Daten
 library(umittr) 
 data(crime_data)
-
-# für SEM/Mediation
+crime_data$crime <- crime_data$crime/1000
+# Paket fuer SEM/Mediation
 library(lavaan)
 @
 
-Danach muss das Modell spezifiziert werden. Pfade sind dabei durch die Tilde (\~) symbolisiert.
+\subsection{Modellsyntax}
+Danach muss das Modell spezifiziert werden. 
 
-Modelle werden immer unter Anführungszeichen per Syntax definiert und dann einem Namen zugewiesen (\textbf{<-}) wie im folgenden Beispiel.
+Die Syntax f\"ur Modelle folgt folgenden Vorgaben:
 
+\begin{itemize}
+  \item Modelle werden immer unter Anf\"uhrungszeichen per Syntax definiert: \textbf{' '}
+  \item Man muss Modell mit \textbf{\textless-} einem Namen zuweisen wie im folgenden Beispiel: \texttt{modell \textless-'  '}
+  \item Pfade sind innerhalb des Modells durch eine Tilde \textbf{\~ } symbolisiert. 
+  \item Pfade benennt man dadurch, dass man vor die Variable \textbf{xyz*} schreibt.
+\end{itemize}
+
+
+\section{Modell erstellen}
+\subsection{Modell 'zeichnen'}
 Wir beginnen mit dem direkten Modell, der einfachen Korrelation.
 <<>>=
 # Modell 1: (nur) direktes Modell
 Modelldirekt <- 'crime ~ pctwhite'
 @
 
-Diese Modell stellt den direkten Pfad \textbf{c} dar. Man kann den Pfad benennen, wenn man die Syntax leicht erweitert und vor dem Prädiktor noch \textbf{Namen mit *} hinschreibt:
+Das Modell liest man als: \textit{crime on pctwhite.}
+
+Diese Modell stellt den direkten Pfad \textbf{c} dar. Man kann den \textbf{Pfad benennen}, wenn man die Syntax leicht erweitert und vor den Pr\"adiktor noch eine \textbf{Bezeichnung mit *} hinschreibt:
 <<>>=
 # Modell 1: (nur) direktes Modell
 Modelldirekt <- 'crime ~ a * pctwhite'
 @
 
+\subsection{Modell graphisch darstellen}
 Das Modell kann man sich schon graphisch ausgeben lassen.
 
 <<>>=
-# Grapik leer
+# Graphik leer
 library(semPlot) # Graphikpaket aktivieren
-semPaths(Modelldirekt, style="lisrel",nCharNodes = 0, whatLabels="std",intercepts = F)
+semPaths(Modelldirekt, style="lisrel",nCharNodes = 0, whatLabels="std",intercepts = F,rotation=2)
 @
 
+\subsection{Ergebnis berechnen und anfordern}
+Um das Ergebnis zu erhalten, muss das Modell zuerst berechnet werden (\texttt{sem}), bevor es ausgegeben werden kann (\texttt{summary}). Befehle hierf\"ur:
+\begin{itemize}
+  \item \texttt{sem(model=MeinModell, data=Meinedaten)}
+  \item \texttt{summary(ergebnisSem, std=TRUE, rsquare=TRUE)}
+\end{itemize}
 
-Um sich das Ergebnis ausgeben zu lassen, muss das Modell nun berechnet werden.
 <<>>=
 # Berechnung der Modelle
 ergModelldirekt <- sem(Modelldirekt, data = crime_data)
 summary(ergModelldirekt, std=TRUE, rsquare=TRUE)
 @
 
+\subsection{Volles Modell erstellen und berechnen}
+Das volle Modell enthält alle Pfade, drei insgesamt, d.h. alle Verbindungen zwischen den Prädiltoren und dem Kriterium sind eingezeichnet und werden auch berechnet.
 
+Wie oben ausgeführt, sind das die Pfade a, b und c. Diese werden wieder mit der Tilde eingezeichnet.
+
+Allerdings soll auch der indirekte Pfad berechnet werden, der ja aus 2 Komponenten besteht. Doppel- oder Mehrfachpfade werden nicht grundsätzlich berechnet, sondern müssen definiert und damit angefordert werden. Dafür muss dem Mehrfachpfad ein Name gegeben werden gefolgt von der Zeichenkombination \textbf{:=} (steht für: definiert durch) und anschließend den verwendeten Pfadnamen.
+\begin{itemize}
+  \item \textbf{indirekterPfad := Pfad*Pfad*Pfad...}
+\end{itemize}
 <<>>=
 # Modell 2: volles Modell
 Modellvoll <- 'crime ~ c*pctwhite # c Pfad direkt
-                crime ~ b*pcths # b
-pcths ~ a*pctwhite # a
-indirekterPfad := a*b' 
-ergModellvoll <- sem(Modellvoll, data = crime_data)
-summary(ergModellvoll, std=TRUE, rsquare=TRUE)
-ergModellindirekt <- sem(Modellvoll, data = crime_data,constraints='c==0')
-summary(ergModellindirekt, std=TRUE, rsquare=TRUE)
+               crime ~ b*pcths # b
+               pcths ~ a*pctwhite # a
+
+               indirekterPfad := a*b' # Definition des ind. Pfads
+
+ergModellvoll <- sem(Modellvoll, data = crime_data) # berechnen
+
+summary(ergModellvoll, std=TRUE, rsquare=TRUE) # anzeigen
+
+semPaths(ergModellvoll, style="lisrel",nCharNodes = 0,
+         whatLabels="std",intercepts = F,rotation=2) # Graphik
+@
+
+
+\subsection{indirektes Modell erstellen und berechnen}
+Hierf\"ur braucht nicht mehr ein eigenes Modell erstellt werden (was möglich wäre), sondern es reicht, den Pfad c aus dem vollen Modell zu streichen. Das geschieht durch die Fixierung des Pfades auf 0.
+
+Dazu reicht es, bei \textit{Berechnung des Modells} einen Befehl einzufügen: \textbf{constraints=' '} und innerhalb der Anführungszeichen den Pfadnamen aufzuführen gefolgt von 2 Gleichzeichen (heißt: weise den Wert zu) und 0.
+<<>>=
+ergModellindirekt <- sem(Modellvoll, data = crime_data, 
+                         constraints='c==0') # Fixierung
+
+summary(ergModellindirekt, std=TRUE, rsquare=TRUE) # Ergebnis
+
+@
+Alternativ kann man die Fixierung auch direkt im Modell einzeichnen:
+<<>>=
+# Modell 2: volles Modell
+Modellindirekt <- 'crime ~ c*pctwhite # c Pfad direkt
+               crime ~ b*pcths # b
+               pcths ~ a*pctwhite # a
+
+               indirekterPfad := a*b # Definition des ind. Pfads
+               c==0' # der direkte Pfad wird so entfernt
+
+ergModellindirekt <- sem(Modellindirekt, data = crime_data) # berechnen
+
+summary(ergModellindirekt, std=TRUE, rsquare=TRUE) # Ergebnis
+
+@
+
+\subsection{Vergleich von vollem und indirektem Modell}
+Mit einem $\chi^{2}$ Differenztest kann man pr\"ufen, ob das indirekte Modell 'ausreicht', d.h. eine vollständige Mediation vorliegt.
+<<Vergleich>>=
+anova(ergModellvoll,ergModellindirekt)
 @
 
 
