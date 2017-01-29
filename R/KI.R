@@ -15,6 +15,8 @@
 #' KI(wert = 66,standardabweichung = 10,reliabilitaet = .98,sicherheit = .99,seitigkeit = 1,mittelwert = 50,typ = "r") # inklusive Regressionshypothese
 #' KI(wert = 66,standardabweichung = 10,reliabilitaet = .96,sicherheit = .8,seitigkeit = 1,mittelwert = 50,typ = "r") # inklusive Regressionshypothese
 KI <- function(wert, standardabweichung, reliabilitaet, seitigkeit=1, sicherheit=.80, mittelwert=NA, typ="a"){
+  if(sicherheit>1) sicherheit <- sicherheit/100
+  if (reliabilitaet>1) reliabilitaet <- reliabilitaet/100
   sex <- standardabweichung*sqrt(1-reliabilitaet)
   set <- standardabweichung*sqrt(reliabilitaet*(1-reliabilitaet))
   if(!(seitigkeit==1 | seitigkeit==2)) {cat("bitte 1 oder 2 angeben bei Seitigkeit!");stop()}
