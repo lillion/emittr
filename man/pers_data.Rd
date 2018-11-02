@@ -34,4 +34,3 @@ Items are scored from 1 to 5.
   }
 }
 \keyword{datasets}
-

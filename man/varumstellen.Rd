@@ -23,4 +23,3 @@ temp <- varumstellen(c("crime","murder"), crime_data)
 head(temp)
 rm(temp)
 }
-

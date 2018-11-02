@@ -25,4 +25,3 @@ hist(exp(x)) # schief verteilte Daten
 x <- staninentransformieren(exp(x)) 
 table(staninentransformieren(x))
 }
-

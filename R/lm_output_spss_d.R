@@ -18,7 +18,7 @@
 #'}
 lm_coef_spss_d <- function (fit, sterne=TRUE, stellen=2, fix=TRUE) {
 	if(class(fit)!="lm") stop(substitute(fit), " ist kein LM Objekt")
-  if(FALSE %in% sapply(fit$model,is.numeric))  stop("Variablen sind nicht alle numerisch!\nFunktion ist für eine ANCOVA nicht verfügbar!", call. = FALSE)
+  # if(FALSE %in% sapply(fit$model,is.numeric))  stop("Variablen sind nicht alle numerisch!\nFunktion ist für eine ANCOVA nicht verfügbar!", call. = FALSE)
 	suppressPackageStartupMessages(require(car))
 	scaled <- data.frame(scale(fit$model))
 	lmz <- lm(formula(fit),data=scaled)

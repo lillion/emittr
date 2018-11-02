@@ -2,17 +2,16 @@
 % Please edit documentation in R/umittr-package.R
 \docType{package}
 \name{umittr-package}
-\alias{umittr}
 \alias{umittr-package}
+\alias{umittr}
 \title{Hilfsfunktionen f\code{ü}r den \code{Ü}bergang von SPSS zu R}
 \description{
 Hilfsfunktionen in R, um den Uebergang von GUI zu Syntax zu erleichtern (z.B. SPSS zu R)
 }
-\author{
-\email{macx@lillion.e4ward.com}
-}
 \seealso{
 \code{\link{...}}
 }
+\author{
+\email{macx@lillion.e4ward.com}
+}
 \keyword{package}
-

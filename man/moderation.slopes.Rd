@@ -37,4 +37,3 @@ detach(crime_data)
 \code{\link{lm}}
 }
 \keyword{lm}
-

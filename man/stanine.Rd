@@ -26,4 +26,3 @@ Tent, L., Stelzl, I. (1993), Pädagogisch-psychologische Diagnostik: Theoretisch
 }
 \keyword{Normierung}
 \keyword{Stanine,}
-

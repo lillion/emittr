@@ -35,4 +35,3 @@ fa.buildscale(efa,datensatz=pers_data[-c(6,11,16)]) # this saves scales to works
 \code{\link[psych]{fa}}
 }
 \keyword{fa}
-

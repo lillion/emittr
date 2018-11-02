@@ -24,4 +24,3 @@ Beschriftung zu Graphik hinzufügen
 \examples{
 add_legend("right", legend=c("Lotta", "Marie", "Olivia"), lty=c(1:3), col=c("steelblue", "indianred", "pink"), horiz=F, bty='n', cex=0.9) # hier die Beschriftung
 }
-

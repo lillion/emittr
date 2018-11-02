@@ -36,4 +36,3 @@ plot(1:28, pch=16, cex=seq(5,15,length.out = 28), col=farbe())
 plot(rnorm(1000),rnorm(1000), main="Scatterplot Example", col=farbe("rot","mittel"), pch=16)
 points(rnorm(1000,.5),rnorm(1000),  col=farbe("blau","mittel"), pch=16)
 }
-

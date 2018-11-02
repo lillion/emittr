@@ -32,4 +32,3 @@ data=mtcars)
 }
 \keyword{lm}
 \keyword{regression}
-

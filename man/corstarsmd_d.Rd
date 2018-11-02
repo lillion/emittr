@@ -45,4 +45,3 @@ write.xlsx(for_word, "test.xlsx") # Ausgabe in ein Excel-Dokument speichern
 \link{cor}
 }
 \keyword{korrelation}
-

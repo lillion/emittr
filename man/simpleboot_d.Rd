@@ -28,4 +28,3 @@ simpleboot_d(mydata, sd, reps=5000)
 boot
 }
 \keyword{bootstrap}
-

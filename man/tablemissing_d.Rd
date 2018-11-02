@@ -38,4 +38,3 @@ tablemissing_d(demoframe,cut=0,sortby="Muster")
 table
 }
 \keyword{missings}
-

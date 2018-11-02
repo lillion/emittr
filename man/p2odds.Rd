@@ -18,4 +18,3 @@ Wahrscheinlichkeiten (p) in Odds umwandeln
 \examples{
 p2odds(c(.10,.50,.90))
 }
-

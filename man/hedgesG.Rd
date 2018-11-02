@@ -20,4 +20,3 @@ Hedges g
 \examples{
 cat("hedges")
 }
-

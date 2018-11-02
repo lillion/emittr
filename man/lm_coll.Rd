@@ -23,4 +23,3 @@ multi collinearity diagnosis
 }
 }
 \keyword{internal}
-

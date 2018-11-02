@@ -29,4 +29,3 @@ setup()
 # wenn es funktioniert hat:
 o() # öffnet das aktuelle Verzeichnis
 }
-

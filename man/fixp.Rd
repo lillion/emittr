@@ -28,4 +28,3 @@ rm(mod)
 \author{
 e.d.
 }
-

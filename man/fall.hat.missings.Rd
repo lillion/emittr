@@ -25,4 +25,3 @@ fall.hat.missings(demoframe) # Fallnummern mit Missings
 fall.hat.missings(demoframe,logisch = T) # Vektor T/F für Fälle mit und ohne Missings
 anzahlmissings(demoframe)
 }
-

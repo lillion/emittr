@@ -46,4 +46,3 @@ plus life data like age, sex, location
   }
 }
 \keyword{datasets}
-

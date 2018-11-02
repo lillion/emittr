@@ -17,4 +17,3 @@ data.frame
 spss einflesen
 wrapper für die foreign Funtion
 }
-

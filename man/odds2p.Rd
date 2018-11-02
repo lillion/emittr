@@ -18,4 +18,3 @@ Odds zu Wahrscheinlichkeiten umwandeln
 \examples{
 odds2p(c(1,2,.5))
 }
-

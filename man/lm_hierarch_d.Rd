@@ -42,4 +42,3 @@ lm_hierarch_d(mpg ~ disp + hp + wt + drat, c(2,2), data=mtcars)
 \keyword{hierarchical}
 \keyword{lm}
 \keyword{regression}
-

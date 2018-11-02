@@ -33,4 +33,3 @@ given the pattern maxtrix of an EFA with more than one factor, combine items loa
 \link[psych]{fa}, \link{factanal}
 }
 \keyword{fa}
-

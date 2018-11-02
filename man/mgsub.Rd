@@ -32,4 +32,3 @@ mgsub(c("ä","ü","ö","Ä","Ü","Ö","ß"), c("ae","ue","oe","Ae","Ue","Oe","ss
 \code{\link{gsub}}
 }
 \keyword{gsub}
-

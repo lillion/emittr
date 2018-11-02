@@ -32,4 +32,3 @@ Berechnung von Konfidenzintervallen
 KI(wert = 66,standardabweichung = 10,reliabilitaet = .98,sicherheit = .99,seitigkeit = 1,mittelwert = 50,typ = "r") # inklusive Regressionshypothese
 KI(wert = 66,standardabweichung = 10,reliabilitaet = .96,sicherheit = .8,seitigkeit = 1,mittelwert = 50,typ = "r") # inklusive Regressionshypothese
 }
-

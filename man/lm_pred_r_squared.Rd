@@ -16,4 +16,3 @@ returns the predictive r-squared using
 \author{
 Thomas Hopper
 }
-

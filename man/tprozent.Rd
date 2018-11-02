@@ -22,4 +22,3 @@ wandelt einzelne oder mehrere T- bzw. S(W)-Werte in Prozent um
 \examples{
 tprozent(20:80)
 }
-

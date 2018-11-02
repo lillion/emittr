@@ -29,4 +29,3 @@ variables were measured in 1993.
 }
 }
 \keyword{datasets}
-

@@ -17,4 +17,3 @@ data.frame
 \description{
 Kontrastvergleich für abhängige Stichproben
 }
-

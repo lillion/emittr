@@ -24,4 +24,3 @@ früher noch: "psych", "ggplot2", "reshape2", "Hmisc", "perturb",
 pakete_installieren()
 }
 \keyword{helper}
-

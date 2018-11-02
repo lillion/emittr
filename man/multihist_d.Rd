@@ -4,8 +4,8 @@
 \alias{multihist_d}
 \title{Mehrere getrennte Histogramme}
 \usage{
-multihist_d(x, variables, labels = TRUE, xlab = "Verteilung", save = TRUE,
-  ...)
+multihist_d(x, variables, labels = TRUE, xlab = "Verteilung",
+  save = TRUE, ...)
 }
 \arguments{
 \item{x}{data.frame}
@@ -39,4 +39,3 @@ multibar(neo_n,5,ylab="häu")
 }
 \keyword{Graphik}
 \keyword{umit}
-

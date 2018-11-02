@@ -25,4 +25,3 @@ as described by Stelzl (2005)
 lm
 }
 \keyword{lm}
-

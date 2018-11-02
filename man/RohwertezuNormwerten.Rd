@@ -28,4 +28,3 @@ y
 \references{
 Tent, L., Stelzl, I. (1993), Pädagogisch-psychologische Diagnostik: Theoretische und methodische Grundlagen. Göttingen: Hogrefe.
 }
-

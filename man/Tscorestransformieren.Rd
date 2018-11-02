@@ -19,4 +19,3 @@ T Werte eines Vektors berechen
 x <- data.frame(x=rnorm(10000)) # Datensatz erzeugen
 Tscorestransformieren(x$x) # in Normwerte umwandeln
 }
-

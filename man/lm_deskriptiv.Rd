@@ -15,4 +15,3 @@ Deskriptive Statistik pro Gruppe
 \description{
 Deskriptive Statistik pro Gruppe einer Anova
 }
-

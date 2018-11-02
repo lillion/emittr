@@ -34,4 +34,3 @@ multibar(cars,save=FALSE)
 }
 \keyword{Graphik}
 \keyword{umit}
-

@@ -14,4 +14,3 @@ and sex (i.e. 'Geschlecht')
 Items are scored from 1 to 4.
 }
 \keyword{datasets}
-

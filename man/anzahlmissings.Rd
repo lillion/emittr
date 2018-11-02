@@ -21,4 +21,3 @@ demoframe <- as.data.frame(lapply(demoframe, function(x) "is.na<-"(x, sample(seq
 demoframe
 anzahlmissings(demoframe) # Anzahl Missings pro Fall
 }
-

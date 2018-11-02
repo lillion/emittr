@@ -27,4 +27,3 @@ Plot Funktion mit einigen Voreinstellungen zur leichteren Handhabung
 plotum(23:27,4:8,Schrift="Gill Sans")
 add_legend("right", legend=c('Text hier', 'Text2 hier', '...'), lty=c(1:3), col=c('pink','indianred', 'steelblue'), horiz=FALSE, bty='n', cex=0.9)
 }
-

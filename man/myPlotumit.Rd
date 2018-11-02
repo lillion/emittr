@@ -28,4 +28,3 @@ manipulate(myPlotumit(beta,dfcov), beta = slider(-1, 1, step = 0.01))
 lm
 }
 \keyword{lm}
-
