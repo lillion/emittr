@@ -145,7 +145,7 @@ cat(\"\nfolgende Schriftfamilien erstellt:\n - 'calibrilight' \n - 'arialnar'\n 
 }
   cat(\"\n.Rprofile erfolgreich geladen am\", date(), \"\n\")
   cat(\"\n   Willkommen zu UMIT R!\n\n\")
-  cat(\"\n   Pakete psych, ggplot2, haven, tidyverse, umittr, car, sjPlot, dplyr geladen. \n\n")
+  cat(\"\n   Pakete psych, ggplot2, haven, tidyverse, umittr, car, sjPlot, dplyr geladen. \n\n\")
 
 }
 
@@ -153,7 +153,7 @@ cat(\"\nfolgende Schriftfamilien erstellt:\n - 'calibrilight' \n - 'arialnar'\n 
 ## .Last() run at the end of the session
 .Last <- function() {
   # save command history here?
-  cat("\n\n   Bussi und Baba!\n\n\")
+  cat(\"\n   Bussi und Baba!\n\n\")
 }",file=file.path(path))
 
 if(file.exists(file.path(path,".Rprofile"))) cat("\n.Rprofile erstellt.\n?berpr?fen des Inhalts mit file.edit(\"",file.path(path,".Rprofile"),".Rprofile\")")
