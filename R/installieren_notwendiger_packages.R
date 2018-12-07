@@ -16,7 +16,8 @@
 pakete_installieren <- function () {
   wants <- c("car", "lmtest", "QuantPsyc", "lavaan", "lme4", "haven","readxl","psycho", "rockchalk",
              "psych", "ggplot2", "ggpubr", "GGally", "reshape2", "semTools", "semPlot","GPArotation", "emmeans",
-             "HH", "Hmisc", "knitr", "sjPlot", "pander", "lattice", "perturb", "ggvis","ez","tidyverse")
+             "HH", "Hmisc", "knitr", "sjPlot", "pander", "lattice", "perturb", "ggvis","ez","tidyverse",
+             "effsize", "lsr")
   has   <- wants %in% rownames(installed.packages())
   if(any(!has)) install.packages(wants[!has],dependencies=T)
   update.packages(ask = F)
