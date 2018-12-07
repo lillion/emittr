@@ -51,6 +51,8 @@ try(library(car)) # car Package laden
 try(library(sjPlot)) # car Package laden
 # try(library(readxl)) # Excel Dateien lesen
 
+ggplot2::theme_set(theme_bw())
+
 ## Do you want to automatically convert strings to factor variables in a data.frame?
 ## WARNING!!! This makes your code less portable/reproducible.
 options(stringsAsFactors=FALSE)
@@ -145,7 +147,8 @@ cat(\"\nfolgende Schriftfamilien erstellt:\n - 'calibrilight' \n - 'arialnar'\n 
 }
   cat(\"\n.Rprofile erfolgreich geladen am\", date(), \"\n\")
   cat(\"\n   Willkommen zu UMIT R!\n\n\")
-  cat(\"\n   Pakete psych, ggplot2, haven, tidyverse, umittr, car, sjPlot, dplyr geladen. \n\n\")
+  cat(\"\n   Pakete psych, ggplot2, haven, tidyverse, umittr, car, sjPlot, dplyr geladen. \n
+  Thema von ggplot2 auf theme_bw() gesetzt. \n\")
 
 }
 
