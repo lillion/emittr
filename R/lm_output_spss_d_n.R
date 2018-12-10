@@ -23,10 +23,10 @@ suppressPackageStartupMessages(require(car))
 # scaled <- data.frame(scale(fit$model))
 scaled <- data.frame(scale(model.frame(fit)))
 lmz <- lm(formula(fit),data=scaled)
-results <- cbind(summary(fit)$coefficients,beta=coef(lmz),rbind(c(NA,NA,NA),cor_lm_d(fit,stellen)))[c(1,2,5,3,4)]
+results <- cbind(summary(fit)$coefficients,beta=coef(lmz),rbind(c(NA,NA,NA),cor_lm_d(fit,stellen=stellen)))[c(1,2,5,3,4)]
 if (fix) results <- fixp(results) ## neu
 results <- round.df(results,stellen)
 names(results) <- c("B","Std Error","\u03B2","t","p")
 if (sterne) {results <- cbind(results,data.frame(st=as.character(symnum(summary(fit)$coefficients[,4],corr=FALSE,cutpoints = c(0, 0.001, 0.01, 0.05, 0.1,1),symbols = c("***","**","*","\u2020"," "))))); names(results) <- c("B","Std Error","\u03B2","t","p"," ")}
-ifelse(ncol(fit$model)==2, return(cbind(results,rbind(c(NA,NA,NA),cor_lm_d(fit)))), return(cbind(results,rbind(c(NA,NA,NA),cor_lm_d(fit)),Tolerance=c(NA,1/vif(fit)),VIF=c(NA,vif(fit)),Problem=c(NA,ifelse(sqrt(vif(fit))> 2,"ja","nein")))))
+ifelse(ncol(fit$model)==2, return(cbind(results,rbind(c(NA,NA,NA),cor_lm_d(fit)))), return(cbind(results,rbind(c(NA,NA,NA),cor_lm_d(fit)),Tolerance=c(NA,round(1/vif(fit),stellen)),VIF=c(NA,round(vif(fit),stellen)),Problem=c(NA,ifelse(sqrt(vif(fit))> 2,"ja","nein")))))
 }

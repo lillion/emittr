@@ -16,6 +16,14 @@
 #' lm_coef_spss_d(fit,stellen = 2) %>% htmlschnell()
 
 htmlschnell <- function(dataframe) {
+  mymyb <- function(x){
+    paste("<tr>",x,"</tr>")  
+  }
+  
+  mymy <- function(x){
+    paste0("<td>",x,"</td>", collapse="")  
+  }
+  
   ifelse(is.data.frame(dataframe),x <- dataframe,stop("kein data.frame!"))
   if(!is.null(rownames(x))) {
     x$Variablen <-rownames(x)
@@ -37,13 +45,7 @@ htmlschnell <- function(dataframe) {
   xx <- mymyb(xx)  
   # xx <- paste("<tr>",xx,"</tr>")  
   
-  mymyb <- function(x){
-    paste("<tr>",x,"</tr>")  
-  }
-  
-  mymy <- function(x){
-    paste0("<td>",x,"</td>", collapse="")  
-  }
+
   
   
   cat("<html>
