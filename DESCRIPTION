@@ -19,4 +19,4 @@ Description: this package provides several functions to ease the transition
     with bulding scales from EFA etc.
 Encoding: UTF-8
 License: GPL (>= 2)
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1

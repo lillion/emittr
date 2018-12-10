@@ -4,7 +4,7 @@
 \alias{cor_lm_d}
 \title{semipartial, partial und Korrelationen nullter Ordnung eines Regressionsmodell}
 \usage{
-cor_lm_d(fit)
+cor_lm_d(fit, stellen)
 }
 \arguments{
 \item{fit}{ein Objekt einer \code{\link{lm}} Berechnung}

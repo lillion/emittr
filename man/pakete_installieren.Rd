@@ -14,9 +14,10 @@ nichts
 }
 \description{
 voellig unnoetige Funktion, aber praktisch
-"car", "lmtest", "QuantPsyc", "lavaan", 
-"semTools", "semPlot","GPArotation", "HH", "knitr",
- "sjPlot", "pander", "lattice",  "ggvis","ez","dplyr"
+"car", "lmtest", "QuantPsyc", "lavaan", "lme4",
+"semTools", "semPlot","GPArotation", "HH", "knitr", "emmeans",
+"rockchalk"
+ "sjPlot", "pander", "lattice",  "ggvis","ez","tidyverse", "haven"
 früher noch: "psych", "ggplot2", "reshape2", "Hmisc", "perturb",
 "Rcmdr"
 }

@@ -1,5 +1,7 @@
 #' Schnelle Darstellung von Data.frames als HTML
 #'
+#' @description Mit dieser einfachen Funktion können Ergebnisse und Daten, die als data.frame vorliegen, 
+#' als HTML dargestellt und so einfach in Word kopiert werden.
 #' @param dataframe 
 #'
 #' @return HTML
