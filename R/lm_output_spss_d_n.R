@@ -23,7 +23,7 @@ suppressPackageStartupMessages(require(car))
 # scaled <- data.frame(scale(fit$model))
 scaled <- data.frame(scale(model.frame(fit)))
 lmz <- lm(formula(fit),data=scaled)
-results <- cbind(summary(fit)$coefficients,beta=coef(lmz),rbind(c(NA,NA,NA),cor_lm_d(fit)))[c(1,2,5,3,4)]
+results <- cbind(summary(fit)$coefficients,beta=coef(lmz),rbind(c(NA,NA,NA),cor_lm_d(fit,stellen)))[c(1,2,5,3,4)]
 if (fix) results <- fixp(results) ## neu
 results <- round.df(results,stellen)
 names(results) <- c("B","Std Error","\u03B2","t","p")
