@@ -11,7 +11,7 @@
 #' library(car)
 #' fit <- lm(mpg ~ disp + hp + wt + drat, data=mtcars) 
 #' cor_lm_d(fit)
-cor_lm_d <- function(fit, stellen=2)  {
+cor_lm_d <- function(fit, digits=2)  {
   if(class(fit)!="lm") stop(substitute(fit), " ist kein LM Objekt")
   dv <- names(fit$model)[1]
   dv_data <- fit$model[, dv]
@@ -32,7 +32,7 @@ cor_lm_d <- function(fit, stellen=2)  {
                                             partial = cor(resid_iv_omit[, i], resid_omit[, i]), 
                                             semipartial = cor(resid_iv_omit[,i], dv_data)))
   results <- data.frame(t(results))
-  if(is.numeric(stellen)) results <- round.df(results,stellen)
+  if(is.numeric(digits)) results <- round.df(results,digits)
   
   rownames(results) <- ivs
   names(results)[1] <- "nullter Ordnung"

@@ -1,8 +1,8 @@
 Package: umittr
 Type: Package
 Title: Hilfsfunktionen fuer die psychologische Forschung
-Version: 0.2.8
-Date: 2014-05-08 - 2018-12-10
+Version: 0.2.9
+Date: 2014-05-08 - 2020-05-04
 Author: lillion
 Maintainer: Erik Danay <danay@lillion.e4ward.com>
 Imports:
@@ -12,7 +12,8 @@ Imports:
     boot,
     heplots,
     car,
-    agricolae
+    agricolae,
+    dplyr
 Suggests:
 Description: this package provides several functions to ease the transition
     from SPSS to R by offering similar output for linear regression, helping

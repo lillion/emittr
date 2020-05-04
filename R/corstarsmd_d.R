@@ -26,7 +26,9 @@
 #' }
 
 corstarsmd_d <- function(x, type="markdown", stellen=3, zehnproz=FALSE, abk=TRUE, diagonale=FALSE, untere=TRUE, ...){ 
+  temp <- names(x)
   x <- x[sapply(x,is.numeric)]
+  if(!identical(temp,names(x))) cat("Nicht numerische Variable(n):\n",setdiff(temp,names(x)),"\nwurde(n) entfernt.\n\n", temp[])
   x <- as.matrix(x) 
   R <- psych::corr.test(x)$r # psych
   p <- psych::corr.test(x)$p # psych

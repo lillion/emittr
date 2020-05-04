@@ -45,7 +45,6 @@ try(library(psych))
 try(library(ggplot2)) #ggplot2 ist für Graphiken, nicht unbedingt notwendig
 try(library(haven)) #um SPSS Dateien zu laden
 try(library(tidyverse)) # dplyr für viele Funktionen der Datenmanipulation
-try(library(dplyr)) # dplyr für viele Funktionen der Datenmanipulation
 try(library(umittr)) # umittr Package laden
 try(library(car)) # car Package laden
 try(library(sjPlot)) # car Package laden
@@ -159,6 +158,6 @@ cat(\"\nfolgende Schriftfamilien erstellt:\n - 'calibrilight' \n - 'arialnar'\n 
   cat(\"\n   Bussi und Baba!\n\n\")
 }",file=file.path(path))
 
-if(file.exists(file.path(path,".Rprofile"))) cat("\n.Rprofile erstellt.\n?berpr?fen des Inhalts mit file.edit(\"",file.path(path,".Rprofile"),".Rprofile\")")
+if(file.exists(file.path(path,".Rprofile"))) cat("\n.Rprofile erstellt.\nüberprüfen des Inhalts mit file.edit(\"",file.path(path,".Rprofile"),".Rprofile\")")
 }
 

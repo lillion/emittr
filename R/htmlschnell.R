@@ -43,9 +43,6 @@ htmlschnell <- function(dataframe) {
   x <- t(x) %>% as.data.frame()
   xx <-sapply(x,mymy)
   xx <- mymyb(xx)  
-  # xx <- paste("<tr>",xx,"</tr>")  
-  
-
   
   
   cat("<html>

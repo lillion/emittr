@@ -46,3 +46,11 @@ qqplot.data <- function (vec) # argument: vector of numbers
   ggplot(d, aes(sample = resids)) + stat_qq() + geom_abline(slope = slope, intercept = int)+theme_bw()
   
 }
+
+round_ps <- function (x,stellen=2) 
+{
+  substr(as.character(ifelse(x < 1e-04, " <.0001", 
+                             ifelse(x < 0.001, formatC(x, digits = 4, format = "f"), 
+                                    ifelse(x < 0.01, formatC(x, digits = 3, format = "f"), 
+                                           ifelse(round(x, 2) == 1, " >.99", formatC(x, digits = stellen, format = "f")))))),2, 7)
+}
