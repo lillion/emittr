@@ -13,11 +13,12 @@ Imports:
     heplots,
     car,
     agricolae,
-    dplyr
+    dplyr,
+    ggplot2
 Suggests:
 Description: this package provides several functions to ease the transition
     from SPSS to R by offering similar output for linear regression, helping
     with bulding scales from EFA etc.
 Encoding: UTF-8
 License: GPL (>= 2)
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0

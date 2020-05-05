@@ -8,6 +8,8 @@
 #' @export
 #'
 #' @examples
+#' data(crime_data)
+#' myscatter(crime_data,crime, pctmetro)
 myscatter <- function(df, xvar,yvar){
   # if(is.character(xvar)) xvar <- sym(xvar)
   # if(is.character(yvar)) yvar <- sym(yvar)
@@ -28,6 +30,8 @@ myscatter <- function(df, xvar,yvar){
 #' @export
 #'
 #' @examples
+#' data(crime_data)
+#' mysummarise(crime_data,crime)
 mysummarise <- function(df, var){
   var <- enexpr(var)
   summarise(df, m=mean(!!var),sd=sd(!!var),se=sd(!!var)/sqrt(n()),ci_lower=m-se*1.96,ci_upper=m+se*1.96)

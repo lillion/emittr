@@ -24,7 +24,7 @@ plot(1:7, 7:1, col=farbe(), pch=19, cex=6, xlab="", ylab="",
 points(1:7, 7:1-0.7, col=farbe(,2), pch=19, cex=6)
 points(1:7, 7:1-1.4, col=farbe(,3), pch=19, cex=6)
 points(1:7, 7:1-2.1, col=farbe(,4), pch=19, cex=6)
-text(1:7, 7:1+0.7, paste("farbe(", 1:7, ")\\n",dimnames(farbe())[[1]][1:7], sep=""), cex=0.9)
+text(1:7, 7:1+0.7, paste("farbe(", 1:7, ")\n",dimnames(farbe())[[1]][1:7], sep=""), cex=0.9)
 sapply(1:7,function(x) text(x,8-x-seq(0,2.1,length.out=4),paste(dimnames(farbe())[[2]][1:4]),cex=0.5))
 par(oldpar)
 

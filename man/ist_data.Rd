@@ -4,7 +4,9 @@
 \name{ist_data}
 \alias{ist_data}
 \title{Intelligence, School grades and life data}
-\format{A data frame with 128 rows and 39 variables}
+\format{
+A data frame with 128 rows and 39 variables
+}
 \usage{
 data(ist)
 }

@@ -5,31 +5,29 @@
 \alias{lm_output_spss_wrapper_d}
 \title{Ergebnis einer linearen Regression aehnlich SPSS}
 \usage{
-lm_output_spss_wrapper_d(fit, Rsquare = TRUE, coefficients = TRUE,
-  collinearity = TRUE, plot = TRUE, runden = 3, sterne = TRUE,
-  fix = TRUE)
+lm_output_spss_wrapper_d(
+  fit,
+  Rsquare = TRUE,
+  coefficients = TRUE,
+  collinearity = TRUE,
+  plot = TRUE,
+  runden = 3,
+  sterne = TRUE,
+  fix = TRUE
+)
 
-lm_output_spss_wrapper_d(fit, Rsquare = TRUE, coefficients = TRUE,
-  collinearity = TRUE, plot = TRUE, runden = 3, sterne = TRUE,
-  fix = TRUE)
+lm_output_spss_wrapper_d(
+  fit,
+  Rsquare = TRUE,
+  coefficients = TRUE,
+  collinearity = TRUE,
+  plot = TRUE,
+  runden = 3,
+  sterne = TRUE,
+  fix = TRUE
+)
 }
 \arguments{
-\item{fit}{Objekt eines linearen Modells}
-
-\item{Rsquare}{(logisch) soll das R^2 berechnet werden}
-
-\item{coefficients}{(logisch) sollen die Koeffizienten angezeigt werden}
-
-\item{collinearity}{(logisch) soll eine Kollinearitätsdiagnose durchgeführt werden}
-
-\item{plot}{(logisch) sollen Histogramm der Residuen, qq plot und Plot der vorhergesagten Werte/Fehler erstellt werden}
-
-\item{runden}{(nummerisch) Anzahl der Stellen, auf die die Ergebnisse gerundet werden. Sinnvoll sind 2 oder 3}
-
-\item{sterne}{(logisch) sollen Signifikanzsterne angegeben werden}
-
-\item{fix}{(logisch) sollen p Werte gerundet 0 als <.001 angezeigt werden}
-
 \item{fit}{Objekt eines linearen Modells}
 
 \item{Rsquare}{(logisch) soll das R^2 berechnet werden}

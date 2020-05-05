@@ -4,7 +4,9 @@
 \name{pers_data}
 \alias{pers_data}
 \title{Personality data with life satisfaction}
-\format{A data frame with 345 rows and 16 variables}
+\format{
+A data frame with 345 rows and 16 variables
+}
 \usage{
 data(pers_data)
 }

@@ -4,8 +4,7 @@
 \alias{multihist_d}
 \title{Mehrere getrennte Histogramme}
 \usage{
-multihist_d(x, variables, labels = TRUE, xlab = "Verteilung",
-  save = TRUE, ...)
+multihist_d(x, variables, labels = TRUE, xlab = "Verteilung", save = TRUE, ...)
 }
 \arguments{
 \item{x}{data.frame}

@@ -4,8 +4,16 @@
 \alias{corstarsmd_d}
 \title{Korrelationstabelle mit Signifikanzsternen}
 \usage{
-corstarsmd_d(x, type = "markdown", stellen = 3, zehnproz = FALSE,
-  abk = TRUE, diagonale = FALSE, untere = TRUE, ...)
+corstarsmd_d(
+  x,
+  type = "markdown",
+  stellen = 3,
+  zehnproz = FALSE,
+  abk = TRUE,
+  diagonale = FALSE,
+  untere = TRUE,
+  ...
+)
 }
 \arguments{
 \item{x}{Datensatz (dataframe) Objekt mit den Variablen}

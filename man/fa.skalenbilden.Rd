@@ -4,8 +4,13 @@
 \alias{fa.skalenbilden}
 \title{Extrahiert automatisch Skalen aus einem EFA Objekt}
 \usage{
-fa.skalenbilden(faobject, ladungsunterschied = 0.1, datensatz = NULL,
-  name = "skala", fuerntratt = FALSE)
+fa.skalenbilden(
+  faobject,
+  ladungsunterschied = 0.1,
+  datensatz = NULL,
+  name = "skala",
+  fuerntratt = FALSE
+)
 }
 \arguments{
 \item{faobject}{Objekt aus einer \link{fa} o.ä.}

@@ -4,8 +4,14 @@
 \alias{tablemissing_d}
 \title{Graphische Darstellung unterschiedlicher missing-value Muster ueber mehrere Items}
 \usage{
-tablemissing_d(x, sortby = "beides", main = "Darstellung der Missings",
-  hue = 0.6, value = 0.9, cut = 0)
+tablemissing_d(
+  x,
+  sortby = "beides",
+  main = "Darstellung der Missings",
+  hue = 0.6,
+  value = 0.9,
+  cut = 0
+)
 }
 \arguments{
 \item{x}{mehrere Items als Datensatz (dataframe)}

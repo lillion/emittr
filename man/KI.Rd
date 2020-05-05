@@ -4,8 +4,15 @@
 \alias{KI}
 \title{Berechnung von Konfidenzintervallen}
 \usage{
-KI(wert, standardabweichung, reliabilitaet, seitigkeit = 1,
-  sicherheit = 0.8, mittelwert = NA, typ = "a")
+KI(
+  wert,
+  standardabweichung,
+  reliabilitaet,
+  seitigkeit = 1,
+  sicherheit = 0.8,
+  mittelwert = NA,
+  typ = "a"
+)
 }
 \arguments{
 \item{wert}{Roh- bzw. Standardwert im Test}

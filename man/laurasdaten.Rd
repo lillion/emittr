@@ -4,7 +4,9 @@
 \name{laurasdaten}
 \alias{laurasdaten}
 \title{18 items of a reactance questionnaire}
-\format{A data frame with 524 rows and 19 variables}
+\format{
+A data frame with 524 rows and 19 variables
+}
 \usage{
 data(laurasdaten)
 }

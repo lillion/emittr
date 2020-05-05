@@ -4,8 +4,14 @@
 \alias{summarySE}
 \title{Standardfehler und Konfidenzintervall des Mittelwerts, auch gruppenbezogen}
 \usage{
-summarySE(data = NULL, measurevar, groupvars = NULL, na.rm = FALSE,
-  conf.interval = 0.95, .drop = TRUE)
+summarySE(
+  data = NULL,
+  measurevar,
+  groupvars = NULL,
+  na.rm = FALSE,
+  conf.interval = 0.95,
+  .drop = TRUE
+)
 }
 \arguments{
 \item{data}{}
@@ -19,6 +25,9 @@ summarySE(data = NULL, measurevar, groupvars = NULL, na.rm = FALSE,
 \item{conf.interval}{}
 
 \item{.drop}{}
+}
+\value{
+
 }
 \description{
 Standardfehler und Konfidenzintervall des Mittelwerts, auch gruppenbezogen

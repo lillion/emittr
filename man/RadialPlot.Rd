@@ -4,25 +4,40 @@
 \alias{RadialPlot}
 \title{Radarplot}
 \usage{
-RadialPlot(plot.data, axis.labels = colnames(plot.data)[-1],
-  grid.min = 0, grid.mid = 4.5, grid.max = 10, centre.y = grid.min
-  - ((1/9) * (grid.max - grid.min)), polygon = FALSE,
-  plot.extent.x.sf = 1.2, plot.extent.y.sf = 1.2,
+RadialPlot(
+  plot.data,
+  axis.labels = colnames(plot.data)[-1],
+  grid.min = 0,
+  grid.mid = 4.5,
+  grid.max = 10,
+  centre.y = grid.min - ((1/9) * (grid.max - grid.min)),
+  polygon = FALSE,
+  plot.extent.x.sf = 1.2,
+  plot.extent.y.sf = 1.2,
   x.centre.range = 0.02 * (grid.max - centre.y),
-  label.centre.y = FALSE, grid.line.width = 0.5,
+  label.centre.y = FALSE,
+  grid.line.width = 0.5,
   gridline.min.linetype = "longdash",
   gridline.mid.linetype = "longdash",
-  gridline.max.linetype = "longdash", gridline.min.colour = "grey",
-  gridline.mid.colour = "blue", gridline.max.colour = "grey",
-  gridline.mid.alpha = 1, grid.label.size = 4,
+  gridline.max.linetype = "longdash",
+  gridline.min.colour = "grey",
+  gridline.mid.colour = "blue",
+  gridline.max.colour = "grey",
+  gridline.mid.alpha = 1,
+  grid.label.size = 4,
   gridline.label.offset = -0.02 * (grid.max - centre.y),
-  label.gridline.min = FALSE, axis.label.offset = 1.15,
-  axis.label.size = 3, axis.line.colour = "snow2",
-  group.line.width = 1, group.point.size = 4,
+  label.gridline.min = FALSE,
+  axis.label.offset = 1.15,
+  axis.label.size = 3,
+  axis.line.colour = "snow2",
+  group.line.width = 1,
+  group.point.size = 4,
   background.circle.colour = "yellow",
-  background.circle.transparency = 0.2, plot.legend = if
-  (nrow(plot.data) > 1) TRUE else FALSE, legend.title = "Übersicht",
-  legend.text.size = grid.label.size)
+  background.circle.transparency = 0.2,
+  plot.legend = if (nrow(plot.data) > 1) TRUE else FALSE,
+  legend.title = "Übersicht",
+  legend.text.size = grid.label.size
+)
 }
 \arguments{
 \item{plot.data}{Daten}

@@ -16,14 +16,6 @@ lm_coef_spss_d(fit, sterne = TRUE, stellen = 2, fix = TRUE)
 \item{stellen}{(nummerisch) auf wie viele Stellen soll gerundet werden, voreingestellt ist 2}
 
 \item{fix}{(logisch) sollen p Werte gerundet 0 als <.001 angezeigt werden}
-
-\item{fit}{Objekt eines linearen Modells}
-
-\item{sterne}{(logisch) sollen Signifikanzsterne (\code{\link{symnum}}) gedruckt werden}
-
-\item{stellen}{(nummerisch) auf wie viele Stellen soll gerundet werden, voreingestellt ist 2}
-
-\item{fix}{(logisch) sollen p Werte gerundet 0 als <.001 angezeigt werden}
 }
 \value{
 dataframe des Ergebnisses einer Regression ähnlich der in SPSS

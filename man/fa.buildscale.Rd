@@ -4,8 +4,13 @@
 \alias{fa.buildscale}
 \title{Extract scales from an EFA object}
 \usage{
-fa.buildscale(faobject, ladungsunterschied = 0.1, datensatz = NULL,
-  name = "scale", fuerntratt = FALSE)
+fa.buildscale(
+  faobject,
+  ladungsunterschied = 0.1,
+  datensatz = NULL,
+  name = "scale",
+  fuerntratt = FALSE
+)
 }
 \arguments{
 \item{faobject}{saved fa object}

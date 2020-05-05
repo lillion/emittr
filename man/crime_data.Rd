@@ -4,7 +4,9 @@
 \name{crime_data}
 \alias{crime_data}
 \title{Verbrechensdaten der USA 1993}
-\format{A data frame with 51 rows and 9 variables}
+\format{
+A data frame with 51 rows and 9 variables
+}
 \source{
 A. Agresti and B. Finlay, STATISTICAL METHODS FOR THE SOCIAL SCIENCES, Prentice Hall, 3rd edition, 2008
 }
